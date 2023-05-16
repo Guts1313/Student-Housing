@@ -32,11 +32,7 @@ namespace StudentHousing
             Setter marginSetter = borderMarginStyle.Setters.FirstOrDefault() as Setter;
             marginSetter.Value = new Thickness(10, 11, 10, 0);
 
-            foreach (TabItem item in MenuTabs.Items)
-            {
-                if(item.Header.ToString() == "Admin")
-                    item.Visibility = Visibility.Visible;
-            }
+            adminItem.Visibility = Visibility.Visible;
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -12,8 +12,24 @@
         <Style x:Name="BorderMargin" x:Key="BorderMargin" TargetType="Border">
             <Setter Property="Margin" Value="10,20,10,0"/>
         </Style>
+        <Style x:Key="styleCalendar" TargetType="{x:Type Calendar}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Calendar}">
+                        <!-- Wrapping in ViewBox will enlarge calendar of that size.-->
+                        <Viewbox Height="400"
+                         Width="400">
+                            <CalendarItem x:Name="PART_CalendarItem"
+                                  Background="{TemplateBinding Background}"
+                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                  BorderThickness="{TemplateBinding BorderThickness}"/>
+                        </Viewbox>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
-
+        
     <Grid Background="#9A83DD">
         <Grid.RowDefinitions>
             <RowDefinition Height="89*"/>
@@ -74,22 +90,42 @@
             </TabItem>
 
             <TabItem Header="Garbage">
+                <Grid>
+
+                </Grid>
             </TabItem>
 
             <TabItem Header="Calendar">
+                <Viewbox>
+                    <Calendar HorizontalAlignment="Center" VerticalAlignment="Center" Height="170" Width="309" RenderTransformOrigin="0.503,0.523"/>
+                    
+                </Viewbox>
             </TabItem>
 
             <TabItem Header="Groceries">
+                <Grid>
+
+                </Grid>
             </TabItem>
 
             <TabItem Header="Cleaning">
+                <Grid>
+
+                </Grid>
             </TabItem>
 
             <TabItem Header="Parties">
+                <Grid>
+
+                </Grid>
             </TabItem>
 
-            <TabItem Header="Admin" Visibility="Collapsed">
+            <TabItem x:Name="adminItem" Header="Admin" Visibility="Collapsed">
+                <Grid>
+
+                </Grid>
             </TabItem>
+
 
         </TabControl>
         <Border BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="1" Margin="0,50,0,0" VerticalAlignment="Top" Width="800"/>

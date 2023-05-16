@@ -19,3 +19,24 @@ C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windo
 C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing.pdb
 C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing.genruntimeconfig.cache
 C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\ref\StudentHousing.dll
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\bin\Debug\net6.0-windows\StudentHousing.exe
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\bin\Debug\net6.0-windows\StudentHousing.deps.json
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\bin\Debug\net6.0-windows\StudentHousing.runtimeconfig.json
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\bin\Debug\net6.0-windows\StudentHousing.dll
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\bin\Debug\net6.0-windows\StudentHousing.pdb
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing.csproj.AssemblyReference.cache
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing_MarkupCompile.cache
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing_MarkupCompile.lref
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing.g.resources
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing.AssemblyInfoInputs.cache
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing.AssemblyInfo.cs
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing.csproj.CoreCompileInputs.cache
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing.dll
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\obj\Debug\net6.0-windows\refint\StudentHousing.dll
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing.pdb
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing.genruntimeconfig.cache
+C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\obj\Debug\net6.0-windows\ref\StudentHousing.dll
