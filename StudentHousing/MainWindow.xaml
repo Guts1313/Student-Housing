@@ -6,12 +6,14 @@
         xmlns:local="clr-namespace:StudentHousing"
         mc:Ignorable="d"
         Title="Menu" Height="475" Width="800"
+        Icon="img\Logo.png"
         ResizeMode="NoResize">
 
     <Window.Resources>
         <Style x:Name="BorderMargin" x:Key="BorderMargin" TargetType="Border">
             <Setter Property="Margin" Value="10,20,10,0"/>
         </Style>
+        
         <Style x:Key="styleCalendar" TargetType="{x:Type Calendar}">
             <Setter Property="Template">
                 <Setter.Value>
@@ -28,6 +30,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
     </Window.Resources>
         
     <Grid Background="#9A83DD">
@@ -85,7 +88,7 @@
 
             <TabItem Header="Account">
                 <Grid>
-
+                    
                 </Grid>
             </TabItem>
 
@@ -104,7 +107,76 @@
 
             <TabItem Header="Groceries">
                 <Grid>
-
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="90" />
+                        <RowDefinition Height="210"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" BorderThickness="0,0,0,1" BorderBrush="Gray">
+                        <Border Background="#CAD5FD" CornerRadius="10" Width="250" Height="65">
+                            <TextBlock x:Name="date" Text="5 May 2023" 
+                                       TextAlignment="Center" VerticalAlignment="Center" 
+                                       HorizontalAlignment="Center" FontSize="25"/>
+                        </Border>
+                    </Border>
+                    
+                    <Border Grid.Row="1" BorderThickness="0,0,0,1" BorderBrush="Gray">
+                        <ListBox x:Name="groceriesList" ItemsSource="{Binding MyDataItems}"
+                                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                 PreviewMouseDown="PreventDef">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" FontSize="20" HorizontalAlignment="Center"/>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ListBoxItem">
+                                                <Border x:Name="border" CornerRadius="10" BorderThickness="1" Margin="5" Padding="5"
+                                                        Background="#CAD5FD" Width="580" Height="40">
+                                                    <ContentPresenter/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter TargetName="border" Property="Background" Value="#B0C1FF"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ListBox.ItemContainerStyle>
+                        </ListBox>
+                    </Border>
+                    
+                    <Border Grid.Row="2" BorderBrush="Gray">
+                        <Grid>
+                            <Border Background="#CAD5FD" CornerRadius="10" 
+                                Width="250" Height="65" Margin="320,0,0,0">
+                                <TextBlock x:Name="amount" Text="Amount: " 
+                                           TextAlignment="Center" VerticalAlignment="Center" 
+                                           HorizontalAlignment="Center" FontSize="25"/>
+                            </Border>
+                            <Button Width="250" Height="65" Content="Pay"
+                                    Margin="0,0,320,0" FontSize="25">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border x:Name="buttonBorder" Background="#CAD5FD" BorderThickness="1" CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="buttonBorder" Property="Background" Value="#B0C1FF" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </Grid>
+                    </Border>
                 </Grid>
             </TabItem>
 

@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "WVI9N4enbGP7M6BluKqVqRHyeV+Uj690Dfpb2LgZcUUyqnJKn/DqmqMUyKtrAK1P9LiSA9K+rTsVr+DZvhb4vQ==",
+  "dgSpecHash": "85ioSwrjyZrthJbsTniHNdwxraxYyWraMKnholqNyhLaScfHzg8BZqMHWGvsbsGuZZdMc1ZXMrX9ZZemAL/6sA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\StudentHousing.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\User\\source\\repos\\student-housing\\StudentHousing\\StudentHousing.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\firebaseauthentication.net\\4.0.2\\firebaseauthentication.net.4.0.2.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\firebaseauthentication.wpf\\4.0.2\\firebaseauthentication.wpf.4.0.2.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.web.webview2\\1.0.1462.37\\microsoft.web.webview2.1.0.1462.37.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

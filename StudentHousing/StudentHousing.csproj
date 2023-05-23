@@ -12,6 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FirebaseAuthentication.WPF" Version="4.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="img\Logo.png" />
   </ItemGroup>
 

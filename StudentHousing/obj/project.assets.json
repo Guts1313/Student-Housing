@@ -1,31 +1,434 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net6.0-windows7.0": {
+      "FirebaseAuthentication.net/4.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Firebase.Auth.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Firebase.Auth.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "FirebaseAuthentication.WPF/4.0.2": {
+        "type": "package",
+        "dependencies": {
+          "FirebaseAuthentication.net": "4.0.2",
+          "Microsoft.Web.WebView2": "1.0.1462.37"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/Firebase.Auth.UI.WPF.dll": {
+            "related": ".xml"
+          },
+          "lib/net6.0-windows7.0/Firebase.Auth.UI.dll": {
+            "related": ".WPF.xml;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/Firebase.Auth.UI.WPF.dll": {
+            "related": ".xml"
+          },
+          "lib/net6.0-windows7.0/Firebase.Auth.UI.dll": {
+            "related": ".WPF.xml;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ],
+        "resource": {
+          "lib/net6.0-windows7.0/ar/Firebase.Auth.UI.resources.dll": {
+            "locale": "ar"
+          },
+          "lib/net6.0-windows7.0/bg/Firebase.Auth.UI.resources.dll": {
+            "locale": "bg"
+          },
+          "lib/net6.0-windows7.0/ca/Firebase.Auth.UI.resources.dll": {
+            "locale": "ca"
+          },
+          "lib/net6.0-windows7.0/cs/Firebase.Auth.UI.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/net6.0-windows7.0/da/Firebase.Auth.UI.resources.dll": {
+            "locale": "da"
+          },
+          "lib/net6.0-windows7.0/de/Firebase.Auth.UI.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0-windows7.0/el/Firebase.Auth.UI.resources.dll": {
+            "locale": "el"
+          },
+          "lib/net6.0-windows7.0/es/Firebase.Auth.UI.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0-windows7.0/fa/Firebase.Auth.UI.resources.dll": {
+            "locale": "fa"
+          },
+          "lib/net6.0-windows7.0/fi/Firebase.Auth.UI.resources.dll": {
+            "locale": "fi"
+          },
+          "lib/net6.0-windows7.0/fr/Firebase.Auth.UI.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0-windows7.0/hi/Firebase.Auth.UI.resources.dll": {
+            "locale": "hi"
+          },
+          "lib/net6.0-windows7.0/hr/Firebase.Auth.UI.resources.dll": {
+            "locale": "hr"
+          },
+          "lib/net6.0-windows7.0/hu/Firebase.Auth.UI.resources.dll": {
+            "locale": "hu"
+          },
+          "lib/net6.0-windows7.0/in/Firebase.Auth.UI.resources.dll": {
+            "locale": "in"
+          },
+          "lib/net6.0-windows7.0/it/Firebase.Auth.UI.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net6.0-windows7.0/iw/Firebase.Auth.UI.resources.dll": {
+            "locale": "iw"
+          },
+          "lib/net6.0-windows7.0/ja/Firebase.Auth.UI.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0-windows7.0/ko/Firebase.Auth.UI.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0-windows7.0/lt/Firebase.Auth.UI.resources.dll": {
+            "locale": "lt"
+          },
+          "lib/net6.0-windows7.0/lv/Firebase.Auth.UI.resources.dll": {
+            "locale": "lv"
+          },
+          "lib/net6.0-windows7.0/nl/Firebase.Auth.UI.resources.dll": {
+            "locale": "nl"
+          },
+          "lib/net6.0-windows7.0/no/Firebase.Auth.UI.resources.dll": {
+            "locale": "no"
+          },
+          "lib/net6.0-windows7.0/pl/Firebase.Auth.UI.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net6.0-windows7.0/pt/Firebase.Auth.UI.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net6.0-windows7.0/ro/Firebase.Auth.UI.resources.dll": {
+            "locale": "ro"
+          },
+          "lib/net6.0-windows7.0/ru/Firebase.Auth.UI.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net6.0-windows7.0/sk/Firebase.Auth.UI.resources.dll": {
+            "locale": "sk"
+          },
+          "lib/net6.0-windows7.0/sl/Firebase.Auth.UI.resources.dll": {
+            "locale": "sl"
+          },
+          "lib/net6.0-windows7.0/sr-cyrl/Firebase.Auth.UI.resources.dll": {
+            "locale": "sr-cyrl"
+          },
+          "lib/net6.0-windows7.0/sv/Firebase.Auth.UI.resources.dll": {
+            "locale": "sv"
+          },
+          "lib/net6.0-windows7.0/th/Firebase.Auth.UI.resources.dll": {
+            "locale": "th"
+          },
+          "lib/net6.0-windows7.0/tr/Firebase.Auth.UI.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net6.0-windows7.0/uk/Firebase.Auth.UI.resources.dll": {
+            "locale": "uk"
+          },
+          "lib/net6.0-windows7.0/ur/Firebase.Auth.UI.resources.dll": {
+            "locale": "ur"
+          },
+          "lib/net6.0-windows7.0/vi/Firebase.Auth.UI.resources.dll": {
+            "locale": "vi"
+          },
+          "lib/net6.0-windows7.0/zh/Firebase.Auth.UI.resources.dll": {
+            "locale": "zh"
+          }
+        }
+      },
+      "Microsoft.Web.WebView2/1.0.1462.37": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/WebView2Loader.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/WebView2Loader.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/WebView2Loader.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "FirebaseAuthentication.net/4.0.2": {
+      "sha512": "805UhOsDsmDPbESOKrT1x31Dx9qLqvt6pEwRyKRVmBAcJxLWFnyoJ7Vzj/TesuzIv0fAXpbnRfzK4LotG+Rksg==",
+      "type": "package",
+      "path": "firebaseauthentication.net/4.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "firebase.png",
+        "firebaseauthentication.net.4.0.2.nupkg.sha512",
+        "firebaseauthentication.net.nuspec",
+        "lib/netstandard2.0/Firebase.Auth.dll",
+        "lib/netstandard2.0/Firebase.Auth.xml"
+      ]
+    },
+    "FirebaseAuthentication.WPF/4.0.2": {
+      "sha512": "B9HXor/aEu6aB6d/i21QvHnz3i+Y9I2qSnI+wTBV5MFr5G1kI3Igwgcdadjd1r6IhPEyRmBKSL62LNbxn07CYg==",
+      "type": "package",
+      "path": "firebaseauthentication.wpf/4.0.2",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "firebase.png",
+        "firebaseauthentication.wpf.4.0.2.nupkg.sha512",
+        "firebaseauthentication.wpf.nuspec",
+        "lib/net6.0-windows7.0/Firebase.Auth.UI.WPF.dll",
+        "lib/net6.0-windows7.0/Firebase.Auth.UI.WPF.xml",
+        "lib/net6.0-windows7.0/Firebase.Auth.UI.dll",
+        "lib/net6.0-windows7.0/Firebase.Auth.UI.xml",
+        "lib/net6.0-windows7.0/ar/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/bg/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/ca/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/cs/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/da/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/de/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/el/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/es/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/fa/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/fi/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/fil/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/fr/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/hi/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/hr/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/hu/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/in/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/it/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/iw/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/ja/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/ko/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/lt/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/lv/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/nl/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/no/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/pl/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/pt/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/ro/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/ru/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/sk/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/sl/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/sr-cyrl/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/sv/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/th/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/tr/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/uk/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/ur/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/vi/Firebase.Auth.UI.resources.dll",
+        "lib/net6.0-windows7.0/zh/Firebase.Auth.UI.resources.dll",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Microsoft.Web.WebView2/1.0.1462.37": {
+      "sha512": "q1B5OWQBJxX4tTcG1JiwUOOPDAfgDwWx9ckEQoo/o55MwE4zeTuFeFv0ghTFr28hxlBSiMQ/6OzRQswyx2D7WA==",
+      "type": "package",
+      "path": "microsoft.web.webview2/1.0.1462.37",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "NOTICE.txt",
+        "WebView2.idl",
+        "WebView2.tlb",
+        "build/Common.targets",
+        "build/Microsoft.Web.WebView2.targets",
+        "build/WebView2Rules.Project.xml",
+        "build/native/Microsoft.Web.WebView2.targets",
+        "build/native/arm64/WebView2Loader.dll",
+        "build/native/arm64/WebView2Loader.dll.lib",
+        "build/native/arm64/WebView2LoaderStatic.lib",
+        "build/native/include-winrt/WebView2Interop.h",
+        "build/native/include-winrt/WebView2Interop.idl",
+        "build/native/include-winrt/WebView2Interop.tlb",
+        "build/native/include/WebView2.h",
+        "build/native/include/WebView2EnvironmentOptions.h",
+        "build/native/x64/WebView2Loader.dll",
+        "build/native/x64/WebView2Loader.dll.lib",
+        "build/native/x64/WebView2LoaderStatic.lib",
+        "build/native/x86/WebView2Loader.dll",
+        "build/native/x86/WebView2Loader.dll.lib",
+        "build/native/x86/WebView2LoaderStatic.lib",
+        "build/wv2winrt.targets",
+        "lib/Microsoft.Web.WebView2.Core.winmd",
+        "lib/net45/Microsoft.Web.WebView2.Core.dll",
+        "lib/net45/Microsoft.Web.WebView2.Core.xml",
+        "lib/net45/Microsoft.Web.WebView2.WinForms.dll",
+        "lib/net45/Microsoft.Web.WebView2.WinForms.xml",
+        "lib/net45/Microsoft.Web.WebView2.Wpf.dll",
+        "lib/net45/Microsoft.Web.WebView2.Wpf.xml",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.xml",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.xml",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll",
+        "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.xml",
+        "microsoft.web.webview2.1.0.1462.37.nupkg.sha512",
+        "microsoft.web.webview2.nuspec",
+        "runtimes/win-arm64/native/WebView2Loader.dll",
+        "runtimes/win-arm64/native_uap/Microsoft.Web.WebView2.Core.dll",
+        "runtimes/win-x64/native/WebView2Loader.dll",
+        "runtimes/win-x64/native_uap/Microsoft.Web.WebView2.Core.dll",
+        "runtimes/win-x86/native/WebView2Loader.dll",
+        "runtimes/win-x86/native_uap/Microsoft.Web.WebView2.Core.dll",
+        "tools/VisualStudioToolsManifest.xml",
+        "tools/wv2winrt/Antlr3.Runtime.dll",
+        "tools/wv2winrt/Antlr4.StringTemplate.dll",
+        "tools/wv2winrt/System.Buffers.dll",
+        "tools/wv2winrt/System.CommandLine.DragonFruit.dll",
+        "tools/wv2winrt/System.CommandLine.Rendering.dll",
+        "tools/wv2winrt/System.CommandLine.dll",
+        "tools/wv2winrt/System.Memory.dll",
+        "tools/wv2winrt/System.Numerics.Vectors.dll",
+        "tools/wv2winrt/System.Runtime.CompilerServices.Unsafe.dll",
+        "tools/wv2winrt/concrt140_app.dll",
+        "tools/wv2winrt/cs/System.CommandLine.resources.dll",
+        "tools/wv2winrt/de/System.CommandLine.resources.dll",
+        "tools/wv2winrt/es/System.CommandLine.resources.dll",
+        "tools/wv2winrt/fr/System.CommandLine.resources.dll",
+        "tools/wv2winrt/it/System.CommandLine.resources.dll",
+        "tools/wv2winrt/ja/System.CommandLine.resources.dll",
+        "tools/wv2winrt/ko/System.CommandLine.resources.dll",
+        "tools/wv2winrt/msvcp140_1_app.dll",
+        "tools/wv2winrt/msvcp140_2_app.dll",
+        "tools/wv2winrt/msvcp140_app.dll",
+        "tools/wv2winrt/pl/System.CommandLine.resources.dll",
+        "tools/wv2winrt/pt-BR/System.CommandLine.resources.dll",
+        "tools/wv2winrt/ru/System.CommandLine.resources.dll",
+        "tools/wv2winrt/tr/System.CommandLine.resources.dll",
+        "tools/wv2winrt/vcamp140_app.dll",
+        "tools/wv2winrt/vccorlib140_app.dll",
+        "tools/wv2winrt/vcomp140_app.dll",
+        "tools/wv2winrt/vcruntime140_app.dll",
+        "tools/wv2winrt/winrt_winmd.dll",
+        "tools/wv2winrt/winrt_winmd.winmd",
+        "tools/wv2winrt/wv2winrt.exe",
+        "tools/wv2winrt/wv2winrt.exe.config",
+        "tools/wv2winrt/wv2winrt.xml",
+        "tools/wv2winrt/zh-Hans/System.CommandLine.resources.dll",
+        "tools/wv2winrt/zh-Hant/System.CommandLine.resources.dll"
+      ]
+    },
+    "Newtonsoft.Json/13.0.2": {
+      "sha512": "R2pZ3B0UjeyHShm9vG+Tu0EBb2lC8b0dFzV9gVn50ofHXh9Smjk6kTn7A/FdAsC8B5cKib1OnGYOXxRBz5XQDg==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net6.0-windows7.0": [
+      "FirebaseAuthentication.WPF >= 4.0.2"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\idero\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\StudentHousing.csproj",
+      "projectUniqueName": "C:\\Users\\User\\source\\repos\\student-housing\\StudentHousing\\StudentHousing.csproj",
       "projectName": "StudentHousing",
-      "projectPath": "C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\StudentHousing.csproj",
-      "packagesPath": "C:\\Users\\idero\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\obj\\",
+      "projectPath": "C:\\Users\\User\\source\\repos\\student-housing\\StudentHousing\\StudentHousing.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\source\\repos\\student-housing\\StudentHousing\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\idero\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -33,7 +436,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -51,6 +453,12 @@
     "frameworks": {
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
+        "dependencies": {
+          "FirebaseAuthentication.WPF": {
+            "target": "Package",
+            "version": "[4.0.2, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

@@ -1,0 +1,35 @@
+﻿<Window x:Class="StudentHousing.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:UI="clr-namespace:Firebase.Auth.UI;assembly=Firebase.Auth.UI.WPF"
+      mc:Ignorable="d"
+      Height="475" Width="800"
+      d:DesignHeight="450" 
+      d:DesignWidth="400"
+      Icon="..\img\Logo.png"
+      Title="LoginPage">
+
+    <Grid>
+        <UI:FirebaseUIControl>
+            <UI:FirebaseUIControl.Header>
+                <StackPanel>
+                    <TextBlock Text="Login"
+                               Foreground="#2C0088"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Center"
+                               FontSize="50"/>
+
+                    <TextBlock 
+                        HorizontalAlignment="Center"
+                        FontSize="16"
+                        Margin="12"
+                        TextWrapping="Wrap"
+                        TextAlignment="Center"
+                        />  
+                </StackPanel>
+            </UI:FirebaseUIControl.Header>
+        </UI:FirebaseUIControl>
+    </Grid>
+</Window>

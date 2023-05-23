@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:StudentHousing"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="FuiTextBlockTitleStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Red" />
+        </Style>
     </Application.Resources>
 </Application>
