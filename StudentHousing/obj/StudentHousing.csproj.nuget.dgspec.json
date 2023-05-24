@@ -43,6 +43,10 @@
             "FirebaseAuthentication.WPF": {
               "target": "Package",
               "version": "[4.0.2, )"
+            },
+            "MahApps.Metro": {
+              "target": "Package",
+              "version": "[2.4.9, )"
             }
           },
           "imports": [

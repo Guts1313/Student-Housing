@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:local="clr-namespace:StudentHousing"
         mc:Ignorable="d"
         Title="Menu" Height="475" Width="800"
@@ -13,7 +14,7 @@
         <Style x:Name="BorderMargin" x:Key="BorderMargin" TargetType="Border">
             <Setter Property="Margin" Value="10,20,10,0"/>
         </Style>
-        
+
         <Style x:Key="styleCalendar" TargetType="{x:Type Calendar}">
             <Setter Property="Template">
                 <Setter.Value>
@@ -31,8 +32,34 @@
             </Setter>
         </Style>
 
+        <Style TargetType="Controls:MetroProgressBar">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Controls:MetroProgressBar">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="15">
+                            <Grid>
+                                <Rectangle x:Name="PART_Track"
+                                           Fill="{TemplateBinding Background}"
+                                           RadiusX="15"
+                                           RadiusY="15"/>
+                                <Rectangle x:Name="PART_Indicator"
+                                           Fill="{TemplateBinding Foreground}"
+                                           RadiusX="15"
+                                           RadiusY="15"
+                                           HorizontalAlignment="Left"
+                                           Clip="{Binding ElementName=PART_Track, Path=Geometry}"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Window.Resources>
-        
+
     <Grid Background="#9A83DD">
         <Grid.RowDefinitions>
             <RowDefinition Height="89*"/>
@@ -88,7 +115,10 @@
 
             <TabItem Header="Account">
                 <Grid>
-                    
+                    <Controls:MetroProgressBar
+                              Value="5"
+                              Background="#FFE9E9"
+                              Foreground="#26FFE5" Margin="50,303,50,50"/>
                 </Grid>
             </TabItem>
 
@@ -101,7 +131,7 @@
             <TabItem Header="Calendar">
                 <Viewbox>
                     <Calendar HorizontalAlignment="Center" VerticalAlignment="Center" Height="170" Width="309" RenderTransformOrigin="0.503,0.523"/>
-                    
+
                 </Viewbox>
             </TabItem>
 
@@ -119,7 +149,7 @@
                                        HorizontalAlignment="Center" FontSize="25"/>
                         </Border>
                     </Border>
-                    
+
                     <Border Grid.Row="1" BorderThickness="0,0,0,1" BorderBrush="Gray">
                         <ListBox x:Name="groceriesList" ItemsSource="{Binding MyDataItems}"
                                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
@@ -151,7 +181,7 @@
                             </ListBox.ItemContainerStyle>
                         </ListBox>
                     </Border>
-                    
+
                     <Border Grid.Row="2" BorderBrush="Gray">
                         <Grid>
                             <Border Background="#CAD5FD" CornerRadius="10" 

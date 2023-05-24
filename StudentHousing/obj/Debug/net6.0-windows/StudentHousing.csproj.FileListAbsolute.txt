@@ -91,3 +91,7 @@ C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windo
 C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\Autherization\LoginPage.g.cs
 C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\App.baml
 C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing.csproj.CopyComplete
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\ControlzEx.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\MahApps.Metro.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\de\MahApps.Metro.resources.dll
