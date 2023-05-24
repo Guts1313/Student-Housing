@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StudentHousing"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Title="Menu" Height="475" Width="800"
         Icon="img\Logo.png"
@@ -13,7 +14,7 @@
         <Style x:Name="BorderMargin" x:Key="BorderMargin" TargetType="Border">
             <Setter Property="Margin" Value="10,20,10,0"/>
         </Style>
-        
+
         <Style x:Key="styleCalendar" TargetType="{x:Type Calendar}">
             <Setter Property="Template">
                 <Setter.Value>
@@ -32,7 +33,7 @@
         </Style>
 
     </Window.Resources>
-        
+
     <Grid Background="#9A83DD">
         <Grid.RowDefinitions>
             <RowDefinition Height="89*"/>
@@ -88,7 +89,39 @@
 
             <TabItem Header="Account">
                 <Grid>
+
+                    <Border BorderBrush="#FFFFC6C6" BorderThickness="1" CornerRadius="10" Margin="38,83,467,272">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF8AFCFF" Offset="0.937"/>
+                                <GradientStop Color="White" Offset="1"/>
+                                <GradientStop Color="#FFC27CFF" Offset="0.027"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="Last name" VerticalAlignment="Top" BorderThickness="0" Background="Transparent" />
+                    </Border>
+                    <Border BorderBrush="#FFFFC6C6" BorderThickness="1" CornerRadius="10" Margin="38,154,467,201">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF8AFCFF" Offset="0.937"/>
+                                <GradientStop Color="White" Offset="1"/>
+                                <GradientStop Color="#FFC27CFF" Offset="0.027"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" BorderThickness="0" Background="Transparent" />
+                    </Border>
+                    <Border BorderBrush="#FFFFB5B5" BorderThickness="1" CornerRadius="10" Margin="38,21,467,336">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF9AEFFF" Offset="1"/>
+                                <GradientStop Color="#FFC27CFF" Offset="0.05"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="First name" VerticalAlignment="Top" BorderThickness="0" Background="Transparent" />
+                    </Border>
                     
+
+
                 </Grid>
             </TabItem>
 
@@ -101,7 +134,7 @@
             <TabItem Header="Calendar">
                 <Viewbox>
                     <Calendar HorizontalAlignment="Center" VerticalAlignment="Center" Height="170" Width="309" RenderTransformOrigin="0.503,0.523"/>
-                    
+
                 </Viewbox>
             </TabItem>
 
@@ -119,7 +152,7 @@
                                        HorizontalAlignment="Center" FontSize="25"/>
                         </Border>
                     </Border>
-                    
+
                     <Border Grid.Row="1" BorderThickness="0,0,0,1" BorderBrush="Gray">
                         <ListBox x:Name="groceriesList" ItemsSource="{Binding MyDataItems}"
                                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
@@ -151,7 +184,7 @@
                             </ListBox.ItemContainerStyle>
                         </ListBox>
                     </Border>
-                    
+
                     <Border Grid.Row="2" BorderBrush="Gray">
                         <Grid>
                             <Border Background="#CAD5FD" CornerRadius="10" 
@@ -197,6 +230,26 @@
 
                 </Grid>
             </TabItem>
+            <TextBox HorizontalAlignment="Left" Height="43" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="229"/>
+            <Border BorderBrush="#FFFFC6C6" BorderThickness="1" CornerRadius="10" Height="32" Width="151">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF8AFCFF" Offset="0.937"/>
+                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="#FFC27CFF" Offset="0.027"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="Last name" VerticalAlignment="Top" BorderThickness="0" Background="Transparent" />
+            </Border>
+            <Border BorderBrush="#FFFFB5B5" BorderThickness="1" CornerRadius="10" Height="32" Width="151">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF9AEFFF" Offset="1"/>
+                        <GradientStop Color="#FFC27CFF" Offset="0.05"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="First name" VerticalAlignment="Top" BorderThickness="0" Background="Transparent" />
+            </Border>
 
 
         </TabControl>
