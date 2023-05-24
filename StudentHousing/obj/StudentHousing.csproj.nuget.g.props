@@ -17,5 +17,6 @@
     <PkgMicrosoft_Web_WebView2 Condition=" '$(PkgMicrosoft_Web_WebView2)' == '' ">C:\Users\User\.nuget\packages\microsoft.web.webview2\1.0.1462.37</PkgMicrosoft_Web_WebView2>
     <PkgMahApps_Metro Condition=" '$(PkgMahApps_Metro)' == '' ">C:\Users\User\.nuget\packages\mahapps.metro\2.4.9</PkgMahApps_Metro>
     <PkgFirebaseAuthentication_WPF Condition=" '$(PkgFirebaseAuthentication_WPF)' == '' ">C:\Users\User\.nuget\packages\firebaseauthentication.wpf\4.0.2</PkgFirebaseAuthentication_WPF>
+    <PkgExtended_Wpf_Toolkit Condition=" '$(PkgExtended_Wpf_Toolkit)' == '' ">C:\Users\User\.nuget\packages\extended.wpf.toolkit\4.5.0</PkgExtended_Wpf_Toolkit>
   </PropertyGroup>
 </Project>
