@@ -144,7 +144,12 @@
                         </Border.Background>
                         <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="First name" VerticalAlignment="Top" BorderThickness="0" Background="Transparent" />
                     </Border>
-
+                    
+                    <Controls:MetroProgressBar
+                        Value="5"
+                        Background="#FFE9E9"
+                        Foreground="#26FFE5" Margin="50,303,50,50"/>
+                    
                 </Grid>
             </TabItem>
 
