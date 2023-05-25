@@ -87,8 +87,6 @@ C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windo
 C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
 C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\runtimes\win-x64\native\WebView2Loader.dll
 C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\runtimes\win-x86\native\WebView2Loader.dll
-C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\Autherization\LoginPage.baml
-C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\Autherization\LoginPage.g.cs
 C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\App.baml
 C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing.csproj.CopyComplete
 <<<<<<< HEAD
@@ -204,3 +202,5 @@ C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windo
 C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\ru\Xceed.Wpf.AvalonDock.NET5.resources.dll
 C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\sv\Xceed.Wpf.AvalonDock.NET5.resources.dll
 C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.NET5.resources.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\Authentication\LoginPage.baml
+C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\Authentication\LoginPage.g.cs
