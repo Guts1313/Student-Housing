@@ -87,10 +87,14 @@ C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windo
 C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
 C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\runtimes\win-x64\native\WebView2Loader.dll
 C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\runtimes\win-x86\native\WebView2Loader.dll
-C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\Autherization\LoginPage.baml
-C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\Autherization\LoginPage.g.cs
 C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\App.baml
 C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing.csproj.CopyComplete
+<<<<<<< HEAD
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\ControlzEx.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\MahApps.Metro.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\de\MahApps.Metro.resources.dll
+=======
 C:\StudentHousing\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing.csproj.AssemblyReference.cache
 C:\StudentHousing\student-housing\StudentHousing\obj\Debug\net6.0-windows\Autherization\LoginPage.baml
 C:\StudentHousing\student-housing\StudentHousing\obj\Debug\net6.0-windows\Autherization\LoginPage.g.cs
@@ -180,3 +184,23 @@ C:\StudentHousing\student-housing\StudentHousing\obj\Debug\net6.0-windows\refint
 C:\StudentHousing\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing.pdb
 C:\StudentHousing\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing.genruntimeconfig.cache
 C:\StudentHousing\student-housing\StudentHousing\obj\Debug\net6.0-windows\ref\StudentHousing.dll
+>>>>>>> 932097af1c4d1cc8334202f16eec682af7aaddf2
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\Xceed.Wpf.AvalonDock.NET5.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\Xceed.Wpf.AvalonDock.Themes.Aero.NET5.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\Xceed.Wpf.AvalonDock.Themes.Metro.NET5.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\Xceed.Wpf.AvalonDock.Themes.VS2010.NET5.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\Xceed.Wpf.Toolkit.NET5.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\cs-CZ\Xceed.Wpf.AvalonDock.NET5.resources.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\de\Xceed.Wpf.AvalonDock.NET5.resources.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\es\Xceed.Wpf.AvalonDock.NET5.resources.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\fr\Xceed.Wpf.AvalonDock.NET5.resources.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\hu\Xceed.Wpf.AvalonDock.NET5.resources.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\it\Xceed.Wpf.AvalonDock.NET5.resources.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\ja-JP\Xceed.Wpf.AvalonDock.NET5.resources.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\pt-BR\Xceed.Wpf.AvalonDock.NET5.resources.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\ro\Xceed.Wpf.AvalonDock.NET5.resources.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\ru\Xceed.Wpf.AvalonDock.NET5.resources.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\sv\Xceed.Wpf.AvalonDock.NET5.resources.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.NET5.resources.dll
+C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\Authentication\LoginPage.baml
+C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\Authentication\LoginPage.g.cs

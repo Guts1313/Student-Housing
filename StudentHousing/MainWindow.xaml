@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:local="clr-namespace:StudentHousing"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
@@ -27,6 +28,31 @@
                                   BorderBrush="{TemplateBinding BorderBrush}"
                                   BorderThickness="{TemplateBinding BorderThickness}"/>
                         </Viewbox>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Controls:MetroProgressBar">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Controls:MetroProgressBar">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="15">
+                            <Grid>
+                                <Rectangle x:Name="PART_Track"
+                                           Fill="{TemplateBinding Background}"
+                                           RadiusX="15"
+                                           RadiusY="15"/>
+                                <Rectangle x:Name="PART_Indicator"
+                                           Fill="{TemplateBinding Foreground}"
+                                           RadiusX="15"
+                                           RadiusY="15"
+                                           HorizontalAlignment="Left"/>
+                            </Grid>
+                        </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -89,7 +115,6 @@
 
             <TabItem Header="Account">
                 <Grid>
-
                     <Border BorderBrush="#FFFFC6C6" BorderThickness="1" CornerRadius="10" Margin="38,83,467,272">
                         <Border.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -120,8 +145,11 @@
                         <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="First name" VerticalAlignment="Top" BorderThickness="0" Background="Transparent" />
                     </Border>
                     
-
-
+                    <Controls:MetroProgressBar
+                        Value="5"
+                        Background="#FFE9E9"
+                        Foreground="#26FFE5" Margin="50,303,50,50"/>
+                    
                 </Grid>
             </TabItem>
 
