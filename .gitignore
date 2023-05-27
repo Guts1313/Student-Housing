@@ -1,0 +1,6 @@
+.vs
+StudentHousing\.idea
+StudentHousing\.vs
+StudentHousing\obj\project.nuget.cache
+StudentHousing\obj\Debug\net6.0-windows\StudentHousing.AssemblyInfo.cs
+StudentHousing\obj\Debug\net6.0-windows\ProjectName.csproj.nuget.g.props

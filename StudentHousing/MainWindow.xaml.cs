@@ -24,6 +24,7 @@ namespace StudentHousing
     public partial class MainWindow : Window
     {
         public ObservableCollection<string> MyDataItems { get; set; }
+        private User user;
 
 
         public MainWindow()
@@ -46,7 +47,8 @@ namespace StudentHousing
             else // all functions calls should be here (probably event manager will be here)
             {
                 this.Show();
-                MessageBox.Show($"Hello, {e.User.Info.LastName}");
+                var userinf = e.User.Info;
+                user = new User(userinf.Uid, userinf.FirstName, userinf.LastName, userinf.Email);
             }
         }
 

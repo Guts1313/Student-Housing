@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="DataCSV\partyOwners.csv" />
+    <None Remove="DataCSV\tasksAssigned.csv" />
     <None Remove="img\Logo.png" />
   </ItemGroup>
 
