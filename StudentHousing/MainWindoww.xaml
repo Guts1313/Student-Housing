@@ -153,9 +153,41 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Garbage">
+            <TabItem Header="Garbage" RenderTransformOrigin="0.73,0.671">
                 <Grid>
+                    <Button Content="Month" Width="80" Height="30"  FontSize="15" Background="#F08080" Margin="335,172,255,201"/>
+                    <Button Content="Day" Width="80" Height="30"  FontSize="15" Background="#F08080" Margin="192,172,398,201"/>
 
+                    <Button Width="200" Height="55" Content="Accept Task"
+                                    Margin="72,271,398,77" FontSize="15">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="buttonBorder" Background="#CAD5FD" BorderThickness="1" CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="buttonBorder" Property="Background" Value="#B0C1FF" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Height="55" Content="Decline Task"
+                                    Margin="367,271,96,77" FontSize="15">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="buttonBorder" Background="#F08080" BorderThickness="1" CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="buttonBorder" Property="Background" Value="#F08080" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                 </Grid>
             </TabItem>
 
