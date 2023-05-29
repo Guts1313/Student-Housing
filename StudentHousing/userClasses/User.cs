@@ -1,11 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Controls;
+using System.Xml.Linq;
 
 namespace StudentHousing;
 
+[Serializable]
 public class User
 {
     private List<string> adminList = new List<string>() 
-    { "BGxH0fJqjPak2L27FQ8p7bQDm3Y2", 
+    { "njuYFgEfwig7LGxIDKirU2SQjyH2", 
       "V9j8vToydGgWhB9W18TF8ZC1dwC2", 
       "BGxH0fJqjPak2L27FQ8p7bQDm3Y2" 
     }; 
@@ -14,6 +18,10 @@ public class User
     private string secondName;
     private string email;
     private bool isAdmin;
+    private bool wasAssignedPrev;
+    public List<Task> AssignedTasks { get; }
+    public string Id => id;
+    public bool IsAdmin => isAdmin;
 
     public User(string id, string firstName, string secondName, string email)
     {
@@ -35,10 +43,40 @@ public class User
 
         return false;
     }
-    
-    public string Id
+
+    public void GetTask(Task task)
     {
-        get => id;
-        private set => id = value;
+        task.ChangeTaskStatus(TaskStatus.Assigned);
+        AssignedTasks.Add(task);
+    }
+
+    public void AcceptTask(Task task)
+    {
+        if (!AssignedTasks.Contains(task))
+            throw new InvalidOperationException("User has not been assigned this task");
+
+        task.ChangeTaskStatus(TaskStatus.Accepted);
+    }
+
+    public void DeclineTask(Task task)
+    {
+        if (!AssignedTasks.Contains(task))
+            throw new InvalidOperationException("User has not been assigned this task");
+
+        task.ChangeTaskStatus(TaskStatus.Declined);
+        AssignedTasks.Remove(task);
+
+    }
+
+    public void CompleteTask(Task task)
+    {
+        task.ChangeTaskStatus(TaskStatus.Completed);
+        AssignedTasks.Remove(task);
+    }
+
+
+    public override string ToString()
+    {
+        return $"ID: {id} Name: {secondName} {firstName} email:{email}";
     }
 }

@@ -8,7 +8,6 @@
       Height="475" Width="800"
       d:DesignHeight="450" 
       d:DesignWidth="400"
-      Icon="..\img\Logo.png"
       Title="LoginPage">
 
     <Grid>

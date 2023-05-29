@@ -1,10 +1,11 @@
 ﻿using Firebase.Auth.UI;
+using Microsoft.Web.WebView2.Core;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using Firebase.Auth.UI;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,12 +26,12 @@ namespace StudentHousing
     {
         public ObservableCollection<string> MyDataItems { get; set; }
         private User user;
+        private UserManager userManager = new UserManager();
 
 
         public MainWindow()
         {
             InitializeComponent();
-            showAdmibTab();
             MyDataItems = new ObservableCollection<string>();
             FirebaseUI.Instance.Client.AuthStateChanged += this.AuthStateChanged;
         }
@@ -38,17 +39,25 @@ namespace StudentHousing
         // checks if the user is logged in
         private void AuthStateChanged(object sender, Firebase.Auth.UserEventArgs e)
         {
+            var uiDispatcher = Dispatcher;
             if (e.User == null)
             {
-                Window myWindow = new LoginPage();
-                myWindow.Show();
-                this.Close();
+                uiDispatcher.Invoke(() =>
+                {
+                    Window loginpage = new LoginPage();
+                    loginpage.Show();
+                    this.Hide();
+                });
             }
             else // all functions calls should be here (probably event manager will be here)
             {
-                this.Show();
                 var userinf = e.User.Info;
                 user = new User(userinf.Uid, userinf.FirstName, userinf.LastName, userinf.Email);
+                userManager.AddUser(user);
+
+                if (user.IsAdmin) showAdmibTab(); // should be called before initializing the window (other won't be possible to change)
+
+                uiDispatcher.Invoke(() => { this.Show(); });
             }
         }
 
