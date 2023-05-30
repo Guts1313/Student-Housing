@@ -205,7 +205,9 @@
 
             <TabItem Header="Calendar">
                 <Viewbox>
-                    <Calendar HorizontalAlignment="Center" VerticalAlignment="Center" Height="170" Width="309" RenderTransformOrigin="0.503,0.523"/>
+                    <Calendar HorizontalAlignment="Center" VerticalAlignment="Center" 
+                              Height="170" Width="309" RenderTransformOrigin="0.503,0.523"
+                              x:Name="CalenadarTab"/>
 
                 </Viewbox>
             </TabItem>
