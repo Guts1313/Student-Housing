@@ -222,7 +222,6 @@
             </TabItem>
 
             <TabItem Header="Calendar">
-<<<<<<< HEAD
                 <Viewbox Stretch="Fill" StretchDirection="Both" Width="543">
                     <Calendar Style="{DynamicResource CalendarStyle1}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="181" Background="#FFC1ABFF">
                         <Calendar.BorderBrush>
@@ -232,14 +231,8 @@
                             </LinearGradientBrush>
                         </Calendar.BorderBrush>
                     </Calendar>
-=======
-                <Viewbox>
-                    <Calendar HorizontalAlignment="Center" VerticalAlignment="Center" 
-                              Height="170" Width="309" RenderTransformOrigin="0.503,0.523"
-                              x:Name="CalenadarTab"/>
->>>>>>> 948ade1a74a73a5cee04aaf4558fd9a2c40648e2
 
-                </Viewbox>
+                    </Viewbox>
             </TabItem>
 
             <TabItem Header="Groceries">
@@ -385,7 +378,7 @@
                         </Calendar>
                     </Viewbox>
 
-                    <Button Content="Vote For" HorizontalAlignment="Left" Margin="149,331,0,20" Width="154" Click="Button_Click" Background="#FF00C80B" BorderBrush="Black" Foreground="White">
+                    <Button Content="Vote For" HorizontalAlignment="Left" Margin="149,331,0,20" Width="154" Click="VoteButtonFor_click" Background="#FF00C80B" BorderBrush="Black" Foreground="White">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Template">
@@ -401,7 +394,7 @@
                         </Button.Style>
                     </Button>
 
-                    <Button Content="Vote Against" HorizontalAlignment="Left" Margin="369,331,0,20" Width="159" Click="Button_Click" Background="#FFCE0000" Foreground="White">
+                    <Button Content="Vote Against" HorizontalAlignment="Left" Margin="369,331,0,20" Width="159" Click="VoteButtonAgainst_click" Background="#FFCE0000" Foreground="White">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Template">
@@ -419,7 +412,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem x:Name="adminItem" Header="Admin" Visibility="Visible">
+            <TabItem x:Name="adminItem" Header="Admin" Visibility="Hidden">
                 <Grid>
 
                 </Grid>

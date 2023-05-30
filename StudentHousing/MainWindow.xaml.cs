@@ -92,5 +92,15 @@ namespace StudentHousing
         {
             e.Handled = true;
         }
+
+        private void VoteButtonFor_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void VoteButtonAgainst_click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
