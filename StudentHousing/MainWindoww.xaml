@@ -16,7 +16,22 @@
             <Setter Property="Margin" Value="10,20,10,0"/>
         </Style>
 
-
+        <Style x:Key="styleCalendar" TargetType="{x:Type Calendar}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Calendar}">
+                        <!-- Wrapping in ViewBox will enlarge calendar of that size.-->
+                        <Viewbox Height="400"
+                         Width="400">
+                            <CalendarItem x:Name="PART_CalendarItem"
+                                  Background="{TemplateBinding Background}"
+                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                  BorderThickness="{TemplateBinding BorderThickness}"/>
+                        </Viewbox>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
         <Style TargetType="Controls:MetroProgressBar">
             <Setter Property="Template">
@@ -42,43 +57,10 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="CalendarStyle1" TargetType="{x:Type Calendar}">
-            <Setter Property="Foreground" Value="#FF333333"/>
-            <Setter Property="Background">
-                <Setter.Value>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFE4EAF0" Offset="0"/>
-                        <GradientStop Color="#FFECF0F4" Offset="0.16"/>
-                        <GradientStop Color="#FFFCFCFD" Offset="0.16"/>
-                        <GradientStop Color="#FFFFFFFF" Offset="1"/>
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="BorderBrush">
-                <Setter.Value>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFA3AEB9" Offset="0"/>
-                        <GradientStop Color="#FF8399A9" Offset="0.375"/>
-                        <GradientStop Color="#FF718597" Offset="0.375"/>
-                        <GradientStop Color="#FF617584" Offset="1"/>
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Calendar}">
-                        <StackPanel x:Name="PART_Root" HorizontalAlignment="Center">
-                            <CalendarItem x:Name="PART_CalendarItem" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Style="{TemplateBinding CalendarItemStyle}"/>
-                        </StackPanel>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
 
     </Window.Resources>
 
-    <Grid Background="#9A83DD" x:Name="MainGrid">
+    <Grid Background="#9A83DD">
         <Grid.RowDefinitions>
             <RowDefinition Height="89*"/>
             <RowDefinition Height="64*"/>
@@ -141,7 +123,7 @@
                                 <GradientStop Color="#FFC27CFF" Offset="0.027"/>
                             </LinearGradientBrush>
                         </Border.Background>
-                        <TextBlock Name="secondName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Last name" VerticalAlignment="Top" Background="Transparent" />
+                        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="Last name" VerticalAlignment="Top" BorderThickness="0" Background="Transparent" />
                     </Border>
                     <Border BorderBrush="#FFFFC6C6" BorderThickness="1" CornerRadius="10" Margin="38,154,467,201">
                         <Border.Background>
@@ -151,7 +133,7 @@
                                 <GradientStop Color="#FFC27CFF" Offset="0.027"/>
                             </LinearGradientBrush>
                         </Border.Background>
-                        <TextBlock Name="email" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Background="Transparent" />
+                        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" BorderThickness="0" Background="Transparent" />
                     </Border>
                     <Border BorderBrush="#FFFFB5B5" BorderThickness="1" CornerRadius="10" Margin="38,21,467,336">
                         <Border.Background>
@@ -160,7 +142,7 @@
                                 <GradientStop Color="#FFC27CFF" Offset="0.05"/>
                             </LinearGradientBrush>
                         </Border.Background>
-                        <TextBlock Name="firstName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="First name" VerticalAlignment="Top" Background="Transparent" />
+                        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="First name" VerticalAlignment="Top" BorderThickness="0" Background="Transparent" />
                     </Border>
 
                     <Controls:MetroProgressBar
@@ -171,24 +153,13 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Garbage">
+            <TabItem Header="Garbage" RenderTransformOrigin="0.73,0.671">
                 <Grid>
-                    <TextBlock FontSize="24" FontFamily="Arial" 
-                               HorizontalAlignment="center" VerticalAlignment="Top"
-                               Margin="0,30,0,0" Width="550" Height="50" TextAlignment="Center">
-                    <Run Text="Next garbage disposal assigned to, {username}"/>
-                    <Run x:Name="UserNameGarbage"/>
-                    </TextBlock>
+                    <Button Content="Month" Width="80" Height="30"  FontSize="15" Background="#F08080" Margin="335,172,255,201"/>
+                    <Button Content="Day" Width="80" Height="30"  FontSize="15" Background="#F08080" Margin="192,172,398,201"/>
 
-                    <TextBlock Text="Month" Width="80" Height="30"  FontSize="15" 
-                            Background="#F08080" Margin="200,-20,0,0"
-                            TextAlignment="Center"/>
-                    <TextBlock Text="Day" Width="80" Height="30"  FontSize="15" 
-                            Background="#F08080" Margin="-200,-20,0,0"
-                            TextAlignment="Center"/>
-
-                    <Button Width="200" Height="55" Content="Accept Task" x:Name="garbageAccept"
-                            Margin="-250,195,0,0" FontSize="15">
+                    <Button Width="200" Height="55" Content="Accept Task"
+                                    Margin="72,271,398,77" FontSize="15">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border x:Name="buttonBorder" Background="#CAD5FD" BorderThickness="1" CornerRadius="10">
@@ -202,9 +173,8 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-
-                    <Button Height="55" Width="200" Content="Decline Task" x:Name="garbageDecline"
-                            Margin="250,195,0,0" FontSize="15">
+                    <Button Height="55" Content="Decline Task"
+                                    Margin="367,271,96,77" FontSize="15">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border x:Name="buttonBorder" Background="#F08080" BorderThickness="1" CornerRadius="10">
@@ -222,15 +192,8 @@
             </TabItem>
 
             <TabItem Header="Calendar">
-                <Viewbox Stretch="Fill" StretchDirection="Both" Width="543">
-                    <Calendar Style="{DynamicResource CalendarStyle1}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="181" Background="#FFC1ABFF">
-                        <Calendar.BorderBrush>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FFB493FF" Offset="0.493"/>
-                                <GradientStop Color="#00653BFF" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Calendar.BorderBrush>
-                    </Calendar>
+                <Viewbox>
+                    <Calendar HorizontalAlignment="Center" VerticalAlignment="Center" Height="170" Width="309" RenderTransformOrigin="0.503,0.523"/>
 
                 </Viewbox>
             </TabItem>
@@ -243,11 +206,19 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Border Grid.Row="0" BorderThickness="0,0,0,1" BorderBrush="Gray">
-                        <Border Background="#CAD5FD" CornerRadius="10" Width="250" Height="65">
+                        <Border Background="#CAD5FD" CornerRadius="10" Width="250" Height="65" Margin="10,10,410,14">
                             <TextBlock x:Name="date" Text="5 May 2023" 
                                        TextAlignment="Center" VerticalAlignment="Center" 
                                        HorizontalAlignment="Center" FontSize="25"/>
                         </Border>
+                         
+                        
+                        
+                    </Border>
+                    <Border Background="#CAD5FD" CornerRadius="10" Width="250" Height="65" Margin="410,10,10,15">
+                        <TextBlock x:Name="" Text="Assigned to" 
+                                       TextAlignment="Center" VerticalAlignment="Center" 
+                                       HorizontalAlignment="Center" FontSize="25"/>
                     </Border>
 
                     <Border Grid.Row="1" BorderThickness="0,0,0,1" BorderBrush="Gray">
@@ -310,24 +281,18 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Cleaning">
-                <Grid>
-                    <TextBlock FontSize="24" FontFamily="Arial" 
-                               HorizontalAlignment="center" VerticalAlignment="Top"
-                               Margin="0,30,0,0" Width="550" Height="50" TextAlignment="Center">
-                    <Run Text="Next cleaning assigned to, {username}"/>
-                    <Run x:Name="UserNameCLeaning"/>
+            <TabItem x:Name="Cleaning_" Header="Cleaning" RenderTransformOrigin="0.529,0.603">
+                <Grid Margin="2,0,-2,0">
+                    <TextBlock FontSize="24" FontFamily="Arial" HorizontalAlignment="Left" Margin="148,40,0,321">
+                    <Run Text="Next cleaning assigned to you, "/>
+                    <Run x:Name="UserNameRun"/>
                     </TextBlock>
 
-                    <TextBlock Text="Month" Width="80" Height="30"  FontSize="15" 
-                            Background="#F08080" Margin="200,-20,0,0"
-                            TextAlignment="Center"/>
-                    <TextBlock Text="Day" Width="80" Height="30"  FontSize="15" 
-                            Background="#F08080" Margin="-200,-20,0,0"
-                            TextAlignment="Center"/>
+                    <Button Content="Month" Width="80" Height="30"  FontSize="15" Background="#F08080" Margin="335,172,255,201"/>
+                    <Button Content="Day" Width="80" Height="30"  FontSize="15" Background="#F08080" Margin="192,172,398,201"/>
 
-                    <Button Width="200" Height="55" Content="Accept Task" x:Name="cleaningAccept"
-                            Margin="-250,195,0,0" FontSize="15">
+                    <Button Width="200" Height="55" Content="Accept Task"
+                                    Margin="72,271,398,77" FontSize="15">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border x:Name="buttonBorder" Background="#CAD5FD" BorderThickness="1" CornerRadius="10">
@@ -341,9 +306,8 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-
-                    <Button Height="55" Width="200" Content="Decline Task" x:Name="cleaningDecline"
-                            Margin="250,195,0,0" FontSize="15">
+                    <Button Height="55" Content="Decline Task"
+                                    Margin="367,271,96,77" FontSize="15">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border x:Name="buttonBorder" Background="#F08080" BorderThickness="1" CornerRadius="10">
@@ -357,67 +321,41 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
+
                 </Grid>
             </TabItem>
 
             <TabItem Header="Parties">
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
 
-                    <Viewbox Stretch="Fill" Margin="0,0,0,77" Width="556">
-                        <Calendar Style="{DynamicResource CalendarStyle1}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="262" Background="#FFC1ABFF" Height="187">
-                            <Calendar.BorderBrush>
-                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                    <GradientStop Color="#FFB493FF" Offset="0.493"/>
-                                    <GradientStop Color="#00653BFF" Offset="1"/>
-                                </LinearGradientBrush>
-                            </Calendar.BorderBrush>
-                        </Calendar>
-                    </Viewbox>
-
-                    <Button Content="Vote For" HorizontalAlignment="Left" Margin="149,331,0,20" Width="154" Click="Button_Click" Background="#FF00C80B" BorderBrush="Black" Foreground="White">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="Button">
-                                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
-                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </Button.Style>
-                    </Button>
-
-                    <Button Content="Vote Against" HorizontalAlignment="Left" Margin="369,331,0,20" Width="159" Click="Button_Click" Background="#FFCE0000" Foreground="White">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="Button">
-                                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
-                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </Button.Style>
-                    </Button>
                 </Grid>
             </TabItem>
 
-            <TabItem x:Name="adminItem" Header="Admin" Visibility="Visible">
+            <TabItem x:Name="adminItem" Header="Admin" Visibility="Collapsed">
                 <Grid>
 
                 </Grid>
             </TabItem>
-
+            <TextBox HorizontalAlignment="Left" Height="43" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="229"/>
+            <Border BorderBrush="#FFFFC6C6" BorderThickness="1" CornerRadius="10" Height="32" Width="151">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF8AFCFF" Offset="0.937"/>
+                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="#FFC27CFF" Offset="0.027"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="Last name" VerticalAlignment="Top" BorderThickness="0" Background="Transparent" />
+            </Border>
+            <Border BorderBrush="#FFFFB5B5" BorderThickness="1" CornerRadius="10" Height="32" Width="151">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF9AEFFF" Offset="1"/>
+                        <GradientStop Color="#FFC27CFF" Offset="0.05"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="First name" VerticalAlignment="Top" BorderThickness="0" Background="Transparent" />
+            </Border>
 
 
         </TabControl>
