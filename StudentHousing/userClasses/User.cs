@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentHousing.userClasses;
+using System;
 using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Xml.Linq;
@@ -19,6 +20,7 @@ public class User
     private string email;
     private bool isAdmin;
     private bool wasAssignedPrev;
+    public List<PartyIdVoted> userVoted { get; set; }
     public List<Task> AssignedTasks { get; }
 
     public string Id => id;
@@ -26,6 +28,7 @@ public class User
     public string FirstName => firstName;
     public string SecondName => secondName;
     public string Email => email;
+    public bool IsAssignedPrev => wasAssignedPrev;
 
     public User(string id, string firstName, string secondName, string email)
     {
@@ -69,7 +72,6 @@ public class User
 
         task.ChangeTaskStatus(TaskStatus.Declined);
         AssignedTasks.Remove(task);
-
     }
 
     public void CompleteTask(Task task)

@@ -5,11 +5,16 @@
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+<<<<<<< HEAD
     <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\idero\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
+=======
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\ASUS\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
+>>>>>>> 948ade1a74a73a5cee04aaf4558fd9a2c40648e2
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.5.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+<<<<<<< HEAD
     <SourceRoot Include="C:\Users\idero\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
@@ -19,5 +24,16 @@
     <PkgMahApps_Metro Condition=" '$(PkgMahApps_Metro)' == '' ">C:\Users\idero\.nuget\packages\mahapps.metro\2.4.9</PkgMahApps_Metro>
     <PkgFirebaseAuthentication_WPF Condition=" '$(PkgFirebaseAuthentication_WPF)' == '' ">C:\Users\idero\.nuget\packages\firebaseauthentication.wpf\4.0.2</PkgFirebaseAuthentication_WPF>
     <PkgExtended_Wpf_Toolkit Condition=" '$(PkgExtended_Wpf_Toolkit)' == '' ">C:\Users\idero\.nuget\packages\extended.wpf.toolkit\4.5.0</PkgExtended_Wpf_Toolkit>
+=======
+    <SourceRoot Include="C:\Users\ASUS\.nuget\packages\" />
+    <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMicrosoft_Xaml_Behaviors_Wpf Condition=" '$(PkgMicrosoft_Xaml_Behaviors_Wpf)' == '' ">C:\Users\ASUS\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.19</PkgMicrosoft_Xaml_Behaviors_Wpf>
+    <PkgMicrosoft_Web_WebView2 Condition=" '$(PkgMicrosoft_Web_WebView2)' == '' ">C:\Users\ASUS\.nuget\packages\microsoft.web.webview2\1.0.1462.37</PkgMicrosoft_Web_WebView2>
+    <PkgMahApps_Metro Condition=" '$(PkgMahApps_Metro)' == '' ">C:\Users\ASUS\.nuget\packages\mahapps.metro\2.4.9</PkgMahApps_Metro>
+    <PkgFirebaseAuthentication_WPF Condition=" '$(PkgFirebaseAuthentication_WPF)' == '' ">C:\Users\ASUS\.nuget\packages\firebaseauthentication.wpf\4.0.2</PkgFirebaseAuthentication_WPF>
+    <PkgExtended_Wpf_Toolkit Condition=" '$(PkgExtended_Wpf_Toolkit)' == '' ">C:\Users\ASUS\.nuget\packages\extended.wpf.toolkit\4.5.0</PkgExtended_Wpf_Toolkit>
+>>>>>>> 948ade1a74a73a5cee04aaf4558fd9a2c40648e2
   </PropertyGroup>
 </Project>

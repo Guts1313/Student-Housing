@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "FwTmRwF8J+kt47BNfwtVNetX3djJsO3FAf/yBGW+3f66JIx8EOY+cpZR4m+AqHJc/UCciHfvFBEl0d+cGVVh9w==",
   "success": true,
   "projectFilePath": "C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\StudentHousing.csproj",
@@ -13,6 +14,21 @@
     "C:\\Users\\idero\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.19\\microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512",
     "C:\\Users\\idero\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
     "C:\\Users\\idero\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512"
+=======
+  "dgSpecHash": "BQTbCmvnD4wbfZhE5SLa0vkEK7xYAvDrlseXtgz/KFkYd0b2Z7Hc90cOLiB1m/tSJFu06YAWEMjTEJHPLEi86Q==",
+  "success": true,
+  "projectFilePath": "C:\\StudentHousing\\student-housing\\StudentHousing\\StudentHousing.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ASUS\\.nuget\\packages\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\firebaseauthentication.net\\4.0.2\\firebaseauthentication.net.4.0.2.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\firebaseauthentication.wpf\\4.0.2\\firebaseauthentication.wpf.4.0.2.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\mahapps.metro\\2.4.9\\mahapps.metro.2.4.9.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.web.webview2\\1.0.1462.37\\microsoft.web.webview2.1.0.1462.37.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.19\\microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512"
+>>>>>>> 948ade1a74a73a5cee04aaf4558fd9a2c40648e2
   ],
   "logs": []
 }

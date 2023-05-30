@@ -222,6 +222,7 @@
             </TabItem>
 
             <TabItem Header="Calendar">
+<<<<<<< HEAD
                 <Viewbox Stretch="Fill" StretchDirection="Both" Width="543">
                     <Calendar Style="{DynamicResource CalendarStyle1}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="181" Background="#FFC1ABFF">
                         <Calendar.BorderBrush>
@@ -231,6 +232,12 @@
                             </LinearGradientBrush>
                         </Calendar.BorderBrush>
                     </Calendar>
+=======
+                <Viewbox>
+                    <Calendar HorizontalAlignment="Center" VerticalAlignment="Center" 
+                              Height="170" Width="309" RenderTransformOrigin="0.503,0.523"
+                              x:Name="CalenadarTab"/>
+>>>>>>> 948ade1a74a73a5cee04aaf4558fd9a2c40648e2
 
                 </Viewbox>
             </TabItem>
