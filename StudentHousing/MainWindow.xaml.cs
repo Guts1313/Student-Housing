@@ -49,7 +49,7 @@ namespace StudentHousing
                     this.Hide();
                 });
             }
-            else // all functions calls should be here (probably event manager will be here)
+            else // user is created here
             {
                 var userinf = e.User.Info;
                 user = new User(userinf.Uid, userinf.FirstName, userinf.LastName, userinf.Email);
@@ -58,7 +58,15 @@ namespace StudentHousing
                 if (user.IsAdmin) showAdmibTab(); // should be called before initializing the window (other won't be possible to change)
 
                 uiDispatcher.Invoke(() => { this.Show(); });
+                showUserInfAcc();
             }
+        }
+
+        public void showUserInfAcc()
+        {
+            firstName.Text = user.FirstName;
+            secondName.Text = user.SecondName;
+            email.Text = user.Email;
         }
 
         // moves all the elements in the window so that an admin panel fits

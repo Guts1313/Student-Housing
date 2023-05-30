@@ -123,7 +123,7 @@
                                 <GradientStop Color="#FFC27CFF" Offset="0.027"/>
                             </LinearGradientBrush>
                         </Border.Background>
-                        <TextBlock Name="firstName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Last name" VerticalAlignment="Top" Background="Transparent" />
+                        <TextBlock Name="secondName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Last name" VerticalAlignment="Top" Background="Transparent" />
                     </Border>
                     <Border BorderBrush="#FFFFC6C6" BorderThickness="1" CornerRadius="10" Margin="38,154,467,201">
                         <Border.Background>
@@ -133,7 +133,7 @@
                                 <GradientStop Color="#FFC27CFF" Offset="0.027"/>
                             </LinearGradientBrush>
                         </Border.Background>
-                        <TextBlock Name="secondName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Background="Transparent" />
+                        <TextBlock Name="email" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Background="Transparent" />
                     </Border>
                     <Border BorderBrush="#FFFFB5B5" BorderThickness="1" CornerRadius="10" Margin="38,21,467,336">
                         <Border.Background>
@@ -142,7 +142,7 @@
                                 <GradientStop Color="#FFC27CFF" Offset="0.05"/>
                             </LinearGradientBrush>
                         </Border.Background>
-                        <TextBlock Name="email" HorizontalAlignment="Left" TextWrapping="Wrap" Text="First name" VerticalAlignment="Top" Background="Transparent" />
+                        <TextBlock Name="firstName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="First name" VerticalAlignment="Top" Background="Transparent" />
                     </Border>
                     
                     <Controls:MetroProgressBar
@@ -155,7 +155,51 @@
 
             <TabItem Header="Garbage">
                 <Grid>
+                    <TextBlock FontSize="24" FontFamily="Arial" 
+                               HorizontalAlignment="center" VerticalAlignment="Top"
+                               Margin="0,30,0,0" Width="550" Height="50" TextAlignment="Center">
+                    <Run Text="Next garbage disposal assigned to, {username}"/>
+                    <Run x:Name="UserNameGarbage"/>
+                    </TextBlock>
 
+                    <TextBlock Text="Month" Width="80" Height="30"  FontSize="15" 
+                            Background="#F08080" Margin="200,-20,0,0"
+                            TextAlignment="Center"/>
+                    <TextBlock Text="Day" Width="80" Height="30"  FontSize="15" 
+                            Background="#F08080" Margin="-200,-20,0,0"
+                            TextAlignment="Center"/>
+
+                    <Button Width="200" Height="55" Content="Accept Task" x:Name="garbageAccept"
+                            Margin="-250,195,0,0" FontSize="15">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="buttonBorder" Background="#CAD5FD" BorderThickness="1" CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="buttonBorder" Property="Background" Value="#B0C1FF" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Height="55" Width="200" Content="Decline Task" x:Name="garbageDecline"
+                            Margin="250,195,0,0" FontSize="15">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="buttonBorder" Background="#F08080" BorderThickness="1" CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="buttonBorder" Property="Background" Value="#F08080" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                 </Grid>
             </TabItem>
 
@@ -243,7 +287,51 @@
 
             <TabItem Header="Cleaning">
                 <Grid>
+                    <TextBlock FontSize="24" FontFamily="Arial" 
+                               HorizontalAlignment="center" VerticalAlignment="Top"
+                               Margin="0,30,0,0" Width="550" Height="50" TextAlignment="Center">
+                    <Run Text="Next cleaning assigned to, {username}"/>
+                    <Run x:Name="UserNameCLeaning"/>
+                    </TextBlock>
 
+                    <TextBlock Text="Month" Width="80" Height="30"  FontSize="15" 
+                            Background="#F08080" Margin="200,-20,0,0"
+                            TextAlignment="Center"/>
+                    <TextBlock Text="Day" Width="80" Height="30"  FontSize="15" 
+                            Background="#F08080" Margin="-200,-20,0,0"
+                            TextAlignment="Center"/>
+
+                    <Button Width="200" Height="55" Content="Accept Task" x:Name="cleaningAccept"
+                            Margin="-250,195,0,0" FontSize="15">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="buttonBorder" Background="#CAD5FD" BorderThickness="1" CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="buttonBorder" Property="Background" Value="#B0C1FF" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Height="55" Width="200" Content="Decline Task" x:Name="cleaningDecline"
+                            Margin="250,195,0,0" FontSize="15">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="buttonBorder" Background="#F08080" BorderThickness="1" CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="buttonBorder" Property="Background" Value="#F08080" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                 </Grid>
             </TabItem>
 

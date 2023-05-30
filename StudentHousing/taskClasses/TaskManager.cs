@@ -9,7 +9,7 @@ namespace StudentHousing
         private List<Task> _listOfTasks;
 
 
-        public TaskManager()
+        public TaskManager() 
         {
             _listOfTasks = new List<Task>();
 

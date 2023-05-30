@@ -20,8 +20,12 @@ public class User
     private bool isAdmin;
     private bool wasAssignedPrev;
     public List<Task> AssignedTasks { get; }
+
     public string Id => id;
     public bool IsAdmin => isAdmin;
+    public string FirstName => firstName;
+    public string SecondName => secondName;
+    public string Email => email;
 
     public User(string id, string firstName, string secondName, string email)
     {
