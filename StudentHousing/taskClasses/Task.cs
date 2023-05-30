@@ -19,6 +19,7 @@ namespace StudentHousing
         public DateTime StartTime { get; private set; }
         public DateTime EndTime { get; private set; }
         public TaskStatus TaskStatus { get; private set; }
+        public User AssignedUser { get; set; }
 
         public int TaskId => id;
         
@@ -70,7 +71,7 @@ namespace StudentHousing
         {
             if (!Enum.IsDefined(typeof(TaskStatus), taskStatus))
                 throw new InvalidEnumArgumentException($"Enum is not defined");
-            this.TaskStatus = taskStatus;
+            TaskStatus = taskStatus;
         }
 
         public override string ToString()

@@ -96,8 +96,6 @@ C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windo
 C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\de\MahApps.Metro.resources.dll
 =======
 C:\StudentHousing\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing.csproj.AssemblyReference.cache
-C:\StudentHousing\student-housing\StudentHousing\obj\Debug\net6.0-windows\Autherization\LoginPage.baml
-C:\StudentHousing\student-housing\StudentHousing\obj\Debug\net6.0-windows\Autherization\LoginPage.g.cs
 C:\StudentHousing\student-housing\StudentHousing\obj\Debug\net6.0-windows\App.g.cs
 C:\StudentHousing\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing_MarkupCompile.cache
 C:\StudentHousing\student-housing\StudentHousing\obj\Debug\net6.0-windows\StudentHousing_MarkupCompile.lref
@@ -204,3 +202,9 @@ C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windo
 C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.NET5.resources.dll
 C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\Authentication\LoginPage.baml
 C:\Users\User\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\Authentication\LoginPage.g.cs
+C:\StudentHousing\student-housing\StudentHousing\bin\Debug\net6.0-windows\ControlzEx.dll
+C:\StudentHousing\student-housing\StudentHousing\bin\Debug\net6.0-windows\MahApps.Metro.dll
+C:\StudentHousing\student-housing\StudentHousing\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\StudentHousing\student-housing\StudentHousing\bin\Debug\net6.0-windows\de\MahApps.Metro.resources.dll
+C:\StudentHousing\student-housing\StudentHousing\obj\Debug\net6.0-windows\Authentication\LoginPage.baml
+C:\StudentHousing\student-housing\StudentHousing\obj\Debug\net6.0-windows\Authentication\LoginPage.g.cs
