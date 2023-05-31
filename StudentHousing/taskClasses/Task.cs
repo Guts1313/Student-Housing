@@ -67,6 +67,12 @@ namespace StudentHousing
             this.TaskStatus = taskStatus;
         }
 
+        public void changeDate(DateTime start, DateTime end)
+        {
+            startTime = start;
+            endTime = end;
+        }
+
         public void ChangeTaskStatus(TaskStatus taskStatus)
         {
             if (!Enum.IsDefined(typeof(TaskStatus), taskStatus))

@@ -81,5 +81,32 @@ namespace StudentHousing
 
             return users;
         }
+
+        public void changeUser(User userChange)
+        {
+            List<User> users = getAllTheUsers();
+
+            for (int i = 0; i < users.Count; i++)
+            {
+                if (users[i].ToString() == userChange.ToString())
+                {
+                    users[i] = userChange;
+                    break;
+                }
+            }
+
+            try
+            {
+                using (FileStream fs = new FileStream(pathToUsersFile, FileMode.OpenOrCreate, FileAccess.Write))
+                {
+                    BinaryFormatter formatter = new BinaryFormatter();
+                    foreach (User user in users)
+                    {
+                        formatter.Serialize(fs, userChange);
+                    }
+                }
+            }
+            catch (Exception ex) { throw new IOException("Couldn't change user"); }
+        }
     }
 }

@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace StudentHousing
 {
@@ -27,13 +28,20 @@ namespace StudentHousing
         public ObservableCollection<string> MyDataItems { get; set; }
         private User user;
         private UserManager userManager = new UserManager();
-
+        private TaskManager taskManager = new TaskManager();
+        private static DispatcherTimer changeTaskTimer;
 
         public MainWindow()
         {
             InitializeComponent();
             MyDataItems = new ObservableCollection<string>();
             FirebaseUI.Instance.Client.AuthStateChanged += this.AuthStateChanged;
+
+            changeTaskTimer = new DispatcherTimer();
+            TimeSpan interval = TimeSpan.FromSeconds(3000);
+            changeTaskTimer.Tick += changeTask;
+            changeTaskTimer.Interval = interval;
+            changeTaskTimer.Start();
         }
 
         // checks if the user is logged in
@@ -55,10 +63,33 @@ namespace StudentHousing
                 user = new User(userinf.Uid, userinf.FirstName, userinf.LastName, userinf.Email);
                 userManager.AddUser(user);
 
-                if (user.IsAdmin) showAdmibTab(); // should be called before initializing the window (or won't be possible to change)
+                if (user.IsAdmin) uiDispatcher.Invoke(() => { showAdmibTab(); }); // should be called before initializing the window (or won't be possible to change)
 
-                uiDispatcher.Invoke(() => { this.Show(); });
-                showUserInfAcc();
+                uiDispatcher.Invoke(() => 
+                {
+                    closeLoginPage();
+                    this.Show();
+                    showUserInfAcc();
+                });
+                MessageBox.Show(userManager.GetUserList().Count.ToString());
+            }
+        }
+
+        private static void changeTask(object sender, EventArgs e)
+        {
+            
+        }
+
+        // neaded beacause of thread issues
+        public void closeLoginPage()
+        {
+            foreach (var window in Application.Current.Windows.OfType<Window>().ToList())
+            {
+                if (window.Title == "LoginPage")
+                {
+                    window.Close();
+                    break;
+                }
             }
         }
 
@@ -99,6 +130,16 @@ namespace StudentHousing
         }
 
         private void VoteButtonAgainst_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void garbageAccept_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void garbageDecline_Click(object sender, RoutedEventArgs e)
         {
 
         }

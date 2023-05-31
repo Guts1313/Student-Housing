@@ -188,7 +188,7 @@
                             TextAlignment="Center"/>
 
                     <Button Width="200" Height="55" Content="Accept Task" x:Name="garbageAccept"
-                            Margin="-250,195,0,0" FontSize="15">
+                            Margin="-250,195,0,0" FontSize="15" Click="garbageAccept_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border x:Name="buttonBorder" Background="#CAD5FD" BorderThickness="1" CornerRadius="10">
@@ -204,7 +204,7 @@
                     </Button>
 
                     <Button Height="55" Width="200" Content="Decline Task" x:Name="garbageDecline"
-                            Margin="250,195,0,0" FontSize="15">
+                            Margin="250,195,0,0" FontSize="15" Click="garbageDecline_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border x:Name="buttonBorder" Background="#F08080" BorderThickness="1" CornerRadius="10">

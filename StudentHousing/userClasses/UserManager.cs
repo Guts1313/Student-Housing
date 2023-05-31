@@ -18,5 +18,10 @@ namespace StudentHousing
             if (user == null) throw new ArgumentNullException("User is null");
             userQueries.addUserToSCV(user);
         }
+
+        public void changeUser(User user)
+        {
+            userQueries.changeUser(user);
+        }
     }
 }

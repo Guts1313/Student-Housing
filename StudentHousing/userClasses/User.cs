@@ -19,7 +19,7 @@ public class User
     private string secondName;
     private string email;
     private bool isAdmin;
-    private bool wasAssignedPrev;
+    public bool wasAssignedPrev;
     public List<PartyIdVoted> userVoted { get; set; }
     public List<Task> AssignedTasks { get; }
 
@@ -28,7 +28,6 @@ public class User
     public string FirstName => firstName;
     public string SecondName => secondName;
     public string Email => email;
-    public bool IsAssignedPrev => wasAssignedPrev;
 
     public User(string id, string firstName, string secondName, string email)
     {
@@ -51,16 +50,21 @@ public class User
         return false;
     }
 
-    public void GetTask(Task task)
+    public void SetTask(Task task)
     {
         task.ChangeTaskStatus(TaskStatus.Assigned);
         AssignedTasks.Add(task);
     }
 
+    public void unassignTask(Task task)
+    {
+        AssignedTasks.Remove(task);
+    }
+
     public void AcceptTask(Task task)
     {
         if (!AssignedTasks.Contains(task))
-            throw new InvalidOperationException("User has not been assigned this task");
+        { throw new InvalidOperationException("User has not been assigned this task"); }
 
         task.ChangeTaskStatus(TaskStatus.Accepted);
     }

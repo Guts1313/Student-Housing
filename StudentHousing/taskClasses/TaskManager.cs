@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 namespace StudentHousing
@@ -7,12 +8,25 @@ namespace StudentHousing
     [Serializable]
     public class TaskManager
     {
-        private List<Task> _listOfTasks;
+        private List<Task> _listOfTasks = new List<Task>();
+        UserManager uManager = new UserManager();
+        private TaskQueries taskQueries = new TaskQueries();
 
 
         public TaskManager()
         {
-            _listOfTasks = new List<Task>();
+            foreach (User user in taskQueries.getUsersAssigned())
+            {
+                _listOfTasks.AddRange(user.AssignedTasks);
+            }
+        }
+
+        public void firstAssignment()
+        {
+            if (_listOfTasks.Count == 0)
+            {
+
+            }
         }
 
         public void SetTasks(List<Task> tasks)
@@ -29,15 +43,15 @@ namespace StudentHousing
                 // Task is not completed and end time is passed
                 if (task.TaskStatus == TaskStatus.Completed && task.EndTime < now)
                 {
+                    task.changeDate(DateTime.Now, DateTime.Now.AddDays(7));
                     ReassignTask(task);
                 }
             }
         }
 
-        public void ReassignTask(Task task)
+        private void ReassignTask(Task task)
         {
             // All users who are not currently assigned with this task
-            UserManager uManager = new UserManager();
             List<User> allUsers = new List<User>();
             foreach (var user in uManager.GetUserList())
             {
@@ -46,7 +60,6 @@ namespace StudentHousing
                     allUsers.Add(user);
                 }
             }
-
 
             if (allUsers.Count == 0)
             {
@@ -58,7 +71,9 @@ namespace StudentHousing
             var oldUser = task.AssignedUser;
             if (oldUser != null)
             {
-                oldUser.DeclineTask(task);
+                oldUser.unassignTask(task);
+                oldUser.wasAssignedPrev = true;
+                uManager.changeUser(oldUser);
             }
             
             // Assign a new user
@@ -66,13 +81,17 @@ namespace StudentHousing
             var userIndex = rng.Next(allUsers.Count);
             var newUser = allUsers[userIndex];
             task.AssignedUser = newUser;
-            newUser.GetTask(task);
+            newUser.SetTask(task);
+
+            uManager.changeUser(newUser);
+            taskQueries.changeUser(newUser);
         }
 
         public void AssignTask(User user, Task task)
         {
             if (user == null || task == null) throw new ArgumentNullException($"Task/User is null");
-            user.GetTask(task);
+            user.SetTask(task);
+            uManager.changeUser(user);
             _listOfTasks.Add(task);
         }
 
