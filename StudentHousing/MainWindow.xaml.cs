@@ -29,19 +29,97 @@ namespace StudentHousing
         private User user;
         private UserManager userManager = new UserManager();
         private TaskManager taskManager = new TaskManager();
-        private static DispatcherTimer changeTaskTimer;
+        private DispatcherTimer changeTaskTimer;
+        private bool flashForTimer = true;
 
         public MainWindow()
         {
             InitializeComponent();
+            //userManager.refreshUsers(); // uncomment if changes happened in user class
+            taskManager.firstAssignment(); // starts the cycle of assigning users (if the cycle is hasn't started yet)
             MyDataItems = new ObservableCollection<string>();
             FirebaseUI.Instance.Client.AuthStateChanged += this.AuthStateChanged;
 
+            TimeSpan interval = TimeSpan.FromSeconds(5);
             changeTaskTimer = new DispatcherTimer();
-            TimeSpan interval = TimeSpan.FromSeconds(3000);
             changeTaskTimer.Tick += changeTask;
             changeTaskTimer.Interval = interval;
             changeTaskTimer.Start();
+        }
+
+        public void showTheAssignedUsers() 
+        {
+            List<Task> tasks = taskManager.GetAllTasks();
+            
+            foreach (Task task in tasks)
+            {
+                
+                switch (task.TaskName)
+                {
+                    case "Trash":
+                        UserNameGarbage.Text = "";
+                        TrashDay.Text = "";
+                        TrashMonth.Text = "";
+
+                        if (user.Id != task.AssignedUser.Id)
+                        {
+                            garbageAccept.Visibility = Visibility.Hidden;
+                            garbageDecline.Visibility = Visibility.Hidden;
+                            UserNameGarbage.Text = $"Next garbage disposal assigned to, \n{task.AssignedUser.Email}"; 
+                        }
+                        else
+                        {
+                            garbageAccept.Visibility = Visibility.Visible;
+                            garbageDecline.Visibility = Visibility.Visible;
+                            UserNameGarbage.Text = $"Next garbage disposal assigned to, \nYou"; 
+                        }
+                        TrashDay.Text = $"day: {task.EndTime.Day}";
+                        TrashMonth.Text = $"month: {task.EndTime.Month}";
+                        break;
+
+                    case "Cleaning":
+                        UserNameCLeaning.Text = "";
+                        CleaningDay.Text = "";
+                        CleaningMonth.Text = "";
+
+                        if (user.Id != task.AssignedUser.Id)
+                        {
+                            cleaningAccept.Visibility = Visibility.Hidden;
+                            cleaningDecline.Visibility = Visibility.Hidden;
+                            UserNameCLeaning.Text = $"Next cleaning is assigned to, \n{task.AssignedUser.Email}"; 
+                        }
+                        else
+                        {
+                            cleaningAccept.Visibility = Visibility.Visible;
+                            cleaningDecline.Visibility = Visibility.Visible;
+                            UserNameCLeaning.Text = $"Next cleaning is assigned to, \nYou"; 
+                        }
+                        CleaningDay.Text = $"day: {task.EndTime.Day}";
+                        CleaningMonth.Text = $"month: {task.EndTime.Month}";
+                        break;
+
+                    case "Groceries":
+                        UserNameGroceries.Text = "";
+                        groceriesDay.Text = "";
+                        groceriesMonth.Text = "";
+
+                        if (user.Id != task.AssignedUser.Id)
+                        {
+                            groceriesAcceptanceGrid.Visibility = Visibility.Hidden;
+                            groceriesMainGrid.Visibility = Visibility.Visible;
+                            date.Text = $"{task.EndTime.Day} {task.EndTime.ToString("MMMM")} {task.EndTime.Year} \n{task.AssignedUser.Email}";
+                        }
+                        else
+                        {
+                            groceriesMainGrid.Visibility = Visibility.Hidden;
+                            groceriesAcceptanceGrid.Visibility = Visibility.Visible;
+                            UserNameGroceries.Text = $"Next groceries must be done by \nYou";
+                        }
+                        groceriesDay.Text = $"day: {task.EndTime.Day}";
+                        groceriesMonth.Text = $"month: {task.EndTime.Month}";
+                        break;
+                }
+            }
         }
 
         // checks if the user is logged in
@@ -62,7 +140,7 @@ namespace StudentHousing
                 var userinf = e.User.Info;
                 user = new User(userinf.Uid, userinf.FirstName, userinf.LastName, userinf.Email);
                 userManager.AddUser(user);
-
+                
                 if (user.IsAdmin) uiDispatcher.Invoke(() => { showAdmibTab(); }); // should be called before initializing the window (or won't be possible to change)
 
                 uiDispatcher.Invoke(() => 
@@ -70,14 +148,21 @@ namespace StudentHousing
                     closeLoginPage();
                     this.Show();
                     showUserInfAcc();
+                    showTheAssignedUsers();
                 });
-                MessageBox.Show(userManager.GetUserList().Count.ToString());
             }
         }
 
-        private static void changeTask(object sender, EventArgs e)
+        private void changeTask(object sender, EventArgs e)
         {
-            
+            //MessageBox.Show(userManager.GetUserList().Count.ToString());
+            if (flashForTimer)
+            {
+                flashForTimer = false;
+                taskManager.CheckAndReassignTasks();
+                showTheAssignedUsers();
+                flashForTimer = true;
+            }
         }
 
         // neaded beacause of thread issues
@@ -126,22 +211,42 @@ namespace StudentHousing
 
         private void VoteButtonFor_click(object sender, RoutedEventArgs e)
         {
-
+            //Todo
         }
 
         private void VoteButtonAgainst_click(object sender, RoutedEventArgs e)
         {
-
+            //Todo
         }
 
         private void garbageAccept_Click(object sender, RoutedEventArgs e)
         {
-
+            //Todo
         }
 
         private void garbageDecline_Click(object sender, RoutedEventArgs e)
         {
+            //Todo
+        }
 
+        private void groceriesAccept_Click(object sender, RoutedEventArgs e)
+        {
+            //Todo
+        }
+
+        private void groceriesDecline_Click(object sender, RoutedEventArgs e)
+        {
+            //Todo
+        }
+
+        private void cleaningAccept_Click(object sender, RoutedEventArgs e)
+        {
+            //Todo
+        }
+
+        private void cleaningDecline_Click(object sender, RoutedEventArgs e)
+        {
+            //Todo
         }
     }
 }

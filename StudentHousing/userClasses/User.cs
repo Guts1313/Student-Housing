@@ -13,7 +13,8 @@ public class User
     { "njuYFgEfwig7LGxIDKirU2SQjyH2", 
       "V9j8vToydGgWhB9W18TF8ZC1dwC2", 
       "BGxH0fJqjPak2L27FQ8p7bQDm3Y2" 
-    }; 
+    };
+
     private string id;
     private string firstName;
     private string secondName;
@@ -21,7 +22,7 @@ public class User
     private bool isAdmin;
     public bool wasAssignedPrev;
     public List<PartyIdVoted> userVoted { get; set; }
-    public List<Task> AssignedTasks { get; }
+    public List<Task> AssignedTasks { get; private set; }
 
     public string Id => id;
     public bool IsAdmin => isAdmin;
@@ -37,6 +38,9 @@ public class User
         this.email = email;
         if (CheckIsAdmin(id))
             isAdmin = true;
+
+        AssignedTasks = new List<Task>();
+        userVoted = new List<PartyIdVoted>();
     }
 
     private bool CheckIsAdmin(string userId)

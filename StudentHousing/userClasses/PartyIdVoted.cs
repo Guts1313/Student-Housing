@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudentHousing.userClasses
 {
+    [Serializable]
     public class PartyIdVoted
     {
         public int partyId { get; set; }

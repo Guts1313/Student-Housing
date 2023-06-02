@@ -14,7 +14,7 @@ namespace StudentHousing
 
         public TaskQueries() 
         {
-            pathToUsersFile = System.IO.Path.Combine(pathToUsersFile, "DataCSV", "partiesAssigned.bin");
+            pathToUsersFile = System.IO.Path.Combine(pathToUsersFile, "DataCSV", "tasksAssigned.bin");
         }
 
         public List<User> getUsersAssigned()
@@ -43,12 +43,14 @@ namespace StudentHousing
 
             for (int i = 0; i < users.Count; i++)
             {
-                if (users[i].ToString() == userChange.ToString())
+                if (users[i].AssignedTasks[0].TaskName == userChange.AssignedTasks[0].TaskName)
                 {
                     users[i] = userChange;
                     break;
                 }
             }
+
+            File.Delete(pathToUsersFile);
 
             try
             {
@@ -57,7 +59,7 @@ namespace StudentHousing
                     BinaryFormatter formatter = new BinaryFormatter();
                     foreach (User user in users)
                     {
-                        formatter.Serialize(fs, userChange);
+                        formatter.Serialize(fs, user);
                     }
                 }
             }

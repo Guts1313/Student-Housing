@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Automation.Provider;
 using Firebase.Auth;
+using System.Windows;
 
 namespace StudentHousing
 {
@@ -66,18 +67,20 @@ namespace StudentHousing
         {
             List<User> users = new List<User>();
 
-            try
-            {
+            //try
+            //{
                 using (FileStream fs = new FileStream(pathToUsersFile, FileMode.Open, FileAccess.Read))
                 {
                     BinaryFormatter formatter = new BinaryFormatter();
+                    int i = 0;
                     while (fs.Position < fs.Length)
                     {
+                        i++;
                         users.Add((User)formatter.Deserialize(fs));
                     }
                 }
-            }
-            catch (Exception ex) { throw new IOException("Couldn't get all the users"); }
+            //}
+            //catch (Exception ex) { throw new IOException("Couldn't get all the users"); }
 
             return users;
         }
@@ -95,6 +98,8 @@ namespace StudentHousing
                 }
             }
 
+            File.Delete(pathToUsersFile);
+
             try
             {
                 using (FileStream fs = new FileStream(pathToUsersFile, FileMode.OpenOrCreate, FileAccess.Write))
@@ -102,11 +107,36 @@ namespace StudentHousing
                     BinaryFormatter formatter = new BinaryFormatter();
                     foreach (User user in users)
                     {
-                        formatter.Serialize(fs, userChange);
+                        formatter.Serialize(fs, user);
                     }
                 }
             }
             catch (Exception ex) { throw new IOException("Couldn't change user"); }
+        }
+
+        public void refreshUsers()
+        {
+            List<User> users = getAllTheUsers();
+
+            for (int i = 0; i < users.Count;i++)
+            {
+                users[i] = new User(users[i].Id, users[i].FirstName, users[i].SecondName, users[i].Email);
+            }
+
+            File.Delete(pathToUsersFile);
+
+            try
+            {
+                using (FileStream fs = new FileStream(pathToUsersFile, FileMode.OpenOrCreate, FileAccess.Write))
+                {
+                    BinaryFormatter formatter = new BinaryFormatter();
+                    foreach (User user in users)
+                    {
+                        formatter.Serialize(fs, user);
+                    }
+                }
+            }
+            catch (Exception ex) { throw new IOException("Couldn't refresh users"); }
         }
     }
 }

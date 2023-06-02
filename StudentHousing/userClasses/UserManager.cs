@@ -23,5 +23,10 @@ namespace StudentHousing
         {
             userQueries.changeUser(user);
         }
+
+        public void refreshUsers()
+        {
+            userQueries.refreshUsers();
+        }
     }
 }
