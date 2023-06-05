@@ -113,7 +113,7 @@ namespace StudentHousing
                     allUsers.Add(user);
                 }
                 if (user.AssignedTasks.Count != 0 &&
-                    (user.AssignedTasks[0].TaskStatus == TaskStatus.Completed || task.TaskStatus == TaskStatus.Declined) &&
+                    (user.AssignedTasks[0].TaskStatus == TaskStatus.Completed || user.AssignedTasks[0].TaskStatus == TaskStatus.Declined) &&
                     task.TaskName == user.AssignedTasks[0].TaskName)
                 {
                     user.unassignTask(user.AssignedTasks[0]);

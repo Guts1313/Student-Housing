@@ -171,6 +171,20 @@
                 </Grid>
             </TabItem>
 
+            <TabItem Header="Calendar">
+                <Viewbox Stretch="Fill" StretchDirection="Both" Width="543">
+                    <Calendar Style="{DynamicResource CalendarStyle1}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="181" Background="#FFC1ABFF">
+                        <Calendar.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFB493FF" Offset="0.493"/>
+                                <GradientStop Color="#00653BFF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Calendar.BorderBrush>
+                    </Calendar>
+
+                </Viewbox>
+            </TabItem>
+
             <TabItem Header="Garbage">
                 <Grid>
                     <TextBlock FontSize="24" FontFamily="Arial" 
@@ -218,21 +232,11 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
+
+                    <TextBlock x:Name="garbageAcceptedText" Text="Accepted" 
+                               HorizontalAlignment="Center" FontSize="30"
+                               VerticalAlignment="Bottom" Margin="85" Visibility="Hidden"/>
                 </Grid>
-            </TabItem>
-
-            <TabItem Header="Calendar">
-                <Viewbox Stretch="Fill" StretchDirection="Both" Width="543">
-                    <Calendar Style="{DynamicResource CalendarStyle1}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="181" Background="#FFC1ABFF">
-                        <Calendar.BorderBrush>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FFB493FF" Offset="0.493"/>
-                                <GradientStop Color="#00653BFF" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Calendar.BorderBrush>
-                    </Calendar>
-
-                    </Viewbox>
             </TabItem>
 
             <TabItem Header="Groceries">
@@ -283,6 +287,10 @@
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
+
+                        <TextBlock x:Name="groceriesAcceptedText" Text="Accepted" 
+                               HorizontalAlignment="Center" FontSize="30"
+                               VerticalAlignment="Bottom" Margin="85" Visibility="Hidden"/>
                     </Grid>
                     
                     <Grid x:Name="groceriesMainGrid" Visibility="Hidden">
@@ -340,7 +348,7 @@
                                                HorizontalAlignment="Center" FontSize="25"/>
                                 </Border>
                                 <Button Width="250" Height="65" Content="Pay"
-                                        Margin="0,0,320,0" FontSize="25">
+                                        Margin="0,0,320,0" FontSize="25" x:Name="PayButton">
                                     <Button.Template>
                                         <ControlTemplate TargetType="Button">
                                             <Border x:Name="buttonBorder" Background="#CAD5FD" BorderThickness="1" CornerRadius="10">
@@ -407,6 +415,10 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
+
+                    <TextBlock x:Name="cleaningAcceptedText" Text="Accepted" 
+                               HorizontalAlignment="Center" FontSize="30"
+                               VerticalAlignment="Bottom" Margin="85" Visibility="Hidden"/>
                 </Grid>
             </TabItem>
 

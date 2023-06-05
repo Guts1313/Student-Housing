@@ -79,7 +79,7 @@ public class User
             throw new InvalidOperationException("User has not been assigned this task");
 
         task.ChangeTaskStatus(TaskStatus.Declined);
-        AssignedTasks.Remove(task);
+        //AssignedTasks.Remove(task);
     }
 
     public void CompleteTask(Task task)

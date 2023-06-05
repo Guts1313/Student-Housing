@@ -40,7 +40,7 @@ namespace StudentHousing
             MyDataItems = new ObservableCollection<string>();
             FirebaseUI.Instance.Client.AuthStateChanged += this.AuthStateChanged;
 
-            TimeSpan interval = TimeSpan.FromSeconds(5);
+            TimeSpan interval = TimeSpan.FromSeconds(1);
             changeTaskTimer = new DispatcherTimer();
             changeTaskTimer.Tick += changeTask;
             changeTaskTimer.Interval = interval;
@@ -65,12 +65,17 @@ namespace StudentHousing
                         {
                             garbageAccept.Visibility = Visibility.Hidden;
                             garbageDecline.Visibility = Visibility.Hidden;
+                            garbageAcceptedText.Visibility = Visibility.Hidden;
                             UserNameGarbage.Text = $"Next garbage disposal assigned to, \n{task.AssignedUser.Email}"; 
                         }
                         else
                         {
-                            garbageAccept.Visibility = Visibility.Visible;
-                            garbageDecline.Visibility = Visibility.Visible;
+                            if (garbageAccept.Visibility != Visibility.Collapsed)
+                            {
+                                garbageAccept.Visibility = Visibility.Visible;
+                                garbageDecline.Visibility = Visibility.Visible;
+                                garbageAcceptedText.Visibility = Visibility.Hidden;
+                            }
                             UserNameGarbage.Text = $"Next garbage disposal assigned to, \nYou"; 
                         }
                         TrashDay.Text = $"day: {task.EndTime.Day}";
@@ -86,12 +91,17 @@ namespace StudentHousing
                         {
                             cleaningAccept.Visibility = Visibility.Hidden;
                             cleaningDecline.Visibility = Visibility.Hidden;
+                            cleaningAcceptedText.Visibility = Visibility.Hidden;
                             UserNameCLeaning.Text = $"Next cleaning is assigned to, \n{task.AssignedUser.Email}"; 
                         }
                         else
                         {
-                            cleaningAccept.Visibility = Visibility.Visible;
-                            cleaningDecline.Visibility = Visibility.Visible;
+                            if (cleaningAccept.Visibility != Visibility.Collapsed)
+                            {
+                                cleaningAccept.Visibility = Visibility.Visible;
+                                cleaningDecline.Visibility = Visibility.Visible;
+                                cleaningAcceptedText.Visibility = Visibility.Hidden;
+                            }
                             UserNameCLeaning.Text = $"Next cleaning is assigned to, \nYou"; 
                         }
                         CleaningDay.Text = $"day: {task.EndTime.Day}";
@@ -105,14 +115,25 @@ namespace StudentHousing
 
                         if (user.Id != task.AssignedUser.Id)
                         {
+                            groceriesAccept.Visibility = Visibility.Hidden;
+                            groceriesDecline.Visibility = Visibility.Hidden;
+                            PayButton.Visibility = Visibility.Visible;
                             groceriesAcceptanceGrid.Visibility = Visibility.Hidden;
                             groceriesMainGrid.Visibility = Visibility.Visible;
+                            groceriesAcceptedText.Visibility = Visibility.Hidden;
                             date.Text = $"{task.EndTime.Day} {task.EndTime.ToString("MMMM")} {task.EndTime.Year} \n{task.AssignedUser.Email}";
                         }
                         else
                         {
-                            groceriesMainGrid.Visibility = Visibility.Hidden;
-                            groceriesAcceptanceGrid.Visibility = Visibility.Visible;
+                            if (groceriesAccept.Visibility != Visibility.Collapsed)
+                            {
+                                groceriesMainGrid.Visibility = Visibility.Hidden;
+                                groceriesAcceptanceGrid.Visibility = Visibility.Visible;
+                                groceriesAccept.Visibility = Visibility.Visible;
+                                groceriesDecline.Visibility = Visibility.Visible;
+                                groceriesAcceptedText.Visibility = Visibility.Hidden;
+                            }
+                            PayButton.Visibility = Visibility.Hidden;
                             UserNameGroceries.Text = $"Next groceries must be done by \nYou";
                         }
                         groceriesDay.Text = $"day: {task.EndTime.Day}";
@@ -219,34 +240,64 @@ namespace StudentHousing
             //Todo
         }
 
+        private Task getTaskForThisPage(string name)
+        {
+            List<Task> tasks = taskManager.GetAllTasks();
+            foreach (Task task in tasks)
+            {
+                if (task.TaskName == name)
+                {
+                    return task;
+                }
+            }
+            return null;
+        }
+
         private void garbageAccept_Click(object sender, RoutedEventArgs e)
         {
-            //Todo
+            Task task = getTaskForThisPage("Trash");
+            task.AssignedUser.AcceptTask(task);
+            garbageAccept.Visibility = Visibility.Collapsed;
+            garbageDecline.Visibility = Visibility.Collapsed;
+            garbageAcceptedText.Visibility = Visibility.Visible;
         }
 
         private void garbageDecline_Click(object sender, RoutedEventArgs e)
         {
-            //Todo
+            Task task = getTaskForThisPage("Trash");
+            task.AssignedUser.DeclineTask(task);
         }
 
         private void groceriesAccept_Click(object sender, RoutedEventArgs e)
         {
-            //Todo
+            Task task = getTaskForThisPage("Groceries");
+            task.AssignedUser.AcceptTask(task);
+            groceriesAccept.Visibility = Visibility.Collapsed;
+            groceriesDecline.Visibility = Visibility.Collapsed;
+            groceriesAcceptedText.Visibility = Visibility.Visible;
+            groceriesAcceptanceGrid.Visibility = Visibility.Hidden;
+            groceriesMainGrid.Visibility = Visibility.Visible;
         }
 
         private void groceriesDecline_Click(object sender, RoutedEventArgs e)
         {
-            //Todo
+            Task task = getTaskForThisPage("Groceries");
+            task.AssignedUser.DeclineTask(task);
         }
 
         private void cleaningAccept_Click(object sender, RoutedEventArgs e)
         {
-            //Todo
+            Task task = getTaskForThisPage("Cleaning");
+            task.AssignedUser.AcceptTask(task);
+            cleaningAccept.Visibility = Visibility.Collapsed;
+            cleaningDecline.Visibility = Visibility.Collapsed;
+            cleaningAcceptedText.Visibility = Visibility.Visible;
         }
 
         private void cleaningDecline_Click(object sender, RoutedEventArgs e)
         {
-            //Todo
+            Task task = getTaskForThisPage("Cleaning");
+            task.AssignedUser.DeclineTask(task);
         }
     }
 }
