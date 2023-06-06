@@ -87,6 +87,10 @@ namespace StudentHousing
                 oldUser.wasAssignedPrev = true;
                 uManager.changeUser(oldUser);
             }
+
+            //reset paymant var
+            if (task.TaskName == "Groceries")
+            { uManager.setAllGroceriesPaymentToFalse(); }    
             
             // Assign a new user
             var rng = new Random();

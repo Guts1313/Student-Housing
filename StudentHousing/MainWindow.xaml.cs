@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -29,28 +30,38 @@ namespace StudentHousing
         private User user;
         private UserManager userManager = new UserManager();
         private TaskManager taskManager = new TaskManager();
+        private groceriesList groceries = new groceriesList();
         private DispatcherTimer changeTaskTimer;
         private bool flashForTimer = true;
+        private Dispatcher uiDispatcher;
 
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = this;
             //userManager.refreshUsers(); // uncomment if changes happened in user class
-            taskManager.firstAssignment(); // starts the cycle of assigning users (if the cycle is hasn't started yet)
+            taskManager.firstAssignment(); // starts the cycle of assigning users (if the cycle is hasn't started yet
             MyDataItems = new ObservableCollection<string>();
+            addToCollectionAndShow();
             FirebaseUI.Instance.Client.AuthStateChanged += this.AuthStateChanged;
 
-            TimeSpan interval = TimeSpan.FromSeconds(1);
-            changeTaskTimer = new DispatcherTimer();
-            changeTaskTimer.Tick += changeTask;
-            changeTaskTimer.Interval = interval;
-            changeTaskTimer.Start();
+            if (uiDispatcher == null)
+            { uiDispatcher = Dispatcher; }
+        }
+
+        private void addToCollectionAndShow()
+        {
+            foreach (var item in groceries.GetGroceriesStr())
+            {
+                MyDataItems.Add(item);
+            }
         }
 
         public void showTheAssignedUsers() 
         {
             List<Task> tasks = taskManager.GetAllTasks();
-            
+            user = userManager.refeshCurrentUser(user);
+
             foreach (Task task in tasks)
             {
                 
@@ -117,11 +128,12 @@ namespace StudentHousing
                         {
                             groceriesAccept.Visibility = Visibility.Hidden;
                             groceriesDecline.Visibility = Visibility.Hidden;
-                            PayButton.Visibility = Visibility.Visible;
+                            if (!user.payedForGroceries) { PayButton.Visibility = Visibility.Visible; }
                             groceriesAcceptanceGrid.Visibility = Visibility.Hidden;
                             groceriesMainGrid.Visibility = Visibility.Visible;
                             groceriesAcceptedText.Visibility = Visibility.Hidden;
                             date.Text = $"{task.EndTime.Day} {task.EndTime.ToString("MMMM")} {task.EndTime.Year} \n{task.AssignedUser.Email}";
+                            amount.Text = $"You pay: {groceries.CountTotalForEachUser()}";
                         }
                         else
                         {
@@ -135,6 +147,8 @@ namespace StudentHousing
                             }
                             PayButton.Visibility = Visibility.Hidden;
                             UserNameGroceries.Text = $"Next groceries must be done by \nYou";
+                            date.Text = $"{task.EndTime.Day} {task.EndTime.ToString("MMMM")} {task.EndTime.Year} \nYou";
+                            amount.Text = $"You pay: {groceries.CountTotal()}";
                         }
                         groceriesDay.Text = $"day: {task.EndTime.Day}";
                         groceriesMonth.Text = $"month: {task.EndTime.Month}";
@@ -146,7 +160,7 @@ namespace StudentHousing
         // checks if the user is logged in
         private void AuthStateChanged(object sender, Firebase.Auth.UserEventArgs e)
         {
-            var uiDispatcher = Dispatcher;
+            uiDispatcher = Dispatcher;
             if (e.User == null)
             {
                 uiDispatcher.Invoke(() =>
@@ -162,7 +176,7 @@ namespace StudentHousing
                 user = new User(userinf.Uid, userinf.FirstName, userinf.LastName, userinf.Email);
                 userManager.AddUser(user);
                 
-                if (user.IsAdmin) uiDispatcher.Invoke(() => { showAdmibTab(); }); // should be called before initializing the window (or won't be possible to change)
+                if (user.IsAdmin) uiDispatcher.Invoke(() => {  showAdmibTab(); }); // should be called before initializing the window (or won't be possible to change)
 
                 uiDispatcher.Invoke(() => 
                 {
@@ -171,6 +185,13 @@ namespace StudentHousing
                     showUserInfAcc();
                     showTheAssignedUsers();
                 });
+
+                TimeSpan interval = TimeSpan.FromSeconds(1);
+                changeTaskTimer = new DispatcherTimer();
+                changeTaskTimer.Tick += changeTask;
+                changeTaskTimer.Interval = interval;
+                changeTaskTimer.Stop();
+                changeTaskTimer.Start();
             }
         }
 
@@ -298,6 +319,32 @@ namespace StudentHousing
         {
             Task task = getTaskForThisPage("Cleaning");
             task.AssignedUser.DeclineTask(task);
+        }
+
+        private void PayButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (user.payedForGroceries)
+            {PayButton.Visibility = Visibility.Hidden;}
+            else
+            {
+                PayButton.Visibility = Visibility.Collapsed;
+                user.payedForGroceries = true;
+                userManager.changeUser(user);
+            }
+        }
+
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+            FirebaseUI.Instance.Client.AuthStateChanged -= this.AuthStateChanged;
+            FirebaseUI.Instance.Client.SignOut();
+
+            Thread.Sleep(1);
+
+            uiDispatcher.Invoke(() =>
+            {
+                Window main = new MainWindow();
+                this.Close();
+            });
         }
     }
 }

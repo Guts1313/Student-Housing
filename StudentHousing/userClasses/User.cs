@@ -21,6 +21,7 @@ public class User
     private string email;
     private bool isAdmin;
     public bool wasAssignedPrev;
+    public bool payedForGroceries = false;
     public List<PartyIdVoted> userVoted { get; set; }
     public List<Task> AssignedTasks { get; private set; }
 

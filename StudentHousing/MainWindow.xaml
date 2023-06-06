@@ -133,6 +133,22 @@
 
             <TabItem Header="Account">
                 <Grid>
+                    <Button Height="30" Width="70" Content="Sign out" x:Name="signOut"
+                            Margin="580,-335,0,0" FontSize="15" Click="exit_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="buttonBorder" Background="#F08080" BorderThickness="1" CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="buttonBorder" Property="Background" Value="#FDCAD3" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
                     <Border BorderBrush="#FFFFC6C6" BorderThickness="1" CornerRadius="10" Margin="38,83,467,272">
                         <Border.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -141,7 +157,8 @@
                                 <GradientStop Color="#FFC27CFF" Offset="0.027"/>
                             </LinearGradientBrush>
                         </Border.Background>
-                        <TextBlock Name="secondName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Last name" VerticalAlignment="Top" Background="Transparent" />
+                        <TextBlock Name="secondName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Last name" 
+                                   VerticalAlignment="Top" Background="Transparent" Margin="7,0,0,0"/>
                     </Border>
                     <Border BorderBrush="#FFFFC6C6" BorderThickness="1" CornerRadius="10" Margin="38,154,467,201">
                         <Border.Background>
@@ -151,7 +168,9 @@
                                 <GradientStop Color="#FFC27CFF" Offset="0.027"/>
                             </LinearGradientBrush>
                         </Border.Background>
-                        <TextBlock Name="email" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Background="Transparent" />
+                        <TextBlock Name="email" HorizontalAlignment="Left" TextWrapping="Wrap" 
+                                   Text="Email" VerticalAlignment="Top" Background="Transparent" 
+                                   Margin="7,0,0,0"/>
                     </Border>
                     <Border BorderBrush="#FFFFB5B5" BorderThickness="1" CornerRadius="10" Margin="38,21,467,336">
                         <Border.Background>
@@ -160,7 +179,9 @@
                                 <GradientStop Color="#FFC27CFF" Offset="0.05"/>
                             </LinearGradientBrush>
                         </Border.Background>
-                        <TextBlock Name="firstName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="First name" VerticalAlignment="Top" Background="Transparent" />
+                        <TextBlock Name="firstName" HorizontalAlignment="Left" TextWrapping="Wrap" 
+                                   Text="First name" VerticalAlignment="Top" Background="Transparent" 
+                                   Margin="7,0,0,0"/>
                     </Border>
 
                     <Controls:MetroProgressBar
@@ -348,7 +369,8 @@
                                                HorizontalAlignment="Center" FontSize="25"/>
                                 </Border>
                                 <Button Width="250" Height="65" Content="Pay"
-                                        Margin="0,0,320,0" FontSize="25" x:Name="PayButton">
+                                        Margin="0,0,320,0" FontSize="25" x:Name="PayButton"
+                                        Click="PayButton_Click">
                                     <Button.Template>
                                         <ControlTemplate TargetType="Button">
                                             <Border x:Name="buttonBorder" Background="#CAD5FD" BorderThickness="1" CornerRadius="10">
@@ -368,7 +390,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Cleaning" Height="62" VerticalAlignment="Bottom">
+            <TabItem Header="Cleaning">
                 <Grid>
                     <TextBlock FontSize="24" FontFamily="Arial" 
                                HorizontalAlignment="center" VerticalAlignment="Top"
