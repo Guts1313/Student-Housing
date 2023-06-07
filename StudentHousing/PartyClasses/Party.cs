@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace StudentHousing.PartyClasses
 {
-    class Party
+    public class Party
     {
+        public User partyOrganiser { private set; get; }
+        public int Id { get; private set; }
     }
 }

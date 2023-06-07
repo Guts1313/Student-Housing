@@ -313,12 +313,12 @@
                                HorizontalAlignment="Center" FontSize="30"
                                VerticalAlignment="Bottom" Margin="85" Visibility="Hidden"/>
                     </Grid>
-                    
+
                     <Grid x:Name="groceriesMainGrid" Visibility="Hidden">
                         <Grid.RowDefinitions>
-                        <RowDefinition Height="90" />
-                        <RowDefinition Height="210"/>
-                        <RowDefinition Height="*"/>
+                            <RowDefinition Height="90" />
+                            <RowDefinition Height="210"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Border Grid.Row="0" BorderThickness="0,0,0,1" BorderBrush="Gray">
                             <Border Background="#CAD5FD" CornerRadius="10" Width="550" Height="75">
@@ -444,7 +444,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Parties">
+            <TabItem Header="Parties" Height="62" VerticalAlignment="Top">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -452,7 +452,15 @@
                     </Grid.RowDefinitions>
 
                     <Viewbox Stretch="Fill" Margin="0,0,0,77" Width="556">
-                        <Calendar Style="{DynamicResource CalendarStyle1}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="262" Background="#FFC1ABFF" Height="187">
+                        <Calendar Style="{DynamicResource CalendarStyle1}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="262" Background="#FFC1ABFF" Height="187" RenderTransformOrigin="0.5,0.5">
+                            <Calendar.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform AngleX="-0.729"/>
+                                    <RotateTransform/>
+                                    <TranslateTransform X="-1.19"/>
+                                </TransformGroup>
+                            </Calendar.RenderTransform>
                             <Calendar.BorderBrush>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="#FFB493FF" Offset="0.493"/>
@@ -462,7 +470,7 @@
                         </Calendar>
                     </Viewbox>
 
-                    <Button Content="Vote For" HorizontalAlignment="Left" Margin="149,331,0,20" Width="154" Click="VoteButtonFor_click" Background="#FF00C80B" BorderBrush="Black" Foreground="White">
+                    <Button Content="Vote For" HorizontalAlignment="Left" Margin="154,336,0,10" Width="93" Click="VoteButtonFor_click" Background="#FF00C80B" BorderBrush="Black" Foreground="White">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Template">
@@ -478,7 +486,9 @@
                         </Button.Style>
                     </Button>
 
-                    <Button Content="Vote Against" HorizontalAlignment="Left" Margin="369,331,0,20" Width="159" Click="VoteButtonAgainst_click" Background="#FFCE0000" Foreground="White">
+
+
+                    <Button Content="Vote Against" HorizontalAlignment="Left" Margin="402,336,0,10" Width="98" Click="VoteButtonAgainst_click" Background="#FFCE0000" Foreground="White">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Template">
@@ -493,6 +503,25 @@
                             </Style>
                         </Button.Style>
                     </Button>
+
+                    <Button Content="Create a Party" HorizontalAlignment="Center" Margin="0,288,0,0" VerticalAlignment="Top" Click="Button_Click" Background="#793dfc" Foreground="White" Height="86" >
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+
+
+
                 </Grid>
             </TabItem>
 
