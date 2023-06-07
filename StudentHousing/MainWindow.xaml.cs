@@ -1,5 +1,6 @@
 ﻿using Firebase.Auth.UI;
 using Microsoft.Web.WebView2.Core;
+using StudentHousing.PartyClasses;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,13 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace StudentHousing
@@ -30,6 +25,7 @@ namespace StudentHousing
         private User user;
         private UserManager userManager = new UserManager();
         private TaskManager taskManager = new TaskManager();
+        private PartyManager partyManager = new PartyManager();
         private groceriesList groceries = new groceriesList();
         private DispatcherTimer changeTaskTimer;
         private bool flashForTimer = true;
@@ -349,7 +345,10 @@ namespace StudentHousing
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Party party = new Party(user, 0);
+            //party date to be assigned here whenever calendar works.
+            //party.CreateParty();
+            //partyManager.AddParty(party);
         }
     }
 }
