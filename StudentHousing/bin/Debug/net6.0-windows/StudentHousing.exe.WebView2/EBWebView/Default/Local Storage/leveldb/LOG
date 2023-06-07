@@ -1,3 +1,2 @@
-2023/06/05-23:58:20.205 20c04 Reusing MANIFEST C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\StudentHousing.exe.WebView2\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
-2023/06/05-23:58:20.206 20c04 Recovering log #3
-2023/06/05-23:58:20.208 20c04 Reusing old log C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\StudentHousing.exe.WebView2\EBWebView\Default\Local Storage\leveldb/000003.log 
+2023/06/06-15:45:57.507 5e14 Creating DB C:\Users\dansil2301\Source\Repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\StudentHousing.exe.WebView2\EBWebView\Default\Local Storage\leveldb since it was missing.
+2023/06/06-15:45:57.523 5e14 Reusing MANIFEST C:\Users\dansil2301\Source\Repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\StudentHousing.exe.WebView2\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001

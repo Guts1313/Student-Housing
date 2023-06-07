@@ -1,3 +1,6 @@
-2023/06/05-23:53:47.753 1ff38 Reusing MANIFEST C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\StudentHousing.exe.WebView2\EBWebView\Default\Site Characteristics Database/MANIFEST-000001
-2023/06/05-23:53:47.754 1ff38 Recovering log #6
-2023/06/05-23:53:47.754 1ff38 Reusing old log C:\Users\User\source\repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\StudentHousing.exe.WebView2\EBWebView\Default\Site Characteristics Database/000006.log 
+2023/06/06-15:45:57.462 4a34 Log #6: 57 ops saved to Table #7 OK
+2023/06/06-15:45:57.463 4a34 Archiving C:\Users\dansil2301\Source\Repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\StudentHousing.exe.WebView2\EBWebView\Default\Site Characteristics Database/000006.log: OK
+2023/06/06-15:45:57.463 4a34 Table #4: 8 entries OK
+2023/06/06-15:45:57.463 4a34 Table #7: 57 entries OK
+2023/06/06-15:45:57.464 4a34 Archiving C:\Users\dansil2301\Source\Repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\StudentHousing.exe.WebView2\EBWebView\Default\Site Characteristics Database/MANIFEST-000001: OK
+2023/06/06-15:45:57.469 4a34 **** Repaired leveldb C:\Users\dansil2301\Source\Repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\StudentHousing.exe.WebView2\EBWebView\Default\Site Characteristics Database; recovered 2 files; 1757 bytes. Some data may have been lost. ****
