@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 2023/06/07-00:11:55.284 4bc8 Creating DB C:\Users\ivaylobakardzhiev\Desktop\student-housing\StudentHousing\bin\Debug\net6.0-windows\StudentHousing.exe.WebView2\EBWebView\Default\Local Storage\leveldb since it was missing.
 2023/06/07-00:11:55.719 4bc8 Reusing MANIFEST C:\Users\ivaylobakardzhiev\Desktop\student-housing\StudentHousing\bin\Debug\net6.0-windows\StudentHousing.exe.WebView2\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
+=======
+2023/06/06-15:45:57.507 5e14 Creating DB C:\Users\dansil2301\Source\Repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\StudentHousing.exe.WebView2\EBWebView\Default\Local Storage\leveldb since it was missing.
+2023/06/06-15:45:57.523 5e14 Reusing MANIFEST C:\Users\dansil2301\Source\Repos\student-housing\StudentHousing\bin\Debug\net6.0-windows\StudentHousing.exe.WebView2\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
+>>>>>>> ae826132b41387b0204b10de5336779d43a02b2e
