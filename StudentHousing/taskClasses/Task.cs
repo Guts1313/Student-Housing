@@ -9,9 +9,9 @@ namespace StudentHousing
     {
         private static int nextId = 1;
         private int id;
-        private string taskName;
+        public string taskName;
         private DateTime startTime;
-        private DateTime endTime;
+        public DateTime endTime;
         private TaskStatus taskStatus;
 
         //read-only properties just in case we need info at some point
