@@ -1,6 +1,5 @@
 ﻿using Firebase.Auth.UI;
 using Microsoft.Web.WebView2.Core;
-using StudentHousing.PartyClasses;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -249,12 +248,34 @@ namespace StudentHousing
 
         private void VoteButtonFor_click(object sender, RoutedEventArgs e)
         {
-            //Todo
+            if (theCalendar.SelectedDate.HasValue)
+            {
+                DateTime date = theCalendar.SelectedDate.Value;
+                foreach (var party in partyManager.GetPartyList())
+                {
+                    if (party.PartyDay == date)
+                    {
+                        party.AddPositiveVote();
+                        partyManager.changeParty(party);
+                    }
+                }
+            }
         }
 
         private void VoteButtonAgainst_click(object sender, RoutedEventArgs e)
         {
-            //Todo
+            if (theCalendar.SelectedDate.HasValue)
+            {
+                DateTime date = theCalendar.SelectedDate.Value;
+                foreach (var party in partyManager.GetPartyList())
+                {
+                    if (party.PartyDay == date)
+                    {
+                        party.AddNegativeVote();
+                        partyManager.changeParty(party);
+                    }
+                }
+            }
         }
 
         private Task getTaskForThisPage(string name)
@@ -343,12 +364,16 @@ namespace StudentHousing
             });
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void createParty_Click(object sender, RoutedEventArgs e)
         {
-            Party party = new Party(user, 0);
-            //party date to be assigned here whenever calendar works.
-            //party.CreateParty();
-            //partyManager.AddParty(party);
+            if (theCalendar.SelectedDate.HasValue)
+            {
+                DateTime dateTime = theCalendar.SelectedDate.Value;
+                Party party = new Party();
+                party.CreateParty(user, dateTime);
+                partyManager.AddParty(party);
+                MessageBox.Show(user.party.ToString());
+            }
         }
     }
 }

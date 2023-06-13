@@ -22,6 +22,7 @@ public class User
     private bool isAdmin;
     public bool wasAssignedPrev;
     public bool payedForGroceries = false;
+    public Party party = new Party();
     public List<PartyIdVoted> userVoted { get; set; }
     public List<Task> AssignedTasks { get; private set; }
 

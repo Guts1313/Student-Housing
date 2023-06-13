@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace StudentHousing.PartyClasses
+namespace StudentHousing
 {
     public class PartyManager
     {
         private PartyQueries partyQueries = new PartyQueries();
+        public List<Party> PartyList { get; set; }
+
+
         public List<Party> GetPartyList()
         {
             return partyQueries.getAllTheParties();
@@ -13,6 +16,7 @@ namespace StudentHousing.PartyClasses
         public void AddParty(Party party)
         {
             if (party == null) throw new ArgumentNullException("Party is null");
+
             partyQueries.addPartyToCSV(party);
         }
 

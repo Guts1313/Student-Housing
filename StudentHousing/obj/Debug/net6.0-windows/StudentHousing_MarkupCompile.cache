@@ -4,29 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
 C:\Users\ivaylobakardzhiev\Desktop\student-housing\StudentHousing\obj\Debug\net6.0-windows\
-=======
-C:\Users\dansil2301\Source\Repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\
->>>>>>> ae826132b41387b0204b10de5336779d43a02b2e
 StudentHousing
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-<<<<<<< HEAD
 C:\Users\ivaylobakardzhiev\Desktop\student-housing\StudentHousing\App.xaml
 2-1011139437
 
 17-221192813
 20971782347
-=======
-C:\Users\dansil2301\Source\Repos\student-housing\StudentHousing\App.xaml
-2-1011139437
-
-16-400854689
-209-1282717434
->>>>>>> ae826132b41387b0204b10de5336779d43a02b2e
 Authentication\LoginPage.xaml;MainWindow.xaml;
 
-False
+True
 

@@ -6,7 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudentHousing.PartyClasses
+namespace StudentHousing
 {
     public class PartyQueries
     {
@@ -85,7 +85,7 @@ namespace StudentHousing.PartyClasses
 
             for (int i = 0; i < parties.Count; i++)
             {
-                if (parties[i].ToString() == partyChange.ToString())
+                if (parties[i].PartyDay == partyChange.PartyDay)
                 {
                     parties[i] = partyChange;
                     break;
@@ -114,7 +114,8 @@ namespace StudentHousing.PartyClasses
 
             for (int i = 0; i < parties.Count; i++)
             {
-                parties[i] = new Party(parties[i].Organiser, parties[i].Votes);
+                parties[i] = new Party();
+                parties[i].CreateParty(parties[i].Organiser, parties[i].PartyDay);
             }
 
             File.Delete(pathToUsersFile);

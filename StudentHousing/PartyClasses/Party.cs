@@ -4,30 +4,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudentHousing.PartyClasses
+namespace StudentHousing
 {
     [Serializable]
     public class Party
     {
         public User Organiser { private set; get; }
         public int Id { get; private set; }
-        public int Votes { get; private set; }
+        public int positiveVotes { get; private set; }
+        public int negativeVotes { get; private set; }
+
         public DateTime PartyDay { get; private set; }
-        public Party(User organiser, int votes)
+
+        public void CreateParty(User organiser, DateTime partyDate)
         {
             CreateUniquePartyId();
-            Organiser = organiser;
-            Votes = votes;
-        }
-        public void CreateParty(DateTime partyDate)
-        {
             this.PartyDay = partyDate;
+            Organiser = organiser;
+            organiser.party = this;
+            positiveVotes = 1;
+            negativeVotes = 0;
         } 
 
-        public void AddVote()
+        public void AddPositiveVote()
         {
-            Votes++;
+            positiveVotes++;
         }
+        public void AddNegativeVote()
+        {
+            nega++;
+        }
+
         private void CreateUniquePartyId()
         {
             Id = BitConverter.ToInt32(Guid.NewGuid().ToByteArray(), 0);
