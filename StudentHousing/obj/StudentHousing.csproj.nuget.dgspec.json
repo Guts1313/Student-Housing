@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ivaylobakardzhiev\\Desktop\\student-housing\\StudentHousing\\StudentHousing.csproj": {}
+    "C:\\Users\\User\\source\\repos\\student-housing\\StudentHousing\\StudentHousing.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ivaylobakardzhiev\\Desktop\\student-housing\\StudentHousing\\StudentHousing.csproj": {
+    "C:\\Users\\User\\source\\repos\\student-housing\\StudentHousing\\StudentHousing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ivaylobakardzhiev\\Desktop\\student-housing\\StudentHousing\\StudentHousing.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\student-housing\\StudentHousing\\StudentHousing.csproj",
         "projectName": "StudentHousing",
-        "projectPath": "C:\\Users\\ivaylobakardzhiev\\Desktop\\student-housing\\StudentHousing\\StudentHousing.csproj",
-        "packagesPath": "C:\\Users\\ivaylobakardzhiev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ivaylobakardzhiev\\Desktop\\student-housing\\StudentHousing\\obj\\",
+        "projectPath": "C:\\Users\\User\\source\\repos\\student-housing\\StudentHousing\\StudentHousing.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\student-housing\\StudentHousing\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ivaylobakardzhiev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[4.0.2, )"
             },
+            "FirebaseAuthentication.net": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
             "MahApps.Metro": {
               "target": "Package",
               "version": "[2.4.9, )"
@@ -72,7 +76,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

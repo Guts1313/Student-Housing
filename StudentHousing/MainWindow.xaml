@@ -444,7 +444,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Parties" Height="62" VerticalAlignment="Top">
+            <TabItem Header="Parties" VerticalAlignment="Top">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -504,20 +504,19 @@
                         </Button.Style>
                     </Button>
 
-                    <Button Content="Create a Party" HorizontalAlignment="Center" Margin="0,288,0,0" VerticalAlignment="Top" Click="createParty_Click" Background="#793dfc" Foreground="White" Height="86" >
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="Button">
-                                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
-                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </Button.Style>
+                    <Button Content="Create a Party" HorizontalAlignment="Center" Margin="0,288,0,0" VerticalAlignment="Top" Click="createParty_Click" Background="#FFBB6AF3" Foreground="White" Height="86" Width="90">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="buttonBorder" Background="#FFE089FF" BorderThickness="1" CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="buttonBorder" Property="Background" Value="#FFC76AD9" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
                     </Button>
 
 

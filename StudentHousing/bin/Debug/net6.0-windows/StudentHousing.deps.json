@@ -10,6 +10,7 @@
         "dependencies": {
           "Extended.Wpf.Toolkit": "4.5.0",
           "FirebaseAuthentication.WPF": "4.0.2",
+          "FirebaseAuthentication.net": "4.0.2",
           "MahApps.Metro": "2.4.9"
         },
         "runtime": {

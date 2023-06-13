@@ -32,7 +32,7 @@ namespace StudentHousing
         }
         public void AddNegativeVote()
         {
-            nega++;
+            negativeVotes++;
         }
 
         private void CreateUniquePartyId()
