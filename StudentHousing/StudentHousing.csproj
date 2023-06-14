@@ -23,8 +23,4 @@
     <Resource Include="img\Logo.png" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="taskClasses\" />
-  </ItemGroup>
-
 </Project>

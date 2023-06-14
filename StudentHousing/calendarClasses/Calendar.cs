@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudentHousing.calendarClasses
+namespace StudentHousing
 {
     internal class Calendar
     {
-        private UserQueries queries;
+        private TaskQueries queries;
 
-        public List<(string, DateTime)> GetTaskDates()
+        public List<(string, DateTime, string, string)> GetTaskDates()
         {
-            List<(string, DateTime)> taskDates = new List<(string, DateTime)>();
-            queries = new UserQueries();
-            List<User> users = queries.getAllTheUsers();
+            List<(string, DateTime, string, string)> taskDates = new List<(string, DateTime, string, string)>();
+            queries = new TaskQueries();
+            List<User> users = queries.getUsersAssigned();
             foreach (User user in users)
             {
-                taskDates.Add((user.AssignedTasks[0].taskName, user.AssignedTasks[0].endTime));
+                taskDates.Add((user.AssignedTasks[0].taskName, user.AssignedTasks[0].endTime, user.FirstName, user.SecondName));
             }
             return taskDates;
         }

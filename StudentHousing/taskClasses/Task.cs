@@ -15,10 +15,10 @@ namespace StudentHousing
         private TaskStatus taskStatus;
 
         //read-only properties just in case we need info at some point
-        public string TaskName { get; private set; }
-        public DateTime StartTime { get; private set; }
-        public DateTime EndTime { get; private set; }
-        public TaskStatus TaskStatus { get; private set; }
+        public string TaskName => taskName;
+        public DateTime StartTime => startTime;
+        public DateTime EndTime => endTime;
+        public TaskStatus TaskStatus => taskStatus;
         public User AssignedUser { get; set; }
 
         public int TaskId => id;
@@ -37,11 +37,12 @@ namespace StudentHousing
 
             if (startTime > endTime)
                 throw new ArgumentException("Start time cannot be after end time");
+
             this.id = nextId++;
             this.taskName = taskName;
             this.startTime = startTime;
             this.endTime = endTime;
-            this.TaskStatus = TaskStatus.Assigned;
+            this.taskStatus = TaskStatus.Assigned;
         }
 
         public Task(string taskName, DateTime startTime, DateTime endTime, TaskStatus taskStatus)
@@ -64,14 +65,20 @@ namespace StudentHousing
             this.taskName = taskName;
             this.startTime = startTime;
             this.endTime = endTime;
-            this.TaskStatus = taskStatus;
+            this.taskStatus = taskStatus;
+        }
+
+        public void changeDate(DateTime start, DateTime end)
+        {
+            startTime = start;
+            endTime = end;
         }
 
         public void ChangeTaskStatus(TaskStatus taskStatus)
         {
             if (!Enum.IsDefined(typeof(TaskStatus), taskStatus))
                 throw new InvalidEnumArgumentException($"Enum is not defined");
-            TaskStatus = taskStatus;
+            this.taskStatus = taskStatus;
         }
 
         public override string ToString()

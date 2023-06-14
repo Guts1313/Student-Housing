@@ -412,6 +412,22 @@
 
             <TabItem Header="Account">
                 <Grid>
+                    <Button Height="30" Width="70" Content="Sign out" x:Name="signOut"
+                            Margin="580,-335,0,0" FontSize="15" Click="exit_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="buttonBorder" Background="#F08080" BorderThickness="1" CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="buttonBorder" Property="Background" Value="#FDCAD3" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
                     <Border BorderBrush="#FFFFC6C6" BorderThickness="1" CornerRadius="10" Margin="38,83,467,272">
                         <Border.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -420,7 +436,8 @@
                                 <GradientStop Color="#FFC27CFF" Offset="0.027"/>
                             </LinearGradientBrush>
                         </Border.Background>
-                        <TextBlock Name="secondName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Last name" VerticalAlignment="Top" Background="Transparent" />
+                        <TextBlock Name="secondName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Last name" 
+                                   VerticalAlignment="Top" Background="Transparent" Margin="7,0,0,0"/>
                     </Border>
                     <Border BorderBrush="#FFFFC6C6" BorderThickness="1" CornerRadius="10" Margin="38,154,467,201">
                         <Border.Background>
@@ -430,7 +447,9 @@
                                 <GradientStop Color="#FFC27CFF" Offset="0.027"/>
                             </LinearGradientBrush>
                         </Border.Background>
-                        <TextBlock Name="email" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Background="Transparent" />
+                        <TextBlock Name="email" HorizontalAlignment="Left" TextWrapping="Wrap" 
+                                   Text="Email" VerticalAlignment="Top" Background="Transparent" 
+                                   Margin="7,0,0,0"/>
                     </Border>
                     <Border BorderBrush="#FFFFB5B5" BorderThickness="1" CornerRadius="10" Margin="38,21,467,336">
                         <Border.Background>
@@ -439,7 +458,9 @@
                                 <GradientStop Color="#FFC27CFF" Offset="0.05"/>
                             </LinearGradientBrush>
                         </Border.Background>
-                        <TextBlock Name="firstName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="First name" VerticalAlignment="Top" Background="Transparent" />
+                        <TextBlock Name="firstName" HorizontalAlignment="Left" TextWrapping="Wrap" 
+                                   Text="First name" VerticalAlignment="Top" Background="Transparent" 
+                                   Margin="7,0,0,0"/>
                     </Border>
 
                     <Controls:MetroProgressBar
@@ -450,24 +471,27 @@
                 </Grid>
             </TabItem>
 
+
+
+
             <TabItem Header="Garbage">
                 <Grid>
                     <TextBlock FontSize="24" FontFamily="Arial" 
                                HorizontalAlignment="center" VerticalAlignment="Top"
-                               Margin="0,30,0,0" Width="550" Height="50" TextAlignment="Center">
-                    <Run Text="Next garbage disposal assigned to, {username}"/>
+                               Margin="0,30,0,0" Width="550" Height="70" TextAlignment="Center">
+                    <Run Text=""/>
                     <Run x:Name="UserNameGarbage"/>
                     </TextBlock>
 
                     <TextBlock Text="Month" Width="80" Height="30"  FontSize="15" 
                             Background="#F08080" Margin="200,-20,0,0"
-                            TextAlignment="Center"/>
+                            TextAlignment="Center" x:Name="TrashMonth"/>
                     <TextBlock Text="Day" Width="80" Height="30"  FontSize="15" 
                             Background="#F08080" Margin="-200,-20,0,0"
-                            TextAlignment="Center"/>
+                            TextAlignment="Center" x:Name="TrashDay"/>
 
                     <Button Width="200" Height="55" Content="Accept Task" x:Name="garbageAccept"
-                            Margin="-250,195,0,0" FontSize="15">
+                            Margin="-250,195,0,0" FontSize="15" Click="garbageAccept_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border x:Name="buttonBorder" Background="#CAD5FD" BorderThickness="1" CornerRadius="10">
@@ -483,7 +507,7 @@
                     </Button>
 
                     <Button Height="55" Width="200" Content="Decline Task" x:Name="garbageDecline"
-                            Margin="250,195,0,0" FontSize="15">
+                            Margin="250,195,0,0" FontSize="15" Click="garbageDecline_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border x:Name="buttonBorder" Background="#F08080" BorderThickness="1" CornerRadius="10">
@@ -491,122 +515,287 @@
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="buttonBorder" Property="Background" Value="#F08080" />
+                                        <Setter TargetName="buttonBorder" Property="Background" Value="#FDCAD3" />
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
+
+                    <TextBlock x:Name="garbageAcceptedText" Text="Accepted" 
+                               HorizontalAlignment="Center" FontSize="30"
+                               VerticalAlignment="Bottom" Margin="85" Visibility="Hidden"/>
                 </Grid>
             </TabItem>
 
             <TabItem Header="Calendar">
-                <Grid Margin="0,10,0,1" Width="619" Loaded="Grid_Loaded">
+                <Grid x:Name="calendarGrid" Margin="0,10,0,-4" Width="819" Loaded="Grid_Loaded">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="55"/>
+                        <RowDefinition Height="55"/>
+                        <RowDefinition Height="55"/>
+                        <RowDefinition Height="55"/>
+                        <RowDefinition Height="55"/>
+                        <RowDefinition Height="55" MinHeight="40"/>
+                        <RowDefinition Height="55" MinHeight="40"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
                     </Grid.ColumnDefinitions>
 
                     <!-- Monday -->
-                    <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="10,0">
-                        <TextBlock Text="Mon" FontSize="18" Margin="0,10,0,0"/>
+                    <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" Margin="10,0,20,0">
+                        <TextBlock Text="Mon" FontSize="22" Margin="0,10,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="MondayButton" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Margin="10,0,-10,0">
-                                <StackPanel>
-                                    <TextBlock x:Name="MondayTask" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="MondayName" HorizontalAlignment="Center" FontSize="18" Margin="0,10,0,0"/>
+                            <Button x:Name="MondayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="MondayTask1" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="MondayName1" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="3" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Button x:Name="MondayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="MondayTask2" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="MondayName2" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="5" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Button x:Name="MondayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="MondayTask3" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="MondayName3" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
 
                     <!-- Tuesday -->
-                    <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Margin="10,0">
-                        <TextBlock Text="Tue" FontSize="18" Margin="0,10,0,0"/>
+                    <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Margin="10,0,20,0">
+                        <TextBlock Text="Tue" FontSize="22" Margin="0,10,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="TuesdayButton" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Margin="18,0,-18,0">
-                                <StackPanel>
-                                    <TextBlock x:Name="TuesdayTask" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="TuesdayName" HorizontalAlignment="Center" FontSize="18" Margin="0,10,0,0"/>
+                            <Button x:Name="TuesdayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="TuesdayTask1" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="TuesdayName1" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="3" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Button x:Name="TuesdayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="TuesdayTask2" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="TuesdayName2" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="5" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Button x:Name="TuesdayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="TuesdayTask3" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="TuesdayName3" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
 
                     <!-- Wednesday -->
-                    <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Margin="10,0">
-                        <TextBlock Text="Wed" FontSize="18" Margin="0,10,0,0"/>
+                    <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical" Margin="10,0,20,0">
+                        <TextBlock Text="Wed" FontSize="22" Margin="0,10,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="WednesdayButton" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Margin="11,0,-11,0">
-                                <StackPanel>
-                                    <TextBlock x:Name="WednesdayTask" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="WednesdayName" HorizontalAlignment="Center" FontSize="18" Margin="0,10,0,0"/>
+                            <Button x:Name="WednesdayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="WednesdayTask1" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="WednesdayName1" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Button x:Name="WednesdayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="WednesdayTask2" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="WednesdayName2" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="5" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Button x:Name="WednesdayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="WednesdayTask3" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="WednesdayName3" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
 
                     <!-- Thursday -->
-                    <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal" Margin="10,0">
-                        <TextBlock Text="Thu" FontSize="18" Margin="0,10,0,0"/>
+                    <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Vertical" Margin="10,0,20,0">
+                        <TextBlock Text="Thu" FontSize="22" Margin="0,10,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="ThursdayButton" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Margin="17,-2,-17,2">
-                                <StackPanel>
-                                    <TextBlock x:Name="ThursdayTask" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="ThursdayName" HorizontalAlignment="Center" FontSize="18" Margin="0,10,0,0"/>
+                            <Button x:Name="ThursdayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="ThursdayTask1" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="ThursdayName1" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" Grid.Column="3" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Button x:Name="ThursdayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="ThursdayTask2" HorizontalAlignment="Center" FontSize="10" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="ThursdayName2" HorizontalAlignment="Center" FontSize="10" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" Grid.Column="5" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Button x:Name="ThursdayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="ThursdayTask3" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="ThursdayName3" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
 
                     <!-- Friday -->
-                    <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal" Margin="10,0">
-                        <TextBlock Text="Fri" FontSize="18" Margin="0,10,0,0"/>
+                    <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Vertical" Margin="10,0,20,0">
+                        <TextBlock Text="Fri" FontSize="22" Margin="0,10,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="FridayButton" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Margin="27,0,-27,0">
-                                <StackPanel>
-                                    <TextBlock x:Name="FridayTask" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="FridayName" HorizontalAlignment="Center" FontSize="18" Margin="0,10,0,0"/>
+                            <Button x:Name="FridayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="FridayTask1" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="FridayName1" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="4" Grid.Column="3" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Button x:Name="FridayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="FridayTask2" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="FridayName2" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="4" Grid.Column="5" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Button x:Name="FridayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="FridayTask3" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="FridayName3" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
 
                     <!-- Saturday -->
-                    <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Horizontal" Margin="10,0">
-                        <TextBlock Text="Sat" FontSize="18" Margin="0,10,0,0"/>
+                    <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Vertical" Margin="10,0,20,0">
+                        <TextBlock Text="Sat" FontSize="22" Margin="0,10,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="SaturdayButton" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Margin="21,0,-21,0">
-                                <StackPanel>
-                                    <TextBlock x:Name="SaturdayTask" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="SaturdayName" HorizontalAlignment="Center" FontSize="18" Margin="0,10,0,0"/>
+                            <Button x:Name="SaturdayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="SaturdayTask1" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="SaturdayName1" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="5" Grid.Column="3" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Button x:Name="SaturdayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="SaturdayTask2" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="SaturdayName2" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="5" Grid.Column="5" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Button x:Name="SaturdayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="SaturdayTask3" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="SaturdayName3" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
 
                     <!-- Sunday -->
-                    <StackPanel Grid.Row="6" Grid.Column="0" Orientation="Horizontal" Margin="10,0">
-                        <TextBlock Text="Sun" FontSize="18" Margin="0,10,0,0"/>
+                    <StackPanel Grid.Row="6" Grid.Column="0" Orientation="Vertical" Margin="10,0,20,0">
+                        <TextBlock Text="Sun" FontSize="22" Margin="0,10,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="SundayButton" Grid.Row="6" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click">
-                                <StackPanel>
-                                    <TextBlock x:Name="SundayTask" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="SundayName" HorizontalAlignment="Center" FontSize="18" Margin="0,10,0,0"/>
+                            <Button x:Name="SundayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="SundayTask1" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="SundayName1" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="6" Grid.Column="3" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Button x:Name="SundayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="SundayTask2" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="SundayName2" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="6" Grid.Column="5" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Button x:Name="SundayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="SundayTask3" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="SundayName3" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
@@ -619,76 +808,131 @@
 
             <TabItem Header="Groceries">
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="90" />
-                        <RowDefinition Height="210"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Border Grid.Row="0" BorderThickness="0,0,0,1" BorderBrush="Gray">
-                        <Border Background="#CAD5FD" CornerRadius="10" Width="250" Height="65">
-                            <TextBlock x:Name="date" Text="5 May 2023" 
-                                       TextAlignment="Center" VerticalAlignment="Center" 
-                                       HorizontalAlignment="Center" FontSize="25"/>
-                        </Border>
-                    </Border>
+                    <Grid x:Name="groceriesAcceptanceGrid" Visibility="Visible">
+                        <TextBlock FontSize="24" FontFamily="Arial" 
+                               HorizontalAlignment="center" VerticalAlignment="Top"
+                               Margin="0,30,0,0" Width="550" Height="70" TextAlignment="Center">
+                    <Run Text=""/>
+                    <Run x:Name="UserNameGroceries"/>
+                        </TextBlock>
 
-                    <Border Grid.Row="1" BorderThickness="0,0,0,1" BorderBrush="Gray">
-                        <ListBox x:Name="groceriesList" ItemsSource="{Binding MyDataItems}"
-                                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                                 PreviewMouseDown="PreventDef">
-                            <ListBox.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding}" FontSize="20" HorizontalAlignment="Center"/>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                            <ListBox.ItemContainerStyle>
-                                <Style TargetType="ListBoxItem">
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="ListBoxItem">
-                                                <Border x:Name="border" CornerRadius="10" BorderThickness="1" Margin="5" Padding="5"
-                                                        Background="#CAD5FD" Width="580" Height="40">
-                                                    <ContentPresenter/>
-                                                </Border>
-                                                <ControlTemplate.Triggers>
-                                                    <Trigger Property="IsMouseOver" Value="True">
-                                                        <Setter TargetName="border" Property="Background" Value="#B0C1FF"/>
-                                                    </Trigger>
-                                                </ControlTemplate.Triggers>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </ListBox.ItemContainerStyle>
-                        </ListBox>
-                    </Border>
+                        <TextBlock Text="Month" Width="80" Height="30"  FontSize="15" 
+                            Background="#F08080" Margin="200,-20,0,0"
+                            TextAlignment="Center" x:Name="groceriesMonth"/>
+                        <TextBlock Text="Day" Width="80" Height="30"  FontSize="15" 
+                            Background="#F08080" Margin="-200,-20,0,0"
+                            TextAlignment="Center" x:Name="groceriesDay"/>
 
-                    <Border Grid.Row="2" BorderBrush="Gray">
-                        <Grid>
-                            <Border Background="#CAD5FD" CornerRadius="10" 
-                                Width="250" Height="65" Margin="320,0,0,0">
-                                <TextBlock x:Name="amount" Text="Amount: " 
+                        <Button Width="200" Height="55" Content="Accept Task" x:Name="groceriesAccept"
+                            Margin="-250,195,0,0" FontSize="15" Click="groceriesAccept_Click">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="buttonBorder" Background="#CAD5FD" BorderThickness="1" CornerRadius="10">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="buttonBorder" Property="Background" Value="#B0C1FF" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                        <Button Height="55" Width="200" Content="Decline Task" x:Name="groceriesDecline"
+                            Margin="250,195,0,0" FontSize="15" Click="groceriesDecline_Click">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="buttonBorder" Background="#F08080" BorderThickness="1" CornerRadius="10">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="buttonBorder" Property="Background" Value="#FDCAD3" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                        <TextBlock x:Name="groceriesAcceptedText" Text="Accepted" 
+                               HorizontalAlignment="Center" FontSize="30"
+                               VerticalAlignment="Bottom" Margin="85" Visibility="Hidden"/>
+                    </Grid>
+
+                    <Grid x:Name="groceriesMainGrid" Visibility="Hidden">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="90" />
+                            <RowDefinition Height="210"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0" BorderThickness="0,0,0,1" BorderBrush="Gray">
+                            <Border Background="#CAD5FD" CornerRadius="10" Width="550" Height="75">
+                                <TextBlock x:Name="date" Text="5 May 2023" 
                                            TextAlignment="Center" VerticalAlignment="Center" 
                                            HorizontalAlignment="Center" FontSize="25"/>
                             </Border>
-                            <Button Width="250" Height="65" Content="Pay"
-                                    Margin="0,0,320,0" FontSize="25">
-                                <Button.Template>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border x:Name="buttonBorder" Background="#CAD5FD" BorderThickness="1" CornerRadius="10">
-                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                        </Border>
-                                        <ControlTemplate.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter TargetName="buttonBorder" Property="Background" Value="#B0C1FF" />
-                                            </Trigger>
-                                        </ControlTemplate.Triggers>
-                                    </ControlTemplate>
-                                </Button.Template>
-                            </Button>
-                        </Grid>
-                    </Border>
+                        </Border>
+
+                        <Border Grid.Row="1" BorderThickness="0,0,0,1" BorderBrush="Gray">
+                            <ListBox x:Name="groceriesList" ItemsSource="{Binding MyDataItems}"
+                                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                     VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                     PreviewMouseDown="PreventDef">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}" FontSize="20" HorizontalAlignment="Center"/>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                                <ListBox.ItemContainerStyle>
+                                    <Style TargetType="ListBoxItem">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="ListBoxItem">
+                                                    <Border x:Name="border" CornerRadius="10" BorderThickness="1" Margin="5" Padding="5"
+                                                            Background="#CAD5FD" Width="580" Height="40">
+                                                        <ContentPresenter/>
+                                                    </Border>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter TargetName="border" Property="Background" Value="#B0C1FF"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </ListBox.ItemContainerStyle>
+                            </ListBox>
+                        </Border>
+
+                        <Border Grid.Row="2" BorderBrush="Gray">
+                            <Grid>
+                                <Border Background="#CAD5FD" CornerRadius="10" 
+                                    Width="250" Height="65" Margin="320,0,0,0">
+                                    <TextBlock x:Name="amount" Text="Amount: " 
+                                               TextAlignment="Center" VerticalAlignment="Center" 
+                                               HorizontalAlignment="Center" FontSize="25"/>
+                                </Border>
+                                <Button Width="250" Height="65" Content="Pay"
+                                        Margin="0,0,320,0" FontSize="25" x:Name="PayButton"
+                                        Click="PayButton_Click">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border x:Name="buttonBorder" Background="#CAD5FD" BorderThickness="1" CornerRadius="10">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter TargetName="buttonBorder" Property="Background" Value="#B0C1FF" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </Grid>
+                        </Border>
+                    </Grid>
                 </Grid>
             </TabItem>
 
@@ -696,20 +940,20 @@
                 <Grid>
                     <TextBlock FontSize="24" FontFamily="Arial" 
                                HorizontalAlignment="center" VerticalAlignment="Top"
-                               Margin="0,30,0,0" Width="550" Height="50" TextAlignment="Center">
-                    <Run Text="Next cleaning assigned to, {username}"/>
+                               Margin="0,30,0,0" Width="550" Height="70" TextAlignment="Center">
+                    <Run Text=""/>
                     <Run x:Name="UserNameCLeaning"/>
                     </TextBlock>
 
                     <TextBlock Text="Month" Width="80" Height="30"  FontSize="15" 
                             Background="#F08080" Margin="200,-20,0,0"
-                            TextAlignment="Center"/>
+                            TextAlignment="Center" x:Name="CleaningMonth"/>
                     <TextBlock Text="Day" Width="80" Height="30"  FontSize="15" 
                             Background="#F08080" Margin="-200,-20,0,0"
-                            TextAlignment="Center"/>
+                            TextAlignment="Center" x:Name="CleaningDay"/>
 
                     <Button Width="200" Height="55" Content="Accept Task" x:Name="cleaningAccept"
-                            Margin="-250,195,0,0" FontSize="15">
+                            Margin="-250,195,0,0" FontSize="15" Click="cleaningAccept_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border x:Name="buttonBorder" Background="#CAD5FD" BorderThickness="1" CornerRadius="10">
@@ -725,7 +969,7 @@
                     </Button>
 
                     <Button Height="55" Width="200" Content="Decline Task" x:Name="cleaningDecline"
-                            Margin="250,195,0,0" FontSize="15">
+                            Margin="250,195,0,0" FontSize="15" Click="cleaningDecline_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border x:Name="buttonBorder" Background="#F08080" BorderThickness="1" CornerRadius="10">
@@ -739,21 +983,41 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
+
+                    <TextBlock x:Name="cleaningAcceptedText" Text="Accepted" 
+                               HorizontalAlignment="Center" FontSize="30"
+                               VerticalAlignment="Bottom" Margin="85" Visibility="Hidden"/>
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Parties">
+            <TabItem Header="Parties" Height="62" VerticalAlignment="Top">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <Viewbox>
 
+                    <Viewbox Stretch="Fill" Margin="0,0,0,77" Width="556">
+                        <Calendar Style="{DynamicResource CalendarStyle1}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="262" Background="#FFC1ABFF" Height="187" RenderTransformOrigin="0.5,0.5">
+                            <Calendar.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform AngleX="-0.729"/>
+                                    <RotateTransform/>
+                                    <TranslateTransform X="-1.19"/>
+                                </TransformGroup>
+                            </Calendar.RenderTransform>
+                            <Calendar.BorderBrush>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFB493FF" Offset="0.493"/>
+                                    <GradientStop Color="#00653BFF" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Calendar.BorderBrush>
+                        </Calendar>
                     </Viewbox>
 
-                    <Button Content="Vote For" HorizontalAlignment="Left" Margin="149,331,0,20" Width="154" Click="VoteButtonFor_click" Background="#FF00C80B" BorderBrush="Black" Foreground="White">
+                    <Button Content="Vote For" HorizontalAlignment="Left" Margin="154,336,0,10" Width="93" Click="VoteButtonFor_click" Background="#FF00C80B" BorderBrush="Black" Foreground="White">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Template">
@@ -769,7 +1033,9 @@
                         </Button.Style>
                     </Button>
 
-                    <Button Content="Vote Against" HorizontalAlignment="Left" Margin="369,331,0,20" Width="159" Click="VoteButtonAgainst_click" Background="#FFCE0000" Foreground="White">
+
+
+                    <Button Content="Vote Against" HorizontalAlignment="Left" Margin="402,336,0,10" Width="98" Click="VoteButtonAgainst_click" Background="#FFCE0000" Foreground="White">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Template">
@@ -784,6 +1050,25 @@
                             </Style>
                         </Button.Style>
                     </Button>
+
+                    <Button Content="Create a Party" HorizontalAlignment="Center" Margin="0,288,0,0" VerticalAlignment="Top" Click="Button_Click" Background="#793dfc" Foreground="White" Height="86" >
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+
+
+
                 </Grid>
             </TabItem>
 
