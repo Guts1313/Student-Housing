@@ -1,6 +1,5 @@
-﻿using Firebase.Auth.UI;
+using Firebase.Auth.UI;
 using Microsoft.Web.WebView2.Core;
-using StudentHousing.voteRecords;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -36,11 +35,7 @@ namespace StudentHousing
         private DispatcherTimer changeTaskTimer;
         private bool flashForTimer = true;
         private Dispatcher uiDispatcher;
-<<<<<<< HEAD
-        private VoteManager VoteManager { get; set; }
-=======
         private List<(string, DateTime, string, string)> taskDates = new List<(string, DateTime, string, string)>();
->>>>>>> 048d925d25c22f57f77c56f65af94579daace04d
 
         public MainWindow()
         {
@@ -58,7 +53,6 @@ namespace StudentHousing
 
             if (uiDispatcher == null)
             { uiDispatcher = Dispatcher; }
-            VoteManager = new VoteManager();
         }
 
       
@@ -263,8 +257,6 @@ namespace StudentHousing
         {
             e.Handled = true;
         }
-<<<<<<< HEAD
-=======
 
        
 
@@ -301,17 +293,15 @@ namespace StudentHousing
             Button clickedButton = (Button)sender;
             string task = GetTaskFromButton(clickedButton);
 
-            // Determine the tab to navigate based on the task
             int tabIndex = GetTabIndexForTask(task);
 
-            // Set the selected tab
+       
             MenuTabs.SelectedIndex = tabIndex;
         }
 
         private string GetTaskFromButton(Button button)
         {
-            // Retrieve the task associated with the clicked button
-            // You may need to modify this logic based on how the task information is stored
+        
             StackPanel stackPanel = (StackPanel)button.Content;
             TextBlock taskTextBlock = (TextBlock)stackPanel.Children[0];
             string task = taskTextBlock.Text;
@@ -320,17 +310,17 @@ namespace StudentHousing
 
         private int GetTabIndexForTask(string task)
         {
-            // Map the task to the corresponding tab index
+
             switch (task)
             {
                 case "Cleaning":
-                    return 3; // Tab index 2 corresponds to "Cleaning" tab
+                    return 3; 
                 case "Trash":
-                    return 1; // Tab index 0 corresponds to "Trash" tab
+                    return 1; 
                 case "Groceries":
-                    return 4; // Tab index 3 corresponds to "Groceries" tab
+                    return 4; 
                 default:
-                    return 0; // Default to the first tab (index 0)
+                    return 0; 
             }
         }
 
@@ -343,16 +333,16 @@ namespace StudentHousing
 
                 List<(string taskName, DateTime date, string firstName, string lastName)> tasks = calendar.GetTaskDates();
 
-                // Create a dictionary to store task information for each day of the week
+               
                 Dictionary<DayOfWeek, List<string>> taskInfoByDay = new Dictionary<DayOfWeek, List<string>>();
 
-                // Initialize the dictionary with empty lists for each day of the week
+               
                 foreach (DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)))
                 {
                     taskInfoByDay[day] = new List<string>();
                 }
 
-                // Add task information to the dictionary based on the task date
+              
                 foreach (var task in tasks)
                 {
                     DayOfWeek taskDay = task.date.DayOfWeek;
@@ -361,24 +351,24 @@ namespace StudentHousing
                     taskInfoByDay[taskDay].Add(taskInfo);
                 }
 
-                // Populate the calendar with the task information
-                int rowOffset = 0; // Adjust this value based on the starting row of the calendar
-                int columnOffset = 1; // Adjust this value based on the starting column of the calendar
-                int maxTasksPerDay = 3; // Maximum number of tasks to display per day
+               
+                int rowOffset = 0; 
+                int columnOffset = 1; 
+                int maxTasksPerDay = 3; 
 
                 foreach (var taskInfo in taskInfoByDay)
                 {
                     DayOfWeek day = taskInfo.Key;
                     List<string> tasksForDay = taskInfo.Value;
 
-                    // Find the corresponding grid cell for the day
+                 
                     int row = (int)day + rowOffset;
                     int column = columnOffset;
 
-                    // Iterate over the tasks for the day and display them in the calendar
+                   
                     for (int i = 0; i < tasksForDay.Count && i < maxTasksPerDay; i++)
                     {
-                        // Create the task textblock
+                      
                         TextBlock taskTextBlock = new TextBlock
                         {
                             Text = tasksForDay[i],
@@ -387,12 +377,12 @@ namespace StudentHousing
                             Margin = new Thickness(0, 0, 0, 0)
                         };
 
-                        // Add the task textblock to the calendar grid
+                    
                         Grid.SetRow(taskTextBlock, row);
                         Grid.SetColumn(taskTextBlock, column);
                         calendarGrid.Children.Add(taskTextBlock);
 
-                        // Increment the column to place the next task textblock
+                       
                         column += 2;
                     }
                 }
@@ -400,9 +390,8 @@ namespace StudentHousing
 
 
    
->>>>>>> 048d925d25c22f57f77c56f65af94579daace04d
         private void VoteButtonFor_click(object sender, RoutedEventArgs e)
-        { 
+        {
             if (theCalendar.SelectedDate.HasValue)
             {
                 DateTime date = theCalendar.SelectedDate.Value;
@@ -410,16 +399,8 @@ namespace StudentHousing
                 {
                     if (party.PartyDay == date)
                     {
-                        if (VoteManager.VotedUser(new Vote(party.Id, Convert.ToInt32(user.Id))))
-                        {
-                            MessageBox.Show("You have already voted for that party!", "Error!",
-                                MessageBoxButton.OK, MessageBoxImage.Error);
-                        }
-                        else
-                        {
-                            party.AddPositiveVote();
-                            partyManager.changeParty(party);
-                        }
+                        party.AddPositiveVote();
+                        partyManager.changeParty(party);
                     }
                 }
             }
@@ -434,16 +415,8 @@ namespace StudentHousing
                 {
                     if (party.PartyDay == date)
                     {
-                        if (VoteManager.VotedUser(new Vote(party.Id, Convert.ToInt32(user.Id))))
-                        {
-                            MessageBox.Show("You have already voted for that party!", "Error!",
-                                MessageBoxButton.OK, MessageBoxImage.Error);
-                        }
-                        else
-                        {
-                            party.AddNegativeVote();
-                            partyManager.changeParty(party);
-                        }
+                        party.AddNegativeVote();
+                        partyManager.changeParty(party);
                     }
                 }
             }
@@ -543,8 +516,7 @@ namespace StudentHousing
                 Party party = new Party();
                 party.CreateParty(user, dateTime);
                 partyManager.AddParty(party);
-                MessageBox.Show("You have created party successfully!", "Success!",
-                     MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(user.party.ToString());
             }
         }
     }
