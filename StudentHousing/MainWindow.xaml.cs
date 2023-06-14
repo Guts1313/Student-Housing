@@ -391,7 +391,7 @@ namespace StudentHousing
                 party.CreateParty(user, dateTime);
                 partyManager.AddParty(party);
                 MessageBox.Show("You have created party successfully!", "Success!",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
+                     MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
     }
