@@ -1,9 +1,29 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "o29qL8oGJtPw5MQnMtlrPzycRRNM+eXkfcA4S9G5lj4gYw+okAOFN0MIqUGJPBZSP6lOZLfN87BOfHgMtcE6Ow==",
+=======
+<<<<<<< HEAD
+  "dgSpecHash": "UMLo2Jv9SuGSBlEx2tMPPFYE1TrSWOUdP0ujsJSY1UcEoNi+5VYUoXHbgJX+SwaZHlbTOLwHTA2g6RDjAQlbKA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\StudentHousing.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\idero\\.nuget\\packages\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
+    "C:\\Users\\idero\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512",
+    "C:\\Users\\idero\\.nuget\\packages\\firebaseauthentication.net\\4.0.2\\firebaseauthentication.net.4.0.2.nupkg.sha512",
+    "C:\\Users\\idero\\.nuget\\packages\\firebaseauthentication.wpf\\4.0.2\\firebaseauthentication.wpf.4.0.2.nupkg.sha512",
+    "C:\\Users\\idero\\.nuget\\packages\\mahapps.metro\\2.4.9\\mahapps.metro.2.4.9.nupkg.sha512",
+    "C:\\Users\\idero\\.nuget\\packages\\microsoft.web.webview2\\1.0.1462.37\\microsoft.web.webview2.1.0.1462.37.nupkg.sha512",
+    "C:\\Users\\idero\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.19\\microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512",
+    "C:\\Users\\idero\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\idero\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512"
+=======
+  "dgSpecHash": "9FjbLeSNKHDmi6ZqOYjX7ZQOTGhMIlzAS+5JitYIy19buSl9ijnPF3Tdua/7uti/DogI8U+eqH6NeYbVUGDCMw==",
+>>>>>>> 048d925d25c22f57f77c56f65af94579daace04d
   "success": true,
   "projectFilePath": "C:\\Users\\ivaylobakardzhiev\\Desktop\\student-housing\\StudentHousing\\StudentHousing.csproj",
   "expectedPackageFiles": [
+<<<<<<< HEAD
     "C:\\Users\\ivaylobakardzhiev\\.nuget\\packages\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
     "C:\\Users\\ivaylobakardzhiev\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512",
     "C:\\Users\\ivaylobakardzhiev\\.nuget\\packages\\firebaseauthentication.net\\4.0.2\\firebaseauthentication.net.4.0.2.nupkg.sha512",
@@ -13,6 +33,18 @@
     "C:\\Users\\ivaylobakardzhiev\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.19\\microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512",
     "C:\\Users\\ivaylobakardzhiev\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
     "C:\\Users\\ivaylobakardzhiev\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512"
+=======
+    "C:\\Users\\dansil2301\\.nuget\\packages\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
+    "C:\\Users\\dansil2301\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512",
+    "C:\\Users\\dansil2301\\.nuget\\packages\\firebaseauthentication.net\\4.0.2\\firebaseauthentication.net.4.0.2.nupkg.sha512",
+    "C:\\Users\\dansil2301\\.nuget\\packages\\firebaseauthentication.wpf\\4.0.2\\firebaseauthentication.wpf.4.0.2.nupkg.sha512",
+    "C:\\Users\\dansil2301\\.nuget\\packages\\mahapps.metro\\2.4.9\\mahapps.metro.2.4.9.nupkg.sha512",
+    "C:\\Users\\dansil2301\\.nuget\\packages\\microsoft.web.webview2\\1.0.1462.37\\microsoft.web.webview2.1.0.1462.37.nupkg.sha512",
+    "C:\\Users\\dansil2301\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.19\\microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512",
+    "C:\\Users\\dansil2301\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\dansil2301\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512"
+>>>>>>> 6d5118d468cac763c19c1b3d0ca8d915801f8bbf
+>>>>>>> 048d925d25c22f57f77c56f65af94579daace04d
   ],
   "logs": []
 }

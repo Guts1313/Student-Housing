@@ -1,7 +1,24 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\ivaylobakardzhiev\\Desktop\\student-housing\\StudentHousing\\StudentHousing.csproj": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\StudentHousing.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\StudentHousing.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\StudentHousing.csproj",
+        "projectName": "StudentHousing",
+        "projectPath": "C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\StudentHousing.csproj",
+        "packagesPath": "C:\\Users\\idero\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\obj\\",
+=======
+    "C:\\Users\\dansil2301\\Source\\Repos\\student-housing\\StudentHousing\\StudentHousing.csproj": {}
+>>>>>>> 048d925d25c22f57f77c56f65af94579daace04d
   },
   "projects": {
     "C:\\Users\\ivaylobakardzhiev\\Desktop\\student-housing\\StudentHousing\\StudentHousing.csproj": {
@@ -9,12 +26,28 @@
       "restore": {
         "projectUniqueName": "C:\\Users\\ivaylobakardzhiev\\Desktop\\student-housing\\StudentHousing\\StudentHousing.csproj",
         "projectName": "StudentHousing",
+<<<<<<< HEAD
         "projectPath": "C:\\Users\\ivaylobakardzhiev\\Desktop\\student-housing\\StudentHousing\\StudentHousing.csproj",
         "packagesPath": "C:\\Users\\ivaylobakardzhiev\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\ivaylobakardzhiev\\Desktop\\student-housing\\StudentHousing\\obj\\",
+=======
+        "projectPath": "C:\\Users\\dansil2301\\Source\\Repos\\student-housing\\StudentHousing\\StudentHousing.csproj",
+        "packagesPath": "C:\\Users\\dansil2301\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dansil2301\\Source\\Repos\\student-housing\\StudentHousing\\obj\\",
+>>>>>>> 6d5118d468cac763c19c1b3d0ca8d915801f8bbf
+>>>>>>> 048d925d25c22f57f77c56f65af94579daace04d
         "projectStyle": "PackageReference",
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\ivaylobakardzhiev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+<<<<<<< HEAD
+          "C:\\Users\\idero\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\dansil2301\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 6d5118d468cac763c19c1b3d0ca8d915801f8bbf
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> 048d925d25c22f57f77c56f65af94579daace04d
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -6,12 +6,17 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Threading;
 
 namespace StudentHousing
@@ -24,19 +29,28 @@ namespace StudentHousing
         public ObservableCollection<string> MyDataItems { get; set; }
         private User user;
         private UserManager userManager = new UserManager();
+        private Calendar calendar;
         private TaskManager taskManager = new TaskManager();
         private PartyManager partyManager = new PartyManager();
         private groceriesList groceries = new groceriesList();
         private DispatcherTimer changeTaskTimer;
         private bool flashForTimer = true;
         private Dispatcher uiDispatcher;
+<<<<<<< HEAD
         private VoteManager VoteManager { get; set; }
+=======
+        private List<(string, DateTime, string, string)> taskDates = new List<(string, DateTime, string, string)>();
+>>>>>>> 048d925d25c22f57f77c56f65af94579daace04d
 
         public MainWindow()
         {
             InitializeComponent();
+            calendar = new Calendar();
+            taskDates = calendar.GetTaskDates();
+            
+
             DataContext = this;
-            //userManager.refreshUsers(); // uncomment if changes happened in user class
+            userManager.refreshUsers(); // uncomment if changes happened in user class
             taskManager.firstAssignment(); // starts the cycle of assigning users (if the cycle is hasn't started yet
             MyDataItems = new ObservableCollection<string>();
             addToCollectionAndShow();
@@ -47,6 +61,7 @@ namespace StudentHousing
             VoteManager = new VoteManager();
         }
 
+      
         private void addToCollectionAndShow()
         {
             foreach (var item in groceries.GetGroceriesStr())
@@ -248,6 +263,144 @@ namespace StudentHousing
         {
             e.Handled = true;
         }
+<<<<<<< HEAD
+=======
+
+       
+
+      
+
+        private void SetDayBackground(Button button, string task)
+        {
+            // Set the background color of the button based on the task
+            if (task.ToLower() == "garbage")
+            {
+                Color color = Color.FromArgb(125, 0, 255, 0); // RGB values for green
+                button.Background = new SolidColorBrush(color);
+           
+            }
+            else if (task.ToLower() == "cleaning")
+            {
+                Color color = Color.FromArgb(125, 0, 0, 200); // RGB values for blue
+                button.Background = new SolidColorBrush(color);
+               
+            }
+            else if (task.ToLower() == "groceries")
+            {
+                Color color = Color.FromArgb(125, 255, 255, 0); // RGB values for yellow
+                button.Background = new SolidColorBrush(color);
+                
+            }
+        }
+
+
+
+
+        private void DayButton_Click(object sender, RoutedEventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            string task = GetTaskFromButton(clickedButton);
+
+            // Determine the tab to navigate based on the task
+            int tabIndex = GetTabIndexForTask(task);
+
+            // Set the selected tab
+            MenuTabs.SelectedIndex = tabIndex;
+        }
+
+        private string GetTaskFromButton(Button button)
+        {
+            // Retrieve the task associated with the clicked button
+            // You may need to modify this logic based on how the task information is stored
+            StackPanel stackPanel = (StackPanel)button.Content;
+            TextBlock taskTextBlock = (TextBlock)stackPanel.Children[0];
+            string task = taskTextBlock.Text;
+            return task;
+        }
+
+        private int GetTabIndexForTask(string task)
+        {
+            // Map the task to the corresponding tab index
+            switch (task)
+            {
+                case "Cleaning":
+                    return 3; // Tab index 2 corresponds to "Cleaning" tab
+                case "Trash":
+                    return 1; // Tab index 0 corresponds to "Trash" tab
+                case "Groceries":
+                    return 4; // Tab index 3 corresponds to "Groceries" tab
+                default:
+                    return 0; // Default to the first tab (index 0)
+            }
+        }
+
+
+
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+            {
+                Grid calendarGrid = (Grid)sender;
+
+                List<(string taskName, DateTime date, string firstName, string lastName)> tasks = calendar.GetTaskDates();
+
+                // Create a dictionary to store task information for each day of the week
+                Dictionary<DayOfWeek, List<string>> taskInfoByDay = new Dictionary<DayOfWeek, List<string>>();
+
+                // Initialize the dictionary with empty lists for each day of the week
+                foreach (DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)))
+                {
+                    taskInfoByDay[day] = new List<string>();
+                }
+
+                // Add task information to the dictionary based on the task date
+                foreach (var task in tasks)
+                {
+                    DayOfWeek taskDay = task.date.DayOfWeek;
+                    string taskInfo = task.taskName + Environment.NewLine + " - " + task.firstName + " " + task.lastName;
+
+                    taskInfoByDay[taskDay].Add(taskInfo);
+                }
+
+                // Populate the calendar with the task information
+                int rowOffset = 0; // Adjust this value based on the starting row of the calendar
+                int columnOffset = 1; // Adjust this value based on the starting column of the calendar
+                int maxTasksPerDay = 3; // Maximum number of tasks to display per day
+
+                foreach (var taskInfo in taskInfoByDay)
+                {
+                    DayOfWeek day = taskInfo.Key;
+                    List<string> tasksForDay = taskInfo.Value;
+
+                    // Find the corresponding grid cell for the day
+                    int row = (int)day + rowOffset;
+                    int column = columnOffset;
+
+                    // Iterate over the tasks for the day and display them in the calendar
+                    for (int i = 0; i < tasksForDay.Count && i < maxTasksPerDay; i++)
+                    {
+                        // Create the task textblock
+                        TextBlock taskTextBlock = new TextBlock
+                        {
+                            Text = tasksForDay[i],
+                            HorizontalAlignment = HorizontalAlignment.Center,
+                            FontSize = 10,
+                            Margin = new Thickness(0, 0, 0, 0)
+                        };
+
+                        // Add the task textblock to the calendar grid
+                        Grid.SetRow(taskTextBlock, row);
+                        Grid.SetColumn(taskTextBlock, column);
+                        calendarGrid.Children.Add(taskTextBlock);
+
+                        // Increment the column to place the next task textblock
+                        column += 2;
+                    }
+                }
+            }
+
+
+   
+>>>>>>> 048d925d25c22f57f77c56f65af94579daace04d
         private void VoteButtonFor_click(object sender, RoutedEventArgs e)
         { 
             if (theCalendar.SelectedDate.HasValue)

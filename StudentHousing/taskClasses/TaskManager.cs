@@ -60,7 +60,7 @@ namespace StudentHousing
                 // Task is not completed and end time is passed
                 if (task.TaskStatus == TaskStatus.Completed || task.TaskStatus == TaskStatus.Declined || task.EndTime < now)
                 {
-                    task.changeDate(DateTime.Now, DateTime.Now.AddSeconds(20));
+                    task.changeDate(DateTime.Now, DateTime.Now.AddSeconds(60000));
                     ReassignTask(task);
                     break;
                 }
