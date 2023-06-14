@@ -1,5 +1,6 @@
 ﻿using Firebase.Auth.UI;
 using Microsoft.Web.WebView2.Core;
+using StudentHousing.voteRecords;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -29,6 +30,7 @@ namespace StudentHousing
         private DispatcherTimer changeTaskTimer;
         private bool flashForTimer = true;
         private Dispatcher uiDispatcher;
+        private VoteManager VoteManager { get; set; }
 
         public MainWindow()
         {
@@ -42,6 +44,7 @@ namespace StudentHousing
 
             if (uiDispatcher == null)
             { uiDispatcher = Dispatcher; }
+            VoteManager = new VoteManager();
         }
 
         private void addToCollectionAndShow()
@@ -245,9 +248,8 @@ namespace StudentHousing
         {
             e.Handled = true;
         }
-
         private void VoteButtonFor_click(object sender, RoutedEventArgs e)
-        {
+        { 
             if (theCalendar.SelectedDate.HasValue)
             {
                 DateTime date = theCalendar.SelectedDate.Value;
@@ -255,8 +257,16 @@ namespace StudentHousing
                 {
                     if (party.PartyDay == date)
                     {
-                        party.AddPositiveVote();
-                        partyManager.changeParty(party);
+                        if (VoteManager.VotedUser(new Vote(party.Id, Convert.ToInt32(user.Id))))
+                        {
+                            MessageBox.Show("You have already voted for that party!", "Error!",
+                                MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                        else
+                        {
+                            party.AddPositiveVote();
+                            partyManager.changeParty(party);
+                        }
                     }
                 }
             }
@@ -271,8 +281,16 @@ namespace StudentHousing
                 {
                     if (party.PartyDay == date)
                     {
-                        party.AddNegativeVote();
-                        partyManager.changeParty(party);
+                        if (VoteManager.VotedUser(new Vote(party.Id, Convert.ToInt32(user.Id))))
+                        {
+                            MessageBox.Show("You have already voted for that party!", "Error!",
+                                MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                        else
+                        {
+                            party.AddNegativeVote();
+                            partyManager.changeParty(party);
+                        }
                     }
                 }
             }
@@ -372,7 +390,8 @@ namespace StudentHousing
                 Party party = new Party();
                 party.CreateParty(user, dateTime);
                 partyManager.AddParty(party);
-                MessageBox.Show(user.party.ToString());
+                MessageBox.Show("You have created party successfully!", "Success!",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
     }
