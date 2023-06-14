@@ -8,4 +8,8 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = StudentHousing
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\
+=======
+build_property.ProjectDir = C:\Users\dansil2301\Source\Repos\student-housing\StudentHousing\
+>>>>>>> 6d5118d468cac763c19c1b3d0ca8d915801f8bbf

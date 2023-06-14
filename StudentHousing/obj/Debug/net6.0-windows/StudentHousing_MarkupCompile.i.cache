@@ -4,11 +4,16 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\obj\Debug\net6.0-windows\
+=======
+C:\Users\dansil2301\Source\Repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\
+>>>>>>> 6d5118d468cac763c19c1b3d0ca8d915801f8bbf
 StudentHousing
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+<<<<<<< HEAD
 C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\App.xaml
 2-1011139437
 
@@ -17,4 +22,14 @@ C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\S
 Authentication\LoginPage.xaml;MainWindow.xaml;
 
 True
+=======
+C:\Users\dansil2301\Source\Repos\student-housing\StudentHousing\App.xaml
+2-1011139437
+
+19296126384
+209-1282717434
+Authentication\LoginPage.xaml;MainWindow.xaml;
+
+False
+>>>>>>> 6d5118d468cac763c19c1b3d0ca8d915801f8bbf
 

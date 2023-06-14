@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="StudentHousing.User">
+    <Position X="7.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAEgABCBCAAskAAAAAAAACAAAgAhACAAAAABAgkI=</HashCode>
+      <FileName>userClasses\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudentHousing.UserManager">
+    <Position X="18.5" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAABAAAAAAAABAAAEBAAggAAAAAAAAAAA=</HashCode>
+      <FileName>userClasses\UserManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="userQueries" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="StudentHousing.UserQueries">
+    <Position X="19.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAQAAAAAAJAAAAAAAAAAAAAAAACAgA=</HashCode>
+      <FileName>userClasses\UserQueries.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudentHousing.Task">
+    <Position X="10" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAAAAAAAEAAAEBBAgACAAIIggAAAAAQAAAAACAgA=</HashCode>
+      <FileName>taskClasses\Task.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AssignedUser" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="StudentHousing.TaskManager">
+    <Position X="20.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAQAAAABAAAAAAxAAEAAAAQARAIAAAAAAAA=</HashCode>
+      <FileName>taskClasses\TaskManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="taskQueries" />
+      <Field Name="uManager" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_listOfTasks" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="StudentHousing.TaskQueries">
+    <Position X="21.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAEABAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>taskClasses\TaskQueries.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudentHousing.Party">
+    <Position X="12.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAISAAAAAAAAAAAAAAAAAAAAABAABACgAAAACAAAAAI=</HashCode>
+      <FileName>PartyClasses\Party.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Organiser" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="StudentHousing.PartyManager">
+    <Position X="15" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SAAEAAAAAAAAAAAAAAAQAAAAAAAIAAAEAAAAAAAABAA=</HashCode>
+      <FileName>PartyClasses\PartyManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="partyQueries" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="PartyList" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="StudentHousing.PartyQueries">
+    <Position X="15" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAgAAAQAAAQAAIAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>PartyClasses\PartyQueries.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudentHousing.groceriesList">
+    <Position X="13" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAIAAAAAAAAAAAAAAAAEAAACAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>groceriesClasses\groceriesList.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="userManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="StudentHousing.MainWindow" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIoAAQAQSAAAEAAUABBBABgIAAEGACQAAEQKCAAAAYA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="groceries" />
+      <Field Name="partyManager" />
+      <Field Name="user" />
+      <Field Name="userManager" />
+      <Field Name="taskManager" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
