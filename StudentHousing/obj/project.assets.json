@@ -698,59 +698,19 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    "C:\\Users\\ivaylobakardzhiev\\.nuget\\packages\\": {}
-=======
-<<<<<<< HEAD
->>>>>>> 9f3eb86ad59f98ec9f6af91480f6175eff111807
-    "C:\\Users\\idero\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
->>>>>>> 048d925d25c22f57f77c56f65af94579daace04d
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\ivaylobakardzhiev\\Desktop\\student-housing\\StudentHousing\\StudentHousing.csproj",
+      "projectUniqueName": "C:\\Users\\User\\source\\repos\\student-housing\\StudentHousing\\StudentHousing.csproj",
       "projectName": "StudentHousing",
-      "projectPath": "C:\\Users\\ivaylobakardzhiev\\Desktop\\student-housing\\StudentHousing\\StudentHousing.csproj",
-      "packagesPath": "C:\\Users\\ivaylobakardzhiev\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ivaylobakardzhiev\\Desktop\\student-housing\\StudentHousing\\obj\\",
-=======
-<<<<<<< HEAD
->>>>>>> 9f3eb86ad59f98ec9f6af91480f6175eff111807
-      "projectUniqueName": "C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\StudentHousing.csproj",
-      "projectName": "StudentHousing",
-      "projectPath": "C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\StudentHousing.csproj",
-      "packagesPath": "C:\\Users\\idero\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\obj\\",
-<<<<<<< HEAD
-=======
-=======
-      "projectUniqueName": "C:\\Users\\dansil2301\\Source\\Repos\\student-housing\\StudentHousing\\StudentHousing.csproj",
-      "projectName": "StudentHousing",
-      "projectPath": "C:\\Users\\dansil2301\\Source\\Repos\\student-housing\\StudentHousing\\StudentHousing.csproj",
-      "packagesPath": "C:\\Users\\dansil2301\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dansil2301\\Source\\Repos\\student-housing\\StudentHousing\\obj\\",
->>>>>>> 6d5118d468cac763c19c1b3d0ca8d915801f8bbf
->>>>>>> 048d925d25c22f57f77c56f65af94579daace04d
->>>>>>> 9f3eb86ad59f98ec9f6af91480f6175eff111807
+      "projectPath": "C:\\Users\\User\\source\\repos\\student-housing\\StudentHousing\\StudentHousing.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\source\\repos\\student-housing\\StudentHousing\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        "C:\\Users\\ivaylobakardzhiev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-<<<<<<< HEAD
->>>>>>> 9f3eb86ad59f98ec9f6af91480f6175eff111807
-        "C:\\Users\\idero\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
->>>>>>> 048d925d25c22f57f77c56f65af94579daace04d
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -812,7 +772,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -821,7 +781,7 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+      "message": "Ошибка чтения файла кэша C:\\Users\\User\\source\\repos\\student-housing\\StudentHousing\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
     }
   ]
 }
