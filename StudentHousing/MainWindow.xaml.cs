@@ -1,4 +1,4 @@
-﻿using Firebase.Auth.UI;
+using Firebase.Auth.UI;
 using Microsoft.Web.WebView2.Core;
 using System;
 using System.Collections.Generic;
@@ -293,17 +293,15 @@ namespace StudentHousing
             Button clickedButton = (Button)sender;
             string task = GetTaskFromButton(clickedButton);
 
-            // Determine the tab to navigate based on the task
             int tabIndex = GetTabIndexForTask(task);
 
-            // Set the selected tab
+       
             MenuTabs.SelectedIndex = tabIndex;
         }
 
         private string GetTaskFromButton(Button button)
         {
-            // Retrieve the task associated with the clicked button
-            // You may need to modify this logic based on how the task information is stored
+        
             StackPanel stackPanel = (StackPanel)button.Content;
             TextBlock taskTextBlock = (TextBlock)stackPanel.Children[0];
             string task = taskTextBlock.Text;
@@ -312,17 +310,25 @@ namespace StudentHousing
 
         private int GetTabIndexForTask(string task)
         {
-            // Map the task to the corresponding tab index
+
             switch (task)
             {
                 case "Cleaning":
+<<<<<<< HEAD
                     return 4; // Tab index 2 corresponds to "Cleaning" tab
+=======
+                    return 3; 
+>>>>>>> 9f3eb86ad59f98ec9f6af91480f6175eff111807
                 case "Trash":
-                    return 1; // Tab index 0 corresponds to "Trash" tab
+                    return 1; 
                 case "Groceries":
+<<<<<<< HEAD
                     return 3; // Tab index 3 corresponds to "Groceries" tab
+=======
+                    return 4; 
+>>>>>>> 9f3eb86ad59f98ec9f6af91480f6175eff111807
                 default:
-                    return 0; // Default to the first tab (index 0)
+                    return 0; 
             }
         }
 
@@ -386,6 +392,7 @@ namespace StudentHousing
 
             foreach (var task in tasksList)
             {
+<<<<<<< HEAD
              
                 if (task.date.DayOfWeek == DayOfWeek.Monday)
                 {
@@ -511,6 +518,63 @@ namespace StudentHousing
                     {
                         SundayTask3.Text = task.taskName;
                         SundayName3.Text = task.firstName + " " + task.lastName;
+=======
+                Grid calendarGrid = (Grid)sender;
+
+                List<(string taskName, DateTime date, string firstName, string lastName)> tasks = calendar.GetTaskDates();
+
+               
+                Dictionary<DayOfWeek, List<string>> taskInfoByDay = new Dictionary<DayOfWeek, List<string>>();
+
+               
+                foreach (DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)))
+                {
+                    taskInfoByDay[day] = new List<string>();
+                }
+
+              
+                foreach (var task in tasks)
+                {
+                    DayOfWeek taskDay = task.date.DayOfWeek;
+                    string taskInfo = task.taskName + Environment.NewLine + " - " + task.firstName + " " + task.lastName;
+
+                    taskInfoByDay[taskDay].Add(taskInfo);
+                }
+
+               
+                int rowOffset = 0; 
+                int columnOffset = 1; 
+                int maxTasksPerDay = 3; 
+
+                foreach (var taskInfo in taskInfoByDay)
+                {
+                    DayOfWeek day = taskInfo.Key;
+                    List<string> tasksForDay = taskInfo.Value;
+
+                 
+                    int row = (int)day + rowOffset;
+                    int column = columnOffset;
+
+                   
+                    for (int i = 0; i < tasksForDay.Count && i < maxTasksPerDay; i++)
+                    {
+                      
+                        TextBlock taskTextBlock = new TextBlock
+                        {
+                            Text = tasksForDay[i],
+                            HorizontalAlignment = HorizontalAlignment.Center,
+                            FontSize = 10,
+                            Margin = new Thickness(0, 0, 0, 0)
+                        };
+
+                    
+                        Grid.SetRow(taskTextBlock, row);
+                        Grid.SetColumn(taskTextBlock, column);
+                        calendarGrid.Children.Add(taskTextBlock);
+
+                       
+                        column += 2;
+>>>>>>> 9f3eb86ad59f98ec9f6af91480f6175eff111807
                     }
                 }
             }

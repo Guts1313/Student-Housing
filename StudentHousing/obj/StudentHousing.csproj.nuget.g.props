@@ -5,11 +5,37 @@
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+<<<<<<< HEAD
     <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\idero\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
+=======
+<<<<<<< HEAD
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\ivaylobakardzhiev\.nuget\packages\</NuGetPackageFolders>
+=======
+<<<<<<< HEAD
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\idero\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
+=======
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\dansil2301\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
+>>>>>>> 6d5118d468cac763c19c1b3d0ca8d915801f8bbf
+>>>>>>> 048d925d25c22f57f77c56f65af94579daace04d
+>>>>>>> 9f3eb86ad59f98ec9f6af91480f6175eff111807
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.5.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <SourceRoot Include="C:\Users\ivaylobakardzhiev\.nuget\packages\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMicrosoft_Xaml_Behaviors_Wpf Condition=" '$(PkgMicrosoft_Xaml_Behaviors_Wpf)' == '' ">C:\Users\ivaylobakardzhiev\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.19</PkgMicrosoft_Xaml_Behaviors_Wpf>
+    <PkgMicrosoft_Web_WebView2 Condition=" '$(PkgMicrosoft_Web_WebView2)' == '' ">C:\Users\ivaylobakardzhiev\.nuget\packages\microsoft.web.webview2\1.0.1462.37</PkgMicrosoft_Web_WebView2>
+    <PkgMahApps_Metro Condition=" '$(PkgMahApps_Metro)' == '' ">C:\Users\ivaylobakardzhiev\.nuget\packages\mahapps.metro\2.4.9</PkgMahApps_Metro>
+    <PkgFirebaseAuthentication_WPF Condition=" '$(PkgFirebaseAuthentication_WPF)' == '' ">C:\Users\ivaylobakardzhiev\.nuget\packages\firebaseauthentication.wpf\4.0.2</PkgFirebaseAuthentication_WPF>
+    <PkgExtended_Wpf_Toolkit Condition=" '$(PkgExtended_Wpf_Toolkit)' == '' ">C:\Users\ivaylobakardzhiev\.nuget\packages\extended.wpf.toolkit\4.5.0</PkgExtended_Wpf_Toolkit>
+=======
+<<<<<<< HEAD
+>>>>>>> 9f3eb86ad59f98ec9f6af91480f6175eff111807
     <SourceRoot Include="C:\Users\idero\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
@@ -19,5 +45,20 @@
     <PkgMahApps_Metro Condition=" '$(PkgMahApps_Metro)' == '' ">C:\Users\idero\.nuget\packages\mahapps.metro\2.4.9</PkgMahApps_Metro>
     <PkgFirebaseAuthentication_WPF Condition=" '$(PkgFirebaseAuthentication_WPF)' == '' ">C:\Users\idero\.nuget\packages\firebaseauthentication.wpf\4.0.2</PkgFirebaseAuthentication_WPF>
     <PkgExtended_Wpf_Toolkit Condition=" '$(PkgExtended_Wpf_Toolkit)' == '' ">C:\Users\idero\.nuget\packages\extended.wpf.toolkit\4.5.0</PkgExtended_Wpf_Toolkit>
+<<<<<<< HEAD
+=======
+=======
+    <SourceRoot Include="C:\Users\dansil2301\.nuget\packages\" />
+    <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMicrosoft_Xaml_Behaviors_Wpf Condition=" '$(PkgMicrosoft_Xaml_Behaviors_Wpf)' == '' ">C:\Users\dansil2301\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.19</PkgMicrosoft_Xaml_Behaviors_Wpf>
+    <PkgMicrosoft_Web_WebView2 Condition=" '$(PkgMicrosoft_Web_WebView2)' == '' ">C:\Users\dansil2301\.nuget\packages\microsoft.web.webview2\1.0.1462.37</PkgMicrosoft_Web_WebView2>
+    <PkgMahApps_Metro Condition=" '$(PkgMahApps_Metro)' == '' ">C:\Users\dansil2301\.nuget\packages\mahapps.metro\2.4.9</PkgMahApps_Metro>
+    <PkgFirebaseAuthentication_WPF Condition=" '$(PkgFirebaseAuthentication_WPF)' == '' ">C:\Users\dansil2301\.nuget\packages\firebaseauthentication.wpf\4.0.2</PkgFirebaseAuthentication_WPF>
+    <PkgExtended_Wpf_Toolkit Condition=" '$(PkgExtended_Wpf_Toolkit)' == '' ">C:\Users\dansil2301\.nuget\packages\extended.wpf.toolkit\4.5.0</PkgExtended_Wpf_Toolkit>
+>>>>>>> 6d5118d468cac763c19c1b3d0ca8d915801f8bbf
+>>>>>>> 048d925d25c22f57f77c56f65af94579daace04d
+>>>>>>> 9f3eb86ad59f98ec9f6af91480f6175eff111807
   </PropertyGroup>
 </Project>
