@@ -316,11 +316,11 @@ namespace StudentHousing
             switch (task)
             {
                 case "Cleaning":
-                    return 3; // Tab index 2 corresponds to "Cleaning" tab
+                    return 4; // Tab index 2 corresponds to "Cleaning" tab
                 case "Trash":
                     return 1; // Tab index 0 corresponds to "Trash" tab
                 case "Groceries":
-                    return 4; // Tab index 3 corresponds to "Groceries" tab
+                    return 3; // Tab index 3 corresponds to "Groceries" tab
                 default:
                     return 0; // Default to the first tab (index 0)
             }
@@ -330,68 +330,195 @@ namespace StudentHousing
 
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Assuming you have a List<(string taskName, DateTime date, string firstName, string lastName)> called "tasksList"
+            // and assuming the buttons and TextBlocks have the names specified in the XAML code
+            List<(string taskName, DateTime date, string firstName, string lastName)> tasksList = calendar.GetTaskDates();
+            // Monday
+            MondayTask1.Text = "";
+            MondayName1.Text = "";
+            MondayTask2.Text = "";
+            MondayName2.Text = "";
+            MondayTask3.Text = "";
+            MondayName3.Text = "";
+            
+            // Tuesday
+            TuesdayTask1.Text = "";
+            TuesdayName1.Text = "";
+            TuesdayTask2.Text = "";
+            TuesdayName2.Text = "";
+            TuesdayTask3.Text = "";
+            TuesdayName3.Text = "";
+
+            // Wednesday
+            WednesdayTask1.Text = "";
+            WednesdayName1.Text = "";
+            WednesdayTask2.Text = "";
+            WednesdayName2.Text = "";
+            WednesdayTask3.Text = "";
+            WednesdayName3.Text = "";
+
+            // Thursday
+            ThursdayTask1.Text = "";
+            ThursdayName1.Text = "";
+            ThursdayTask2.Text = "";
+            ThursdayName2.Text = "";
+            ThursdayTask3.Text = "";
+            ThursdayName3.Text = "";
+
+            // Friday
+            FridayTask1.Text = "";
+            FridayName1.Text = "";
+            FridayTask2.Text = "";
+            FridayName2.Text = "";
+            FridayTask3.Text = "";
+            FridayName3.Text = "";
+
+            // Saturday
+            SaturdayTask1.Text = "";
+            SaturdayName1.Text = "";
+            SaturdayTask2.Text = "";
+            SaturdayName2.Text = "";
+            SaturdayTask3.Text = "";
+            SaturdayName3.Text = "";
+
+            // Assuming your list contains the tasks and you want to display them in the respective TextBlocks
+
+            foreach (var task in tasksList)
             {
-                Grid calendarGrid = (Grid)sender;
-
-                List<(string taskName, DateTime date, string firstName, string lastName)> tasks = calendar.GetTaskDates();
-
-                // Create a dictionary to store task information for each day of the week
-                Dictionary<DayOfWeek, List<string>> taskInfoByDay = new Dictionary<DayOfWeek, List<string>>();
-
-                // Initialize the dictionary with empty lists for each day of the week
-                foreach (DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)))
+             
+                if (task.date.DayOfWeek == DayOfWeek.Monday)
                 {
-                    taskInfoByDay[day] = new List<string>();
-                }
-
-                // Add task information to the dictionary based on the task date
-                foreach (var task in tasks)
-                {
-                    DayOfWeek taskDay = task.date.DayOfWeek;
-                    string taskInfo = task.taskName + Environment.NewLine + " - " + task.firstName + " " + task.lastName;
-
-                    taskInfoByDay[taskDay].Add(taskInfo);
-                }
-
-                // Populate the calendar with the task information
-                int rowOffset = 0; // Adjust this value based on the starting row of the calendar
-                int columnOffset = 1; // Adjust this value based on the starting column of the calendar
-                int maxTasksPerDay = 3; // Maximum number of tasks to display per day
-
-                foreach (var taskInfo in taskInfoByDay)
-                {
-                    DayOfWeek day = taskInfo.Key;
-                    List<string> tasksForDay = taskInfo.Value;
-
-                    // Find the corresponding grid cell for the day
-                    int row = (int)day + rowOffset;
-                    int column = columnOffset;
-
-                    // Iterate over the tasks for the day and display them in the calendar
-                    for (int i = 0; i < tasksForDay.Count && i < maxTasksPerDay; i++)
+                    if (MondayTask1.Text == "")
                     {
-                        // Create the task textblock
-                        TextBlock taskTextBlock = new TextBlock
-                        {
-                            Text = tasksForDay[i],
-                            HorizontalAlignment = HorizontalAlignment.Center,
-                            FontSize = 10,
-                            Margin = new Thickness(0, 0, 0, 0)
-                        };
-
-                        // Add the task textblock to the calendar grid
-                        Grid.SetRow(taskTextBlock, row);
-                        Grid.SetColumn(taskTextBlock, column);
-                        calendarGrid.Children.Add(taskTextBlock);
-
-                        // Increment the column to place the next task textblock
-                        column += 2;
+                        MondayTask1.Text = task.taskName;
+                        MondayName1.Text = task.firstName + " " + task.lastName;
+                    }
+                    else if (MondayTask2.Text == "")
+                    {
+                        MondayTask2.Text = task.taskName;
+                        MondayName2.Text = task.firstName + " " + task.lastName;
+                    }
+                    else if (MondayTask3.Text == "")
+                    {
+                        MondayTask3.Text = task.taskName;
+                        MondayName3.Text = task.firstName + " " + task.lastName;
+                    }
+                }
+                else if (task.date.DayOfWeek == DayOfWeek.Tuesday)
+                {
+                    if (TuesdayTask1.Text == "")
+                    {
+                        TuesdayTask1.Text = task.taskName;
+                        TuesdayName1.Text = task.firstName + " " + task.lastName;
+                    }
+                    else if (TuesdayTask2.Text == "")
+                    {
+                        TuesdayTask2.Text = task.taskName;
+                        TuesdayName2.Text = task.firstName + " " + task.lastName;
+                    }
+                    else if (TuesdayTask3.Text == "")
+                    {
+                        TuesdayTask3.Text = task.taskName;
+                        TuesdayName3.Text = task.firstName + " " + task.lastName;
+                    }
+                }
+                else if (task.date.DayOfWeek == DayOfWeek.Wednesday)
+                {
+                    if (WednesdayTask1.Text == "")
+                    {
+                        WednesdayTask1.Text = task.taskName;
+                        WednesdayName1.Text = task.firstName + " " + task.lastName;
+                    }
+                    else if (WednesdayTask2.Text == "")
+                    {
+                        WednesdayTask2.Text = task.taskName;
+                        WednesdayName2.Text = task.firstName + " " + task.lastName;
+                    }
+                    else if (WednesdayTask3.Text == "")
+                    {
+                        WednesdayTask3.Text = task.taskName;
+                        WednesdayName3.Text = task.firstName + " " + task.lastName;
+                    }
+                }
+                else if (task.date.DayOfWeek == DayOfWeek.Thursday)
+                {
+                    if (ThursdayTask1.Text == "")
+                    {
+                        ThursdayTask1.Text = task.taskName;
+                        ThursdayName1.Text = task.firstName + " " + task.lastName;
+                    }
+                    else if (ThursdayTask2.Text == "")
+                    {
+                        ThursdayTask2.Text = task.taskName;
+                        ThursdayName2.Text = task.firstName + " " + task.lastName;
+                    }
+                    else if (ThursdayTask3.Text == "")
+                    {
+                        ThursdayTask3.Text = task.taskName;
+                        ThursdayName3.Text = task.firstName + " " + task.lastName;
+                    }
+                }
+                else if (task.date.DayOfWeek == DayOfWeek.Friday)
+                {
+                    if (FridayTask1.Text == "")
+                    {
+                        FridayTask1.Text = task.taskName;
+                        FridayName1.Text = task.firstName + " " + task.lastName;
+                    }
+                    else if (FridayTask2.Text == "")
+                    {
+                        FridayTask2.Text = task.taskName;
+                        FridayName2.Text = task.firstName + " " + task.lastName;
+                    }
+                    else if (FridayTask3.Text == "")
+                    {
+                        FridayTask3.Text = task.taskName;
+                        FridayName3.Text = task.firstName + " " + task.lastName;
+                    }
+                }
+                else if (task.date.DayOfWeek == DayOfWeek.Saturday)
+                {
+                    if (SaturdayTask1.Text == "")
+                    {
+                        SaturdayTask1.Text = task.taskName;
+                        SaturdayName1.Text = task.firstName + " " + task.lastName;
+                    }
+                    else if (SaturdayTask2.Text == "")
+                    {
+                        SaturdayTask2.Text = task.taskName;
+                        SaturdayName2.Text = task.firstName + " " + task.lastName;
+                    }
+                    else if (SaturdayTask3.Text == "")
+                    {
+                        SaturdayTask3.Text = task.taskName;
+                        SaturdayName3.Text = task.firstName + " " + task.lastName;
+                    }
+                }
+                else if (task.date.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    if (SundayTask1.Text == "")
+                    {
+                        SundayTask1.Text = task.taskName;
+                        SundayName1.Text = task.firstName + " " + task.lastName;
+                    }
+                    else if (SundayTask2.Text == "")
+                    {
+                        MondayTask2.Text = task.taskName;
+                        MondayName2.Text = task.firstName + " " + task.lastName;
+                    }
+                    else if (SundayTask3.Text == "")
+                    {
+                        SundayTask3.Text = task.taskName;
+                        SundayName3.Text = task.firstName + " " + task.lastName;
                     }
                 }
             }
+        }
 
 
-   
+
+
         private void VoteButtonFor_click(object sender, RoutedEventArgs e)
         {
             if (theCalendar.SelectedDate.HasValue)

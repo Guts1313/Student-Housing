@@ -12,13 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-<<<<<<< HEAD
       "C:\\Users\\idero\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\idero\\.nuget\\packages",
-=======
-      "C:\\Users\\dansil2301\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\dansil2301\\.nuget\\packages",
->>>>>>> 6d5118d468cac763c19c1b3d0ca8d915801f8bbf
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {
