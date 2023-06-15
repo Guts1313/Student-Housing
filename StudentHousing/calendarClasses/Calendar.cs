@@ -10,14 +10,14 @@ namespace StudentHousing
     {
         private TaskQueries queries;
 
-        public List<(string, DateTime, string, string)> GetTaskDates()
+        public List<(string, DateTime, string)> GetTaskDates()
         {
-            List<(string, DateTime, string, string)> taskDates = new List<(string, DateTime, string, string)>();
+            List<(string, DateTime, string)> taskDates = new List<(string, DateTime, string)>();
             queries = new TaskQueries();
             List<User> users = queries.getUsersAssigned();
             foreach (User user in users)
             {
-                taskDates.Add((user.AssignedTasks[0].taskName, user.AssignedTasks[0].endTime, user.FirstName, user.SecondName));
+                taskDates.Add((user.AssignedTasks[0].taskName, user.AssignedTasks[0].endTime, user.Email));
             }
             return taskDates;
         }

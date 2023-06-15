@@ -35,14 +35,13 @@ namespace StudentHousing
         private DispatcherTimer changeTaskTimer;
         private bool flashForTimer = true;
         private Dispatcher uiDispatcher;
-        private List<(string, DateTime, string, string)> taskDates = new List<(string, DateTime, string, string)>();
+      
 
         public MainWindow()
         {
             InitializeComponent();
             calendar = new Calendar();
-            taskDates = calendar.GetTaskDates();
-            
+        
 
             DataContext = this;
             userManager.refreshUsers(); // uncomment if changes happened in user class
@@ -309,7 +308,7 @@ namespace StudentHousing
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
 
-            List<(string taskName, DateTime date, string firstName, string lastName)> tasksList = calendar.GetTaskDates();
+            List<(string taskName, DateTime date, string email)> tasksList = calendar.GetTaskDates();
             // Monday
             MondayTask1.Text = "";
             MondayName1.Text = "";
@@ -368,17 +367,17 @@ namespace StudentHousing
                     if (MondayTask1.Text == "")
                     {
                         MondayTask1.Text = task.taskName;
-                        MondayName1.Text = task.firstName + " " + task.lastName;
+                        MondayName1.Text = task.email;
                     }
                     else if (MondayTask2.Text == "")
                     {
                         MondayTask2.Text = task.taskName;
-                        MondayName2.Text = task.firstName + " " + task.lastName;
+                        MondayName2.Text = task.email;
                     }
                     else if (MondayTask3.Text == "")
                     {
                         MondayTask3.Text = task.taskName;
-                        MondayName3.Text = task.firstName + " " + task.lastName;
+                        MondayName3.Text = task.email;
                     }
                 }
                 else if (task.date.DayOfWeek == DayOfWeek.Tuesday)
@@ -386,17 +385,17 @@ namespace StudentHousing
                     if (TuesdayTask1.Text == "")
                     {
                         TuesdayTask1.Text = task.taskName;
-                        TuesdayName1.Text = task.firstName + " " + task.lastName;
+                        TuesdayName1.Text = task.email;
                     }
                     else if (TuesdayTask2.Text == "")
                     {
                         TuesdayTask2.Text = task.taskName;
-                        TuesdayName2.Text = task.firstName + " " + task.lastName;
+                        TuesdayName2.Text = task.email;
                     }
                     else if (TuesdayTask3.Text == "")
                     {
                         TuesdayTask3.Text = task.taskName;
-                        TuesdayName3.Text = task.firstName + " " + task.lastName;
+                        TuesdayName3.Text = task.email;
                     }
                 }
                 else if (task.date.DayOfWeek == DayOfWeek.Wednesday)
@@ -404,17 +403,17 @@ namespace StudentHousing
                     if (WednesdayTask1.Text == "")
                     {
                         WednesdayTask1.Text = task.taskName;
-                        WednesdayName1.Text = task.firstName + " " + task.lastName;
+                        WednesdayName1.Text = task.email;
                     }
                     else if (WednesdayTask2.Text == "")
                     {
                         WednesdayTask2.Text = task.taskName;
-                        WednesdayName2.Text = task.firstName + " " + task.lastName;
+                        WednesdayName2.Text = task.email;
                     }
                     else if (WednesdayTask3.Text == "")
                     {
                         WednesdayTask3.Text = task.taskName;
-                        WednesdayName3.Text = task.firstName + " " + task.lastName;
+                        WednesdayName3.Text = task.email;
                     }
                 }
                 else if (task.date.DayOfWeek == DayOfWeek.Thursday)
@@ -422,17 +421,17 @@ namespace StudentHousing
                     if (ThursdayTask1.Text == "")
                     {
                         ThursdayTask1.Text = task.taskName;
-                        ThursdayName1.Text = task.firstName + " " + task.lastName;
+                        ThursdayName1.Text = task.email;
                     }
                     else if (ThursdayTask2.Text == "")
                     {
                         ThursdayTask2.Text = task.taskName;
-                        ThursdayName2.Text = task.firstName + " " + task.lastName;
+                        ThursdayName2.Text = task.email;
                     }
                     else if (ThursdayTask3.Text == "")
                     {
                         ThursdayTask3.Text = task.taskName;
-                        ThursdayName3.Text = task.firstName + " " + task.lastName;
+                        ThursdayName3.Text = task.email;
                     }
                 }
                 else if (task.date.DayOfWeek == DayOfWeek.Friday)
@@ -440,17 +439,17 @@ namespace StudentHousing
                     if (FridayTask1.Text == "")
                     {
                         FridayTask1.Text = task.taskName;
-                        FridayName1.Text = task.firstName + " " + task.lastName;
+                        FridayName1.Text = task.email;
                     }
                     else if (FridayTask2.Text == "")
                     {
                         FridayTask2.Text = task.taskName;
-                        FridayName2.Text = task.firstName + " " + task.lastName;
+                        FridayName2.Text = task.email;
                     }
                     else if (FridayTask3.Text == "")
                     {
                         FridayTask3.Text = task.taskName;
-                        FridayName3.Text = task.firstName + " " + task.lastName;
+                        FridayName3.Text = task.email;
                     }
                 }
                 else if (task.date.DayOfWeek == DayOfWeek.Saturday)
@@ -458,17 +457,17 @@ namespace StudentHousing
                     if (SaturdayTask1.Text == "")
                     {
                         SaturdayTask1.Text = task.taskName;
-                        SaturdayName1.Text = task.firstName + " " + task.lastName;
+                        SaturdayName1.Text = task.email;
                     }
                     else if (SaturdayTask2.Text == "")
                     {
                         SaturdayTask2.Text = task.taskName;
-                        SaturdayName2.Text = task.firstName + " " + task.lastName;
+                        SaturdayName2.Text = task.email;
                     }
                     else if (SaturdayTask3.Text == "")
                     {
                         SaturdayTask3.Text = task.taskName;
-                        SaturdayName3.Text = task.firstName + " " + task.lastName;
+                        SaturdayName3.Text = task.email;
                     }
                 }
                 else if (task.date.DayOfWeek == DayOfWeek.Sunday)
@@ -476,17 +475,17 @@ namespace StudentHousing
                     if (SundayTask1.Text == "")
                     {
                         SundayTask1.Text = task.taskName;
-                        SundayName1.Text = task.firstName + " " + task.lastName;
+                        SundayName1.Text = task.email;
                     }
                     else if (SundayTask2.Text == "")
                     {
                         SundayTask2.Text = task.taskName;
-                        SundayName2.Text = task.firstName + " " + task.lastName;
+                        SundayName2.Text = task.email;
                     }
                     else if (SundayTask3.Text == "")
                     {
                         SundayTask3.Text = task.taskName;
-                        SundayName3.Text = task.firstName + " " + task.lastName;
+                        SundayName3.Text = task.email;
 
                     }
                 }
