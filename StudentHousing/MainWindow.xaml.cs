@@ -262,28 +262,7 @@ namespace StudentHousing
 
       
 
-        private void SetDayBackground(Button button, string task)
-        {
-            // Set the background color of the button based on the task
-            if (task.ToLower() == "garbage")
-            {
-                Color color = Color.FromArgb(125, 0, 255, 0); // RGB values for green
-                button.Background = new SolidColorBrush(color);
-           
-            }
-            else if (task.ToLower() == "cleaning")
-            {
-                Color color = Color.FromArgb(125, 0, 0, 200); // RGB values for blue
-                button.Background = new SolidColorBrush(color);
-               
-            }
-            else if (task.ToLower() == "groceries")
-            {
-                Color color = Color.FromArgb(125, 255, 255, 0); // RGB values for yellow
-                button.Background = new SolidColorBrush(color);
-                
-            }
-        }
+        
 
 
 
@@ -314,19 +293,11 @@ namespace StudentHousing
             switch (task)
             {
                 case "Cleaning":
-<<<<<<< HEAD
-                    return 4; // Tab index 2 corresponds to "Cleaning" tab
-=======
-                    return 3; 
->>>>>>> 9f3eb86ad59f98ec9f6af91480f6175eff111807
+                    return 4; 
                 case "Trash":
                     return 1; 
                 case "Groceries":
-<<<<<<< HEAD
-                    return 3; // Tab index 3 corresponds to "Groceries" tab
-=======
-                    return 4; 
->>>>>>> 9f3eb86ad59f98ec9f6af91480f6175eff111807
+                    return 3;
                 default:
                     return 0; 
             }
@@ -337,8 +308,7 @@ namespace StudentHousing
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            // Assuming you have a List<(string taskName, DateTime date, string firstName, string lastName)> called "tasksList"
-            // and assuming the buttons and TextBlocks have the names specified in the XAML code
+
             List<(string taskName, DateTime date, string firstName, string lastName)> tasksList = calendar.GetTaskDates();
             // Monday
             MondayTask1.Text = "";
@@ -388,11 +358,10 @@ namespace StudentHousing
             SaturdayTask3.Text = "";
             SaturdayName3.Text = "";
 
-            // Assuming your list contains the tasks and you want to display them in the respective TextBlocks
 
             foreach (var task in tasksList)
             {
-<<<<<<< HEAD
+
              
                 if (task.date.DayOfWeek == DayOfWeek.Monday)
                 {
@@ -511,70 +480,14 @@ namespace StudentHousing
                     }
                     else if (SundayTask2.Text == "")
                     {
-                        MondayTask2.Text = task.taskName;
-                        MondayName2.Text = task.firstName + " " + task.lastName;
+                        SundayTask2.Text = task.taskName;
+                        SundayName2.Text = task.firstName + " " + task.lastName;
                     }
                     else if (SundayTask3.Text == "")
                     {
                         SundayTask3.Text = task.taskName;
                         SundayName3.Text = task.firstName + " " + task.lastName;
-=======
-                Grid calendarGrid = (Grid)sender;
 
-                List<(string taskName, DateTime date, string firstName, string lastName)> tasks = calendar.GetTaskDates();
-
-               
-                Dictionary<DayOfWeek, List<string>> taskInfoByDay = new Dictionary<DayOfWeek, List<string>>();
-
-               
-                foreach (DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)))
-                {
-                    taskInfoByDay[day] = new List<string>();
-                }
-
-              
-                foreach (var task in tasks)
-                {
-                    DayOfWeek taskDay = task.date.DayOfWeek;
-                    string taskInfo = task.taskName + Environment.NewLine + " - " + task.firstName + " " + task.lastName;
-
-                    taskInfoByDay[taskDay].Add(taskInfo);
-                }
-
-               
-                int rowOffset = 0; 
-                int columnOffset = 1; 
-                int maxTasksPerDay = 3; 
-
-                foreach (var taskInfo in taskInfoByDay)
-                {
-                    DayOfWeek day = taskInfo.Key;
-                    List<string> tasksForDay = taskInfo.Value;
-
-                 
-                    int row = (int)day + rowOffset;
-                    int column = columnOffset;
-
-                   
-                    for (int i = 0; i < tasksForDay.Count && i < maxTasksPerDay; i++)
-                    {
-                      
-                        TextBlock taskTextBlock = new TextBlock
-                        {
-                            Text = tasksForDay[i],
-                            HorizontalAlignment = HorizontalAlignment.Center,
-                            FontSize = 10,
-                            Margin = new Thickness(0, 0, 0, 0)
-                        };
-
-                    
-                        Grid.SetRow(taskTextBlock, row);
-                        Grid.SetColumn(taskTextBlock, column);
-                        calendarGrid.Children.Add(taskTextBlock);
-
-                       
-                        column += 2;
->>>>>>> 9f3eb86ad59f98ec9f6af91480f6175eff111807
                     }
                 }
             }
