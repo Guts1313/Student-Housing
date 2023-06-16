@@ -182,7 +182,7 @@ namespace StudentHousing
                 user = new User(userinf.Uid, userinf.FirstName, userinf.LastName, userinf.Email);
                 userManager.AddUser(user);
                 
-                if (user.IsAdmin) uiDispatcher.Invoke(() => {  showAdmibTab(); }); // should be called before initializing the window (or won't be possible to change)
+                //if (user.IsAdmin) uiDispatcher.Invoke(() => {  showAdmibTab(); }); // should be called before initializing the window (or won't be possible to change)
 
                 uiDispatcher.Invoke(() => 
                 {

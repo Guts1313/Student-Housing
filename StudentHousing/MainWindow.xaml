@@ -413,7 +413,7 @@
             <TabItem Header="Account">
                 <Grid>
                     <Button Height="30" Width="70" Content="Sign out" x:Name="signOut"
-                            Margin="580,-335,0,0" FontSize="15" Click="exit_Click">
+                            Margin="540,-335,0,0" FontSize="15" Click="exit_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border x:Name="buttonBorder" Background="#F08080" BorderThickness="1" CornerRadius="10">

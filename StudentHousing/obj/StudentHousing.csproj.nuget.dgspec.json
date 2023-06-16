@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\StudentHousing.csproj": {}
+    "C:\\Users\\dansil2301\\source\\repos\\student-housing\\StudentHousing\\StudentHousing.csproj": {}
   },
   "projects": {
-    "C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\StudentHousing.csproj": {
+    "C:\\Users\\dansil2301\\source\\repos\\student-housing\\StudentHousing\\StudentHousing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\StudentHousing.csproj",
+        "projectUniqueName": "C:\\Users\\dansil2301\\source\\repos\\student-housing\\StudentHousing\\StudentHousing.csproj",
         "projectName": "StudentHousing",
-        "projectPath": "C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\StudentHousing.csproj",
-        "packagesPath": "C:\\Users\\idero\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\idero\\OneDrive\\Документы\\Student Housing Git\\student-housing\\StudentHousing\\obj\\",
+        "projectPath": "C:\\Users\\dansil2301\\source\\repos\\student-housing\\StudentHousing\\StudentHousing.csproj",
+        "packagesPath": "C:\\Users\\dansil2301\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dansil2301\\source\\repos\\student-housing\\StudentHousing\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\idero\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dansil2301\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -81,7 +81,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
