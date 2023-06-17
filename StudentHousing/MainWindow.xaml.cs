@@ -35,16 +35,20 @@ namespace StudentHousing
         private DispatcherTimer changeTaskTimer;
         private bool flashForTimer = true;
         private Dispatcher uiDispatcher;
-        private List<(string, DateTime, string, string)> taskDates = new List<(string, DateTime, string, string)>();
+      
 
         public MainWindow()
         {
             InitializeComponent();
             ShowParties();
             calendar = new Calendar();
+<<<<<<< HEAD
             taskDates = calendar.GetTaskDates();
 
 
+=======
+        
+>>>>>>> da2493ed0e3dbfec67a4fdc6e77a4fc26c7f7c84
 
             DataContext = this;
             userManager.refreshUsers(); // uncomment if changes happened in user class
@@ -264,6 +268,7 @@ namespace StudentHousing
 
 
 
+<<<<<<< HEAD
         private void SetDayBackground(Button button, string task)
         {
             // Set the background color of the button based on the task
@@ -286,6 +291,9 @@ namespace StudentHousing
 
             }
         }
+=======
+        
+>>>>>>> da2493ed0e3dbfec67a4fdc6e77a4fc26c7f7c84
 
 
 
@@ -316,11 +324,19 @@ namespace StudentHousing
             switch (task)
             {
                 case "Cleaning":
+<<<<<<< HEAD
                     return 3;
+=======
+                    return 4; 
+>>>>>>> da2493ed0e3dbfec67a4fdc6e77a4fc26c7f7c84
                 case "Trash":
                     return 1;
                 case "Groceries":
+<<<<<<< HEAD
                     return 4;
+=======
+                    return 3;
+>>>>>>> da2493ed0e3dbfec67a4fdc6e77a4fc26c7f7c84
                 default:
                     return 0;
             }
@@ -331,6 +347,7 @@ namespace StudentHousing
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
+<<<<<<< HEAD
             Grid calendarGrid = (Grid)sender;
 
             List<(string taskName, DateTime date, string firstName, string lastName)> tasks = calendar.GetTaskDates();
@@ -342,9 +359,197 @@ namespace StudentHousing
             foreach (DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)))
             {
                 taskInfoByDay[day] = new List<string>();
+=======
+
+            List<(string taskName, DateTime date, string email)> tasksList = calendar.GetTaskDates();
+            // Monday
+            MondayTask1.Text = "";
+            MondayName1.Text = "";
+            MondayTask2.Text = "";
+            MondayName2.Text = "";
+            MondayTask3.Text = "";
+            MondayName3.Text = "";
+            
+            // Tuesday
+            TuesdayTask1.Text = "";
+            TuesdayName1.Text = "";
+            TuesdayTask2.Text = "";
+            TuesdayName2.Text = "";
+            TuesdayTask3.Text = "";
+            TuesdayName3.Text = "";
+
+            // Wednesday
+            WednesdayTask1.Text = "";
+            WednesdayName1.Text = "";
+            WednesdayTask2.Text = "";
+            WednesdayName2.Text = "";
+            WednesdayTask3.Text = "";
+            WednesdayName3.Text = "";
+
+            // Thursday
+            ThursdayTask1.Text = "";
+            ThursdayName1.Text = "";
+            ThursdayTask2.Text = "";
+            ThursdayName2.Text = "";
+            ThursdayTask3.Text = "";
+            ThursdayName3.Text = "";
+
+            // Friday
+            FridayTask1.Text = "";
+            FridayName1.Text = "";
+            FridayTask2.Text = "";
+            FridayName2.Text = "";
+            FridayTask3.Text = "";
+            FridayName3.Text = "";
+
+            // Saturday
+            SaturdayTask1.Text = "";
+            SaturdayName1.Text = "";
+            SaturdayTask2.Text = "";
+            SaturdayName2.Text = "";
+            SaturdayTask3.Text = "";
+            SaturdayName3.Text = "";
+
+
+            foreach (var task in tasksList)
+            {
+
+             
+                if (task.date.DayOfWeek == DayOfWeek.Monday)
+                {
+                    if (MondayTask1.Text == "")
+                    {
+                        MondayTask1.Text = task.taskName;
+                        MondayName1.Text = task.email;
+                    }
+                    else if (MondayTask2.Text == "")
+                    {
+                        MondayTask2.Text = task.taskName;
+                        MondayName2.Text = task.email;
+                    }
+                    else if (MondayTask3.Text == "")
+                    {
+                        MondayTask3.Text = task.taskName;
+                        MondayName3.Text = task.email;
+                    }
+                }
+                else if (task.date.DayOfWeek == DayOfWeek.Tuesday)
+                {
+                    if (TuesdayTask1.Text == "")
+                    {
+                        TuesdayTask1.Text = task.taskName;
+                        TuesdayName1.Text = task.email;
+                    }
+                    else if (TuesdayTask2.Text == "")
+                    {
+                        TuesdayTask2.Text = task.taskName;
+                        TuesdayName2.Text = task.email;
+                    }
+                    else if (TuesdayTask3.Text == "")
+                    {
+                        TuesdayTask3.Text = task.taskName;
+                        TuesdayName3.Text = task.email;
+                    }
+                }
+                else if (task.date.DayOfWeek == DayOfWeek.Wednesday)
+                {
+                    if (WednesdayTask1.Text == "")
+                    {
+                        WednesdayTask1.Text = task.taskName;
+                        WednesdayName1.Text = task.email;
+                    }
+                    else if (WednesdayTask2.Text == "")
+                    {
+                        WednesdayTask2.Text = task.taskName;
+                        WednesdayName2.Text = task.email;
+                    }
+                    else if (WednesdayTask3.Text == "")
+                    {
+                        WednesdayTask3.Text = task.taskName;
+                        WednesdayName3.Text = task.email;
+                    }
+                }
+                else if (task.date.DayOfWeek == DayOfWeek.Thursday)
+                {
+                    if (ThursdayTask1.Text == "")
+                    {
+                        ThursdayTask1.Text = task.taskName;
+                        ThursdayName1.Text = task.email;
+                    }
+                    else if (ThursdayTask2.Text == "")
+                    {
+                        ThursdayTask2.Text = task.taskName;
+                        ThursdayName2.Text = task.email;
+                    }
+                    else if (ThursdayTask3.Text == "")
+                    {
+                        ThursdayTask3.Text = task.taskName;
+                        ThursdayName3.Text = task.email;
+                    }
+                }
+                else if (task.date.DayOfWeek == DayOfWeek.Friday)
+                {
+                    if (FridayTask1.Text == "")
+                    {
+                        FridayTask1.Text = task.taskName;
+                        FridayName1.Text = task.email;
+                    }
+                    else if (FridayTask2.Text == "")
+                    {
+                        FridayTask2.Text = task.taskName;
+                        FridayName2.Text = task.email;
+                    }
+                    else if (FridayTask3.Text == "")
+                    {
+                        FridayTask3.Text = task.taskName;
+                        FridayName3.Text = task.email;
+                    }
+                }
+                else if (task.date.DayOfWeek == DayOfWeek.Saturday)
+                {
+                    if (SaturdayTask1.Text == "")
+                    {
+                        SaturdayTask1.Text = task.taskName;
+                        SaturdayName1.Text = task.email;
+                    }
+                    else if (SaturdayTask2.Text == "")
+                    {
+                        SaturdayTask2.Text = task.taskName;
+                        SaturdayName2.Text = task.email;
+                    }
+                    else if (SaturdayTask3.Text == "")
+                    {
+                        SaturdayTask3.Text = task.taskName;
+                        SaturdayName3.Text = task.email;
+                    }
+                }
+                else if (task.date.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    if (SundayTask1.Text == "")
+                    {
+                        SundayTask1.Text = task.taskName;
+                        SundayName1.Text = task.email;
+                    }
+                    else if (SundayTask2.Text == "")
+                    {
+                        SundayTask2.Text = task.taskName;
+                        SundayName2.Text = task.email;
+                    }
+                    else if (SundayTask3.Text == "")
+                    {
+                        SundayTask3.Text = task.taskName;
+                        SundayName3.Text = task.email;
+
+                    }
+                }
+>>>>>>> da2493ed0e3dbfec67a4fdc6e77a4fc26c7f7c84
             }
+        }
 
 
+
+
+<<<<<<< HEAD
             foreach (var task in tasks)
             {
                 DayOfWeek taskDay = task.date.DayOfWeek;
@@ -392,6 +597,8 @@ namespace StudentHousing
 
 
 
+=======
+>>>>>>> da2493ed0e3dbfec67a4fdc6e77a4fc26c7f7c84
         private void VoteButtonFor_click(object sender, RoutedEventArgs e)
         {
             if (theCalendar.SelectedDate.HasValue)

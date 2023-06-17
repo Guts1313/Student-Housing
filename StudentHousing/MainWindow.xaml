@@ -528,7 +528,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Calendar">
+            <TabItem Header="Task Schedule">
                 <Grid x:Name="calendarGrid" Margin="0,10,0,-4" Width="819" Loaded="Grid_Loaded">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="55"/>
@@ -556,30 +556,30 @@
 
                     <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="MondayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="MondayTask1" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="MondayName1" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="MondayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="MondayTask1" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="MondayName1" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
                     <StackPanel Grid.Row="0" Grid.Column="3" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="MondayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="MondayTask2" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="MondayName2" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="MondayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="MondayTask2" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="MondayName2" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
                     <StackPanel Grid.Row="0" Grid.Column="5" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="MondayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="MondayTask3" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="MondayName3" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="MondayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="MondayTask3" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="MondayName3" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
@@ -592,30 +592,30 @@
 
                     <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="TuesdayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="TuesdayTask1" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="TuesdayName1" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="TuesdayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="TuesdayTask1" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="TuesdayName1" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
                     <StackPanel Grid.Row="1" Grid.Column="3" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="TuesdayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="TuesdayTask2" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="TuesdayName2" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="TuesdayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-59,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="TuesdayTask2" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="TuesdayName2" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
                     <StackPanel Grid.Row="1" Grid.Column="5" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="TuesdayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="TuesdayTask3" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="TuesdayName3" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="TuesdayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="TuesdayTask3" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="TuesdayName3" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
@@ -628,30 +628,30 @@
 
                     <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="WednesdayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="WednesdayTask1" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="WednesdayName1" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="WednesdayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="WednesdayTask1" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="WednesdayName1" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
                     <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="WednesdayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="WednesdayTask2" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="WednesdayName2" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="WednesdayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="WednesdayTask2" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="WednesdayName2" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
                     <StackPanel Grid.Row="2" Grid.Column="5" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="WednesdayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="WednesdayTask3" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="WednesdayName3" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="WednesdayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="WednesdayTask3" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="WednesdayName3" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
@@ -664,30 +664,30 @@
 
                     <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="ThursdayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="ThursdayTask1" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="ThursdayName1" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="ThursdayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="ThursdayTask1" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="ThursdayName1" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
                     <StackPanel Grid.Row="3" Grid.Column="3" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="ThursdayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="ThursdayTask2" HorizontalAlignment="Center" FontSize="10" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="ThursdayName2" HorizontalAlignment="Center" FontSize="10" Margin="10,0,0,0"/>
+                            <Button x:Name="ThursdayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="ThursdayTask2" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="ThursdayName2" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
                     <StackPanel Grid.Row="3" Grid.Column="5" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="ThursdayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="ThursdayTask3" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="ThursdayName3" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="ThursdayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="ThursdayTask3" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="ThursdayName3" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
@@ -700,30 +700,30 @@
 
                     <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="FridayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="FridayTask1" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="FridayName1" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="FridayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="FridayTask1" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="FridayName1" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
                     <StackPanel Grid.Row="4" Grid.Column="3" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="FridayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="FridayTask2" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="FridayName2" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="FridayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="FridayTask2" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="FridayName2" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
                     <StackPanel Grid.Row="4" Grid.Column="5" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="FridayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="FridayTask3" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="FridayName3" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="FridayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="FridayTask3" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="FridayName3" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
@@ -736,30 +736,30 @@
 
                     <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="SaturdayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="SaturdayTask1" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="SaturdayName1" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="SaturdayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="SaturdayTask1" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="SaturdayName1" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
                     <StackPanel Grid.Row="5" Grid.Column="3" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="SaturdayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="SaturdayTask2" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="SaturdayName2" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="SaturdayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="SaturdayTask2" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="SaturdayName2" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
                     <StackPanel Grid.Row="5" Grid.Column="5" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="SaturdayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="SaturdayTask3" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="SaturdayName3" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="SaturdayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="SaturdayTask3" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="SaturdayName3" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
@@ -772,30 +772,30 @@
 
                     <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="SundayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="SundayTask1" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="SundayName1" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="SundayButton1" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="SundayTask1" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="SundayName1" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
                     <StackPanel Grid.Row="6" Grid.Column="3" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="SundayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="SundayTask2" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="SundayName2" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="SundayButton2" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="SundayTask2" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="SundayName2" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
                     </StackPanel>
                     <StackPanel Grid.Row="6" Grid.Column="5" Orientation="Vertical" Margin="0,0,92,0" Grid.ColumnSpan="2">
                         <Grid>
-                            <Button x:Name="SundayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="SundayTask3" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,0"/>
-                                    <TextBlock x:Name="SundayName3" HorizontalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                            <Button x:Name="SundayButton3" BorderBrush="Black" BorderThickness="1" Click="DayButton_Click" Height="40" Margin="0,0,-60,0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock x:Name="SundayTask3" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
+                                    <TextBlock x:Name="SundayName3" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,0"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
@@ -1090,7 +1090,7 @@
 
         </TabControl>
         <Border BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="1" Margin="0,50,0,0" VerticalAlignment="Top" Width="800"/>
-        <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="475" Margin="59,1,0,0" VerticalAlignment="Top" Width="1" Grid.RowSpan="2" Grid.Column="1"/>
+        <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="475" Margin="83,1,0,0" VerticalAlignment="Top" Width="1" Grid.RowSpan="2" Grid.Column="1"/>
 
     </Grid>
 </Window>
