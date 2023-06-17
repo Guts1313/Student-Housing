@@ -12,22 +12,9 @@
       }
     ],
     "additionalProbingPaths": [
-<<<<<<< HEAD
       "C:\\Users\\dansil2301\\.dotnet\\store\\|arch|\\|tfm|",
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-      "C:\\Users\\ivaylobakardzhiev\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\ivaylobakardzhiev\\.nuget\\packages"
-=======
-      "C:\\Users\\idero\\.dotnet\\store\\|arch|\\|tfm|",
->>>>>>> 8590894940f35d3774487809056ab2d1c1a01fd1
-      "C:\\Users\\idero\\.nuget\\packages",
-=======
       "C:\\Users\\dansil2301\\.nuget\\packages",
->>>>>>> Stashed changes
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
->>>>>>> da2493ed0e3dbfec67a4fdc6e77a4fc26c7f7c84
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

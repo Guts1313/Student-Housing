@@ -463,10 +463,12 @@
                                    Margin="7,0,0,0"/>
                     </Border>
 
+                    <!--
                     <Controls:MetroProgressBar
-                        Value="5"
-                        Background="#FFE9E9"
-                        Foreground="#26FFE5" Margin="50,303,50,50"/>
+                              Value="5"
+                              Background="#FFE9E9"
+                              Foreground="#26FFE5" Margin="50,303,50,50"/>
+                    -->
 
                 </Grid>
             </TabItem>
@@ -998,8 +1000,8 @@
                     </Grid.RowDefinitions>
 
 
-                    <Viewbox Stretch="Fill" Margin="0,0,0,77" Width="556">
-                        <Calendar x:Name="theCalendar" Style="{DynamicResource CalendarStyle1}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="262" Background="#FFC1ABFF" Height="187" RenderTransformOrigin="0.5,0.5">
+                    <Viewbox Stretch="Fill" Margin="0,0,160,77" Width="556">
+                        <Calendar x:Name="theCalendar" Style="{DynamicResource CalendarStyle1}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="262" Background="#FFC1ABFF" Height="187" RenderTransformOrigin="0.5,0.5">
                             <Calendar.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
@@ -1065,7 +1067,9 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <ListBox x:Name="partyListBox" Width="200" Height="200" Margin="451,63,19,140">
+                    
+                    <ListBox x:Name="partyListBox" Width="145" Height="200" Margin="0,0,5,0"
+                             HorizontalAlignment="Right">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding}" />

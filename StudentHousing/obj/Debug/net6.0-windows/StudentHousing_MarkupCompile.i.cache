@@ -4,44 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
-C:\Users\dansil2301\source\repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\
-=======
-<<<<<<< HEAD
-C:\Users\ivaylobakardzhiev\Desktop\student-housing\StudentHousing\obj\Debug\net6.0-windows\
-=======
-C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\obj\Debug\net6.0-windows\
->>>>>>> da2493ed0e3dbfec67a4fdc6e77a4fc26c7f7c84
->>>>>>> 8590894940f35d3774487809056ab2d1c1a01fd1
+C:\Users\dansil2301\Source\Repos\student-housing\StudentHousing\obj\Debug\net6.0-windows\
 StudentHousing
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-<<<<<<< HEAD
-C:\Users\dansil2301\source\repos\student-housing\StudentHousing\App.xaml
-=======
-<<<<<<< HEAD
-C:\Users\ivaylobakardzhiev\Desktop\student-housing\StudentHousing\App.xaml
-2-1011139437
-
-23-809485404
-20971782347
-Authentication\LoginPage.xaml;MainWindow.xaml;
-
-False
-=======
-C:\Users\idero\OneDrive\Документы\Student Housing Git\student-housing\StudentHousing\App.xaml
->>>>>>> 8590894940f35d3774487809056ab2d1c1a01fd1
+C:\Users\dansil2301\Source\Repos\student-housing\StudentHousing\App.xaml
 2-1011139437
 
 23-809485404
 209-1282717434
 Authentication\LoginPage.xaml;MainWindow.xaml;
 
-<<<<<<< HEAD
 False
-=======
-True
->>>>>>> da2493ed0e3dbfec67a4fdc6e77a4fc26c7f7c84
->>>>>>> 8590894940f35d3774487809056ab2d1c1a01fd1
 

@@ -42,13 +42,8 @@ namespace StudentHousing
             InitializeComponent();
             ShowParties();
             calendar = new Calendar();
-<<<<<<< HEAD
-            taskDates = calendar.GetTaskDates();
+            //taskDates = calendar.GetTaskDates();
 
-
-=======
-        
->>>>>>> da2493ed0e3dbfec67a4fdc6e77a4fc26c7f7c84
 
             DataContext = this;
             userManager.refreshUsers(); // uncomment if changes happened in user class
@@ -188,13 +183,8 @@ namespace StudentHousing
                 var userinf = e.User.Info;
                 user = new User(userinf.Uid, userinf.FirstName, userinf.LastName, userinf.Email);
                 userManager.AddUser(user);
-<<<<<<< HEAD
                 
                 //if (user.IsAdmin) uiDispatcher.Invoke(() => {  showAdmibTab(); }); // should be called before initializing the window (or won't be possible to change)
-=======
->>>>>>> 8590894940f35d3774487809056ab2d1c1a01fd1
-
-                if (user.IsAdmin) uiDispatcher.Invoke(() => { showAdmibTab(); }); // should be called before initializing the window (or won't be possible to change)
 
                 uiDispatcher.Invoke(() =>
                 {
@@ -258,9 +248,20 @@ namespace StudentHousing
         // shows the name of the selected tab
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            TabItem selectedItem = e.AddedItems[0] as TabItem;
-            string selectedHeader = selectedItem.Header.ToString();
-            TabName.Text = selectedHeader;
+            try
+            {
+                TabItem selectedItem = e.AddedItems[0] as TabItem;
+
+                if (selectedItem != null)
+                {
+                    string selectedHeader = selectedItem.Header.ToString();
+                    TabName.Text = selectedHeader;
+                }
+            }
+            catch
+            {
+                // just quick fix(
+            }
         }
 
         // prevents default action of the listbox (it always wants to do smth when item is clicked)
@@ -272,8 +273,6 @@ namespace StudentHousing
 
 
 
-
-<<<<<<< HEAD
         private void SetDayBackground(Button button, string task)
         {
             // Set the background color of the button based on the task
@@ -296,9 +295,6 @@ namespace StudentHousing
 
             }
         }
-=======
-        
->>>>>>> da2493ed0e3dbfec67a4fdc6e77a4fc26c7f7c84
 
 
 
@@ -329,19 +325,11 @@ namespace StudentHousing
             switch (task)
             {
                 case "Cleaning":
-<<<<<<< HEAD
-                    return 3;
-=======
-                    return 4; 
->>>>>>> da2493ed0e3dbfec67a4fdc6e77a4fc26c7f7c84
+                    return 4; // 3
                 case "Trash":
                     return 1;
                 case "Groceries":
-<<<<<<< HEAD
-                    return 4;
-=======
-                    return 3;
->>>>>>> da2493ed0e3dbfec67a4fdc6e77a4fc26c7f7c84
+                    return 3; // 4
                 default:
                     return 0;
             }
@@ -352,20 +340,6 @@ namespace StudentHousing
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-<<<<<<< HEAD
-            Grid calendarGrid = (Grid)sender;
-
-            List<(string taskName, DateTime date, string firstName, string lastName)> tasks = calendar.GetTaskDates();
-
-
-            Dictionary<DayOfWeek, List<string>> taskInfoByDay = new Dictionary<DayOfWeek, List<string>>();
-
-
-            foreach (DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)))
-            {
-                taskInfoByDay[day] = new List<string>();
-=======
-
             List<(string taskName, DateTime date, string email)> tasksList = calendar.GetTaskDates();
             // Monday
             MondayTask1.Text = "";
@@ -547,63 +521,11 @@ namespace StudentHousing
 
                     }
                 }
->>>>>>> da2493ed0e3dbfec67a4fdc6e77a4fc26c7f7c84
             }
         }
 
 
 
-
-<<<<<<< HEAD
-            foreach (var task in tasks)
-            {
-                DayOfWeek taskDay = task.date.DayOfWeek;
-                string taskInfo = task.taskName + Environment.NewLine + " - " + task.firstName + " " + task.lastName;
-
-                taskInfoByDay[taskDay].Add(taskInfo);
-            }
-
-
-            int rowOffset = 0;
-            int columnOffset = 1;
-            int maxTasksPerDay = 3;
-
-            foreach (var taskInfo in taskInfoByDay)
-            {
-                DayOfWeek day = taskInfo.Key;
-                List<string> tasksForDay = taskInfo.Value;
-
-
-                int row = (int)day + rowOffset;
-                int column = columnOffset;
-
-
-                for (int i = 0; i < tasksForDay.Count && i < maxTasksPerDay; i++)
-                {
-
-                    TextBlock taskTextBlock = new TextBlock
-                    {
-                        Text = tasksForDay[i],
-                        HorizontalAlignment = HorizontalAlignment.Center,
-                        FontSize = 10,
-                        Margin = new Thickness(0, 0, 0, 0)
-                    };
-
-
-                    Grid.SetRow(taskTextBlock, row);
-                    Grid.SetColumn(taskTextBlock, column);
-                    calendarGrid.Children.Add(taskTextBlock);
-
-
-                    column += 2;
-                }
-            }
-        }
-
-
-
-=======
->>>>>>> da2493ed0e3dbfec67a4fdc6e77a4fc26c7f7c84
         private void VoteButtonFor_click(object sender, RoutedEventArgs e)
         {
             if (theCalendar.SelectedDate.HasValue)
@@ -738,11 +660,12 @@ namespace StudentHousing
 
         private void ShowParties()
         {
-            List<Party> parties = partyManager.GetPartyList();
             partyListBox.Items.Clear();
+            List<Party> parties = partyManager.GetPartyList();
+            MessageBox.Show(parties.Count.ToString());
             foreach (Party party in parties)
             {
-                partyListBox.Items.Add($"{party.PartyDay}");
+                partyListBox.Items.Add($"{party.PartyDay.ToString("dd.MM.yyyy")}");
             }
         }
     }
