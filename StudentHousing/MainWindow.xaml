@@ -1065,6 +1065,14 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
+                    <ListBox x:Name="partyListBox" Width="200" Height="200" Margin="451,63,19,140">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" />
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
 
 
 
@@ -1076,6 +1084,7 @@
 
                 </Grid>
             </TabItem>
+            <TextBox TextWrapping="Wrap" Text="TextBox" Width="120"/>
 
 
 

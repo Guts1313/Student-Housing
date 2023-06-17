@@ -1,5 +1,5 @@
 ﻿StudentHousing
-
+1.0.0.0
 
 winexe
 C#
@@ -12,7 +12,7 @@ TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\ivaylobakardzhiev\Desktop\student-housing\StudentHousing\App.xaml
 2-1011139437
 
-21-1326804601
+23-809485404
 20971782347
 Authentication\LoginPage.xaml;MainWindow.xaml;
 

@@ -40,9 +40,11 @@ namespace StudentHousing
         public MainWindow()
         {
             InitializeComponent();
+            ShowParties();
             calendar = new Calendar();
             taskDates = calendar.GetTaskDates();
-            
+
+
 
             DataContext = this;
             userManager.refreshUsers(); // uncomment if changes happened in user class
@@ -55,7 +57,7 @@ namespace StudentHousing
             { uiDispatcher = Dispatcher; }
         }
 
-      
+
         private void addToCollectionAndShow()
         {
             foreach (var item in groceries.GetGroceriesStr())
@@ -64,14 +66,14 @@ namespace StudentHousing
             }
         }
 
-        public void showTheAssignedUsers() 
+        public void showTheAssignedUsers()
         {
             List<Task> tasks = taskManager.GetAllTasks();
             user = userManager.refeshCurrentUser(user);
 
             foreach (Task task in tasks)
             {
-                
+
                 switch (task.TaskName)
                 {
                     case "Trash":
@@ -84,7 +86,7 @@ namespace StudentHousing
                             garbageAccept.Visibility = Visibility.Hidden;
                             garbageDecline.Visibility = Visibility.Hidden;
                             garbageAcceptedText.Visibility = Visibility.Hidden;
-                            UserNameGarbage.Text = $"Next garbage disposal assigned to, \n{task.AssignedUser.Email}"; 
+                            UserNameGarbage.Text = $"Next garbage disposal assigned to, \n{task.AssignedUser.Email}";
                         }
                         else
                         {
@@ -94,7 +96,7 @@ namespace StudentHousing
                                 garbageDecline.Visibility = Visibility.Visible;
                                 garbageAcceptedText.Visibility = Visibility.Hidden;
                             }
-                            UserNameGarbage.Text = $"Next garbage disposal assigned to, \nYou"; 
+                            UserNameGarbage.Text = $"Next garbage disposal assigned to, \nYou";
                         }
                         TrashDay.Text = $"day: {task.EndTime.Day}";
                         TrashMonth.Text = $"month: {task.EndTime.Month}";
@@ -110,7 +112,7 @@ namespace StudentHousing
                             cleaningAccept.Visibility = Visibility.Hidden;
                             cleaningDecline.Visibility = Visibility.Hidden;
                             cleaningAcceptedText.Visibility = Visibility.Hidden;
-                            UserNameCLeaning.Text = $"Next cleaning is assigned to, \n{task.AssignedUser.Email}"; 
+                            UserNameCLeaning.Text = $"Next cleaning is assigned to, \n{task.AssignedUser.Email}";
                         }
                         else
                         {
@@ -120,7 +122,7 @@ namespace StudentHousing
                                 cleaningDecline.Visibility = Visibility.Visible;
                                 cleaningAcceptedText.Visibility = Visibility.Hidden;
                             }
-                            UserNameCLeaning.Text = $"Next cleaning is assigned to, \nYou"; 
+                            UserNameCLeaning.Text = $"Next cleaning is assigned to, \nYou";
                         }
                         CleaningDay.Text = $"day: {task.EndTime.Day}";
                         CleaningMonth.Text = $"month: {task.EndTime.Month}";
@@ -182,10 +184,10 @@ namespace StudentHousing
                 var userinf = e.User.Info;
                 user = new User(userinf.Uid, userinf.FirstName, userinf.LastName, userinf.Email);
                 userManager.AddUser(user);
-                
-                if (user.IsAdmin) uiDispatcher.Invoke(() => {  showAdmibTab(); }); // should be called before initializing the window (or won't be possible to change)
 
-                uiDispatcher.Invoke(() => 
+                if (user.IsAdmin) uiDispatcher.Invoke(() => { showAdmibTab(); }); // should be called before initializing the window (or won't be possible to change)
+
+                uiDispatcher.Invoke(() =>
                 {
                     closeLoginPage();
                     this.Show();
@@ -258,9 +260,9 @@ namespace StudentHousing
             e.Handled = true;
         }
 
-       
 
-      
+
+
 
         private void SetDayBackground(Button button, string task)
         {
@@ -269,19 +271,19 @@ namespace StudentHousing
             {
                 Color color = Color.FromArgb(125, 0, 255, 0); // RGB values for green
                 button.Background = new SolidColorBrush(color);
-           
+
             }
             else if (task.ToLower() == "cleaning")
             {
                 Color color = Color.FromArgb(125, 0, 0, 200); // RGB values for blue
                 button.Background = new SolidColorBrush(color);
-               
+
             }
             else if (task.ToLower() == "groceries")
             {
                 Color color = Color.FromArgb(125, 255, 255, 0); // RGB values for yellow
                 button.Background = new SolidColorBrush(color);
-                
+
             }
         }
 
@@ -295,13 +297,13 @@ namespace StudentHousing
 
             int tabIndex = GetTabIndexForTask(task);
 
-       
+
             MenuTabs.SelectedIndex = tabIndex;
         }
 
         private string GetTaskFromButton(Button button)
         {
-        
+
             StackPanel stackPanel = (StackPanel)button.Content;
             TextBlock taskTextBlock = (TextBlock)stackPanel.Children[0];
             string task = taskTextBlock.Text;
@@ -314,13 +316,13 @@ namespace StudentHousing
             switch (task)
             {
                 case "Cleaning":
-                    return 3; 
+                    return 3;
                 case "Trash":
-                    return 1; 
+                    return 1;
                 case "Groceries":
-                    return 4; 
+                    return 4;
                 default:
-                    return 0; 
+                    return 0;
             }
         }
 
@@ -328,68 +330,68 @@ namespace StudentHousing
 
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            Grid calendarGrid = (Grid)sender;
+
+            List<(string taskName, DateTime date, string firstName, string lastName)> tasks = calendar.GetTaskDates();
+
+
+            Dictionary<DayOfWeek, List<string>> taskInfoByDay = new Dictionary<DayOfWeek, List<string>>();
+
+
+            foreach (DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)))
             {
-                Grid calendarGrid = (Grid)sender;
-
-                List<(string taskName, DateTime date, string firstName, string lastName)> tasks = calendar.GetTaskDates();
-
-               
-                Dictionary<DayOfWeek, List<string>> taskInfoByDay = new Dictionary<DayOfWeek, List<string>>();
-
-               
-                foreach (DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)))
-                {
-                    taskInfoByDay[day] = new List<string>();
-                }
-
-              
-                foreach (var task in tasks)
-                {
-                    DayOfWeek taskDay = task.date.DayOfWeek;
-                    string taskInfo = task.taskName + Environment.NewLine + " - " + task.firstName + " " + task.lastName;
-
-                    taskInfoByDay[taskDay].Add(taskInfo);
-                }
-
-               
-                int rowOffset = 0; 
-                int columnOffset = 1; 
-                int maxTasksPerDay = 3; 
-
-                foreach (var taskInfo in taskInfoByDay)
-                {
-                    DayOfWeek day = taskInfo.Key;
-                    List<string> tasksForDay = taskInfo.Value;
-
-                 
-                    int row = (int)day + rowOffset;
-                    int column = columnOffset;
-
-                   
-                    for (int i = 0; i < tasksForDay.Count && i < maxTasksPerDay; i++)
-                    {
-                      
-                        TextBlock taskTextBlock = new TextBlock
-                        {
-                            Text = tasksForDay[i],
-                            HorizontalAlignment = HorizontalAlignment.Center,
-                            FontSize = 10,
-                            Margin = new Thickness(0, 0, 0, 0)
-                        };
-
-                    
-                        Grid.SetRow(taskTextBlock, row);
-                        Grid.SetColumn(taskTextBlock, column);
-                        calendarGrid.Children.Add(taskTextBlock);
-
-                       
-                        column += 2;
-                    }
-                }
+                taskInfoByDay[day] = new List<string>();
             }
 
 
-   
+            foreach (var task in tasks)
+            {
+                DayOfWeek taskDay = task.date.DayOfWeek;
+                string taskInfo = task.taskName + Environment.NewLine + " - " + task.firstName + " " + task.lastName;
+
+                taskInfoByDay[taskDay].Add(taskInfo);
+            }
+
+
+            int rowOffset = 0;
+            int columnOffset = 1;
+            int maxTasksPerDay = 3;
+
+            foreach (var taskInfo in taskInfoByDay)
+            {
+                DayOfWeek day = taskInfo.Key;
+                List<string> tasksForDay = taskInfo.Value;
+
+
+                int row = (int)day + rowOffset;
+                int column = columnOffset;
+
+
+                for (int i = 0; i < tasksForDay.Count && i < maxTasksPerDay; i++)
+                {
+
+                    TextBlock taskTextBlock = new TextBlock
+                    {
+                        Text = tasksForDay[i],
+                        HorizontalAlignment = HorizontalAlignment.Center,
+                        FontSize = 10,
+                        Margin = new Thickness(0, 0, 0, 0)
+                    };
+
+
+                    Grid.SetRow(taskTextBlock, row);
+                    Grid.SetColumn(taskTextBlock, column);
+                    calendarGrid.Children.Add(taskTextBlock);
+
+
+                    column += 2;
+                }
+            }
+        }
+
+
+
         private void VoteButtonFor_click(object sender, RoutedEventArgs e)
         {
             if (theCalendar.SelectedDate.HasValue)
@@ -485,7 +487,7 @@ namespace StudentHousing
         private void PayButton_Click(object sender, RoutedEventArgs e)
         {
             if (user.payedForGroceries)
-            {PayButton.Visibility = Visibility.Hidden;}
+            { PayButton.Visibility = Visibility.Hidden; }
             else
             {
                 PayButton.Visibility = Visibility.Collapsed;
@@ -516,7 +518,19 @@ namespace StudentHousing
                 Party party = new Party();
                 party.CreateParty(user, dateTime);
                 partyManager.AddParty(party);
-                MessageBox.Show(user.party.ToString());
+                MessageBox.Show("Party is created successfully!", "Success!", MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+            }
+            ShowParties();
+        }
+
+        private void ShowParties()
+        {
+            List<Party> parties = partyManager.GetPartyList();
+            partyListBox.Items.Clear();
+            foreach (Party party in parties)
+            {
+                partyListBox.Items.Add($"{party.PartyDay}");
             }
         }
     }
