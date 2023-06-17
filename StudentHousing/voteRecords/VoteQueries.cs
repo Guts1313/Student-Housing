@@ -13,7 +13,7 @@ namespace StudentHousing.voteRecords
         private string pathToUsersFile = System.IO.Path.GetFullPath(System.IO.Path.Combine(Environment.CurrentDirectory, @"..\..\..\"));
         public VoteQueries()
         {
-            pathToUsersFile = System.IO.Path.Combine(pathToUsersFile, "DataCSV", "partiesAssigned.bin");
+            pathToUsersFile = System.IO.Path.Combine(pathToUsersFile, "DataCSV", "vote.bin");
         }
         public bool checkIfVoteExists(Vote vote)
         {
@@ -70,7 +70,7 @@ namespace StudentHousing.voteRecords
                     }
                 }
             }
-            catch (Exception ex) { throw new IOException("Couldn't get all the users"); }
+            catch (Exception ex) { throw new IOException("Couldn't get all the votes"); }
 
             return votes;
         }
